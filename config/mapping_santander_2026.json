@@ -1,0 +1,167 @@
+{
+  "version": "2026.10",
+  "plantilla": "Formato Fitogreen Santander 2026.xlsx",
+  "proposito": "Donde va cada dato en el formato final de Santander (CLAUDE.md §16.a.centies.sexiesdecies). Las coordenadas son las del MOLDE vacio: el motor (services/excel_engine_santander.py) las traduce a la hoja final despues de repetir las partes.",
+
+  "hojas": {
+    "portada": "Portada",
+    "recursos": "Recursos",
+    "inversion": "Inversión",
+    "plantaciones": "Plantaciones",
+    "flujo": "Flujo proyectado ",
+    "supuestos": "Supuestos",
+    "opinion": "Comentarios generales Opinion",
+    "anexo1": "Anexo 1 Resultado",
+    "anexo2": "Anexo 2 Ventas F29",
+    "anexo3": "Anexo 3 Precios",
+    "anexo4": "Anexo 4 Imágenes",
+    "conciliacion": "Conciliación Ventas"
+  },
+
+  "partes": [
+    {"id": "especies_portada", "hoja": "portada", "filas": [21, 21], "dimension": "especie"},
+
+    {"id": "lotes", "hoja": "recursos", "filas": [8, 8], "dimension": "lote",
+     "columnas": {"A": "unidad_predial", "B": "nombre", "D": "dominio", "E": "rol", "F": "region",
+                  "G": "comuna", "H": "fojas", "I": "numero", "J": "anio", "K": "conservador",
+                  "L": "superficie_legal_ha", "M": "superficie_real_ha"}},
+    {"id": "unidades", "hoja": "recursos", "filas": [13, 13], "dimension": "unidad",
+     "columnas": {"A": "nombre", "B": "i_ii_riego_ha", "C": "iii_iv_riego_ha", "D": "i_ii_secano_ha",
+                  "E": "iii_iv_secano_ha", "F": "v_vi_secano_ha", "G": "vii_viii_secano_ha",
+                  "K": "topografia"}},
+    {"id": "fuentes", "hoja": "recursos", "filas": [24, 24], "dimension": "fuente",
+     "columnas": {"A": "unidad_predial", "B": "tipo_fuente", "C": "nombre_fuente", "D": "ejercicio",
+                  "F": "dominio", "G": "cantidad", "H": "caudal_nominal_ls", "I": "caudal_real_ls",
+                  "J": "cbr_fojas", "K": "cbr_numero", "L": "cbr_anio", "M": "cbr_conservador"},
+     "pisa_formula": ["A", "H", "I"],
+     "nota": "A, H e I traen formula en el molde (=A13, =G24, =H24): si el dato existe, manda el dato"},
+    {"id": "riego", "hoja": "recursos", "filas": [33, 37], "dimension": "riego",
+     "celdas": {"B33": "unidad_predial", "J35": "capacidad_tranques_m3"},
+     "pisa_formula": ["B33"],
+     "nota": "un bloque por unidad predial con plantaciones; B33 =A24 en el molde"},
+    {"id": "riego_especies", "hoja": "recursos", "filas": [35, 35], "dimension": "riego_especie",
+     "dentro_de": "riego", "columnas_de_afuera": ["I", "J", "K", "L", "M"],
+     "columnas": {"C": "sistema_riego"}},
+
+    {"id": "plantaciones", "hoja": "plantaciones", "filas": [7, 7], "dimension": "plantacion",
+     "columnas": {"A": "especie", "B": "variedad", "C": "anio", "D": "royalty", "E": "superficie_ha",
+                  "F": "conduccion", "G": "predio", "H": "riego", "I": "estatus", "J": "densidad",
+                  "K": "dominio"}},
+    {"id": "resumen_superficie", "hoja": "plantaciones", "filas": [15, 15], "dimension": "especie"},
+    {"id": "sistemas_produccion", "hoja": "plantaciones", "filas": [33, 33], "dimension": "especie",
+     "columnas": {"B": "sistema_produccion", "C": "densidad", "D": "sistema_riego",
+                  "F": "techos", "G": "heladas", "H": "nivel_tecnologico", "I": "homogeneidad",
+                  "J": "estado_fitosanitario", "K": "nivel_productivo"}},
+    {"id": "comercializacion", "hoja": "plantaciones", "filas": [39, 39], "dimension": "especie",
+     "columnas": {"B": "destino", "C": "empresas", "E": "sistema_venta", "F": "certificaciones",
+                  "H": "packing", "I": "proceso_exportacion", "J": "periodo_cosecha",
+                  "K": "periodo_liquidaciones"}},
+
+    {"id": "bloques", "hoja": "flujo", "filas": [8, 17], "dimension": "plantacion"},
+    {"id": "flujo_superficie", "hoja": "flujo", "filas": [25, 25], "dimension": "especie",
+     "agrega": "plantacion", "columnas": {"A": "nombre"}},
+    {"id": "flujo_produccion", "hoja": "flujo", "filas": [27, 27], "dimension": "especie", "agrega": "plantacion"},
+    {"id": "flujo_rendimiento", "hoja": "flujo", "filas": [29, 29], "dimension": "especie", "agrega": "plantacion"},
+    {"id": "flujo_precio", "hoja": "flujo", "filas": [31, 31], "dimension": "especie", "agrega": "plantacion"},
+    {"id": "flujo_costo_ha", "hoja": "flujo", "filas": [33, 33], "dimension": "especie", "agrega": "plantacion"},
+    {"id": "flujo_costo_kg", "hoja": "flujo", "filas": [35, 35], "dimension": "especie", "agrega": "plantacion"},
+    {"id": "flujo_margen", "hoja": "flujo", "filas": [37, 37], "dimension": "especie", "agrega": "plantacion"},
+    {"id": "flujo_ingresos", "hoja": "flujo", "filas": [42, 42], "dimension": "especie", "agrega": "plantacion"},
+    {"id": "flujo_costos", "hoja": "flujo", "filas": [44, 44], "dimension": "especie", "agrega": "plantacion"},
+
+    {"id": "secciones_supuestos", "hoja": "supuestos", "filas": [21, 26], "dimension": "especie",
+     "celdas": {"A22": "nombre_mayusculas", "A26": "nota_supuestos"}},
+    {"id": "filas_supuestos", "hoja": "supuestos", "filas": [24, 24], "dimension": "plantacion",
+     "dentro_de": "secciones_supuestos",
+     "columnas": {"E": "pct_exportacion", "F": "precio_exportacion_usd_kg",
+                  "G": "precio_exportacion_siguientes_usd_kg", "H": "precio_mercado_interno_usd_kg",
+                  "I": "costo_fijo_usd_ha", "J": "costo_variable_usd_kg",
+                  "K": "rendimiento_1", "L": "rendimiento_2", "M": "rendimiento_3", "N": "rendimiento_4",
+                  "O": "rendimiento_5", "P": "rendimiento_6", "Q": "rendimiento_7", "R": "rendimiento_8",
+                  "S": "costo_formacion_1_usd_ha", "T": "costo_formacion_2_usd_ha",
+                  "U": "costo_fijo_formacion_3_usd_ha", "V": "costo_variable_formacion_3_usd_kg"}},
+
+    {"id": "especies_anexo1", "hoja": "anexo1", "filas": [5, 5], "dimension": "especie",
+     "columnas": {"A": "nombre", "B": "produccion_total_kg", "C": "unidad", "D": "pct_exportacion",
+                  "E": "ventas_exportacion_pesos", "F": "ventas_mercado_interno_pesos",
+                  "H": "costos_directos_pesos"}},
+    {"id": "especies_conciliacion", "hoja": "conciliacion", "filas": [23, 23], "dimension": "especie"}
+  ],
+
+  "columnas_repetidas": [
+    {"id": "sensibilizacion", "hoja": "supuestos", "columna": "B", "filas": [4, 8], "dimension": "especie",
+     "celdas": {"4": "nombre", "5": "sens_precio_exportacion", "6": "sens_precio_mercado_interno",
+                "7": "sens_rendimiento", "8": "sens_costos"}}
+  ],
+
+  "campos": {
+    "portada!B10": "antecedentes.cliente",
+    "portada!H10": "antecedentes.rut",
+    "portada!B11": "antecedentes.ejecutivo",
+    "portada!H11": "antecedentes.fecha_visita",
+    "portada!B12": "antecedentes.sucursal",
+    "portada!H12": "antecedentes.fecha_emision_informe",
+    "portada!B14": "antecedentes.agronomo_informante",
+    "portada!H13": "antecedentes.n_solicitud",
+    "portada!H14": "flujo_proyectado.uf",
+    "flujo!E7": "@temporada_real",
+    "flujo!D4": "@tc_anterior",
+    "flujo!F4": "@tc_proyeccion",
+    "anexo1!F3": "@tc_real",
+    "anexo1!I7": "anexo.resultado_real.administracion_pesos",
+    "anexo1!I8": "anexo.resultado_real.gastos_generales_pesos",
+    "supuestos!B10": "supuestos.administracion_usd_anio",
+    "recursos!A40": "dotacion_recursos.comentarios",
+    "inversion!A19": "inversiones.comentarios",
+    "plantaciones!A20": "estructura_productiva.comentarios_plantaciones",
+    "flujo!A83": "flujo_proyectado.comentarios",
+    "opinion!A5": "opinion.gestion_administrativa_productiva.texto",
+    "opinion!H4": "opinion.gestion_administrativa_productiva.calificacion",
+    "opinion!A15": "opinion.canales_comerciales.texto",
+    "opinion!H14": "opinion.canales_comerciales.calificacion",
+    "opinion!A22": "opinion.calidad_activos_productivos.texto",
+    "opinion!H21": "opinion.calidad_activos_productivos.calificacion",
+    "opinion!A30": "opinion.conclusion_final.texto",
+    "opinion!H29": "opinion.conclusion_final.calificacion",
+    "anexo2!A23": "anexo.nota_f29"
+  },
+
+  "listas": {
+    "anexo2!B5:B16": "anexo.ventas_f29_pesos"
+  },
+
+  "inversion": {
+    "hoja": "inversion",
+    "bloques": [[5, 9], [10, 14]],
+    "fila_total": 15,
+    "columnas_proyecto": {"A": "proyecto", "B": "anio", "C": "superficie_ha"},
+    "columnas_item": {"D": "item", "E": "cantidad_ha", "F": "costo_unitario_usd"},
+    "formulas_item": {
+      "G": "=IF(OR(E{fila}=\"\",F{fila}=\"\"),\"\",E{fila}*F{fila})",
+      "H": "=IF(G{fila}=\"\",\"\",G{fila}*{superficie})",
+      "I": "=IF(OR(H{fila}=\"\",{tc}=0),\"\",H{fila}*{tc})",
+      "J": "=IF(I{fila}=\"\",\"\",IFERROR(I{fila}/$I${total},\"\"))"
+    },
+    "tipo_cambio": "flujo!F4",
+    "formatos": {"C": "0.00", "E": "#,##0.0", "F": "#,##0", "G": "#,##0", "H": "#,##0", "I": "#,##0", "J": "0.0%"}
+  },
+
+  "imagenes": {
+    "emplazamiento": {"hoja": "portada", "forma": "Imagen 1"},
+    "galeria": {
+      "hoja": "anexo4",
+      "formas": ["Imagen 26", "Imagen 48", "Imagen 38", "Imagen 28", "Imagen 44", "Imagen 46",
+                 "Imagen 36", "Imagen 40", "Imagen 34", "Imagen 42", "Imagen 32", "Imagen 30",
+                 "Imagen 50", "Imagen 52", "Imagen 54"],
+      "titulos": ["A4", "B4", "C4", "A6", "B6", "C6", "A8", "B8", "C8", "A10", "B10", "C10",
+                  "A12", "B12", "C12"],
+      "filas": [3, 12],
+      "fotos_por_fila": 3,
+      "filas_por_fila": 2
+    }
+  },
+
+  "cuadros_de_texto": {
+    "recursos!CuadroTexto 1": "dotacion_recursos.notas_suelos"
+  }
+}

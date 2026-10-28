@@ -1,0 +1,29 @@
+# Fitogreen - backend de tasaciones
+# Python 3.11+ (el entorno actual es 3.11.9; la especificacion pide 3.12+)
+
+# --- API
+fastapi>=0.115
+uvicorn[standard]>=0.32
+python-multipart>=0.0.12       # subida de archivos
+aiofiles>=24.1
+
+# --- validacion y configuracion
+pydantic>=2.9
+pydantic-settings>=2.6
+
+# --- Excel (el 80% determinista)
+openpyxl>=3.1.5
+pillow>=10.0                   # openpyxl la exige para incrustar imagenes
+
+# --- PDF -> Markdown (reduce ~80% los tokens antes de llamar a la IA)
+pymupdf4llm>=0.0.17
+
+# --- IA (el 20% probabilistico)
+google-genai>=1.0
+
+# --- base de datos
+# Opcional: sin DATABASE_URL el sistema guarda en archivos JSON y arranca igual.
+sqlalchemy[asyncio]>=2.0
+asyncpg>=0.30
+alembic>=1.13
+greenlet>=3.0                  # lo exige SQLAlchemy en modo asincrono

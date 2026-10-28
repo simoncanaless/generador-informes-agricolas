@@ -1,0 +1,359 @@
+{
+  "version": "2.0",
+  "generado": "2026-09-23, midiendo celda por celda Tasacion_Base_Rabo.xlsx (informe real de RaboFinance de un cliente, entregado por el usuario). 2026-10-03: plantilla rehecha con scripts/derivar_plantilla_rabo.py para que sea IDÉNTICA al formato (cuadros de texto, grupos, imágenes), y mapeo de lo que faltaba.",
+  "plantilla": "templates/Formato Fitogreen Rabo.xlsx",
+
+  "sin_destino_en_plantilla": [
+    "parametros.n_solicitud",
+    "parametros.ejecutivo"
+  ],
+  "nota_vida_remanente": "construcciones_hipotecables/prendables e instalaciones tienen un campo 'vida_remanente_anios' en el dominio (informativo), pero NO tiene celda de entrada: la plantilla real la calcula sola a partir de anio_dato_aprox + vida_util_total_anios - año del informe (columna O, formula viva).",
+  "nota_sin_destino": "La plantilla vigente no trae celda para N° de solicitud ni ejecutivo. Los deslindes SI la tienen (LEGAL!C35, '2.3. DESLINDES LEGALES'): la medición de 2026-09-23 decía que no, y era un error -ver 'deslindes'-.",
+
+  "si_no": ["Sí", "No"],
+  "nota_si_no": "Cómo escribe la plantilla un sí/no: con tilde, y cada tabla con su propia lista desplegable (AGUA usa 'SÍ, NO' en mayúscula; CONSTR 'Sí, No'). Un 'Si' sin tilde no calza con la lista y Excel lo marca como inválido.",
+
+  "plant_validacion": {
+    "nota": "PLANT!Tabla12/Tabla5 (dentro de la propia plantilla) traen los COSTOS -esto es solo la lista de CLAVES validas, para avisar ANTES de escribir si una especie/estructura no va a calzar con el VLOOKUP (que si no calza, no da error: da 0 en silencio, IFERROR(...,) en la formula del banco).",
+    "especies": ["Cerezo", "Ciruelo", "Avellano", "Manzano", "Peral", "Nogal",
+                "Vid Vinifera", "Kiwi", "Palto convencional", "Palto Clonal",
+                "Uva de mesa"],
+    "estructuras": ["Parron estándar", "Open Gable", "Espaldera", "Alambrado Tutor", "No"]
+  },
+
+  "hojas": {
+    "portada": "PORTADA",
+    "legal": "LEGAL",
+    "suelos": "SUELOS  ",
+    "agua": "AGUA ",
+    "constr": "CONSTR",
+    "plantacion": "PLANTACION",
+    "resumen": "RESUMEN VALOR",
+    "fotografias": "Fotografias 1",
+    "ref_propiedades": "REF. PROPIEDADES ",
+    "ref_canal": "REF. Canal "
+  },
+
+  "campos": {
+    "parametros.fecha_retasacion": {"hoja": "portada", "celda": "H7", "tipo": "date"},
+    "parametros.uf_base":          {"hoja": "portada", "celda": "H8", "tipo": "float"},
+    "parametros.valor_usd":        {"hoja": "portada", "celda": "H9", "tipo": "float"},
+    "parametros.comuna":           {"hoja": "portada", "celda": "H11", "tipo": "str"},
+    "parametros.region":           {"hoja": "portada", "celda": "H12", "tipo": "str"},
+
+    "cliente.nombre":           {"hoja": "portada", "celda": "C14", "tipo": "str"},
+    "cliente.rut":              {"hoja": "portada", "celda": "H14", "tipo": "str"},
+    "cliente.propietario":      {"hoja": "portada", "celda": "C15", "tipo": "str"},
+    "cliente.rut_propietario":  {"hoja": "portada", "celda": "H15", "tipo": "str"},
+
+    "predio.nombre":                      {"hoja": "legal", "celda": "B6", "tipo": "str"},
+    "predio.rol_avaluo":                  {"hoja": "legal", "celda": "G6", "tipo": "str"},
+    "predio.superficie_legal_ha":         {"hoja": "legal", "celda": "H6", "tipo": "float"},
+    "predio.inscripcion.fojas":           {"hoja": "legal", "celda": "C6", "tipo": "str"},
+    "predio.inscripcion.numero":          {"hoja": "legal", "celda": "D6", "tipo": "str"},
+    "predio.inscripcion.anio":            {"hoja": "legal", "celda": "E6", "tipo": "int"},
+    "predio.inscripcion.conservador":     {"hoja": "legal", "celda": "F6", "tipo": "str"},
+    "predio.hipoteca_rabofinance":        {"hoja": "legal", "celda": "J6", "tipo": "str"},
+    "tiene_tasacion_anterior":            {"hoja": "legal", "celda": "K6", "tipo": "str"},
+    "predio.deuda_contribuciones_clp":    {"hoja": "legal", "celda": "L6", "tipo": "float"},
+    "predio.nombre_corto":               {"hoja": "legal", "celda": "B24", "tipo": "str",
+      "si_falta": "predio.nombre"},
+    "predio.afecto_expropiacion":         {"hoja": "legal", "celda": "C24", "tipo": "str",
+      "nota": "la plantilla espera 'Sí'/'No' como texto, no un booleano de Excel"},
+    "predio.superficie_expropiada":       {"hoja": "legal", "celda": "E24", "tipo": "str"},
+    "predio.descripcion_expropiacion":    {"hoja": "legal", "celda": "G24", "tipo": "str"},
+
+    "suelos_descripcion.tipo_propiedad":  {"hoja": "suelos", "celda": "H34", "tipo": "str"},
+    "suelos_descripcion.coordenada_e":    {"hoja": "suelos", "celda": "H35", "tipo": "str"},
+    "suelos_descripcion.coordenada_s":    {"hoja": "suelos", "celda": "H36", "tipo": "str"},
+    "suelos_descripcion.ciudad_cercana":  {"hoja": "suelos", "celda": "H37", "tipo": "str"},
+    "suelos_descripcion.distancia_km":    {"hoja": "suelos", "celda": "H38", "tipo": "str"},
+    "suelos_descripcion.ruta_acceso":     {"hoja": "suelos", "celda": "H39", "tipo": "str"},
+    "suelos_descripcion.tipo_via":        {"hoja": "suelos", "celda": "H40", "tipo": "str"},
+
+    "aguas_observaciones":  {"hoja": "agua", "celda": "A14", "area_visual": "A14:K17", "tipo": "str"},
+    "aguas_suficiencia":    {"hoja": "agua", "celda": "A32", "tipo": "str"},
+
+    "tasador.nombre":   {"hoja": "resumen", "celda": "B24", "tipo": "str"},
+    "tasador.rut":      {"hoja": "resumen", "celda": "B25", "tipo": "str"},
+    "tasador.empresa":  {"hoja": "resumen", "celda": "B26", "tipo": "str"}
+  },
+
+  "deslindes": {
+    "hoja": "legal",
+    "celda": "C35",
+    "partes": {"Norte": "predio.deslinde_norte", "Sur": "predio.deslinde_sur",
+               "Oriente": "predio.deslinde_oriente", "Poniente": "predio.deslinde_poniente"},
+    "nota": "Una sola celda con un renglón por punto cardinal y el nombre en negrita, como en el original ('Norte: con Parcela...')."
+  },
+
+  "cuadros_de_texto": {
+    "nota": "Los cuadros de texto del formato real -no son celdas: openpyxl no los ve, y el motor los llena después de guardar con services/dibujos_xlsx.py-. 'forma' es el nombre de la forma en la plantilla.",
+    "observaciones_portada":              {"hoja": "portada", "forma": "CuadroTexto 2"},
+    "legal_observaciones":                {"hoja": "legal", "forma": "CuadroTexto 1"},
+    "legal_observaciones_expropiacion":   {"hoja": "legal", "forma": "CuadroTexto 2"},
+    "suelos_descripcion.descripcion":     {"hoja": "suelos", "forma": "CuadroTexto 1"},
+    "construcciones_observaciones":       {"hoja": "constr", "forma": "Shape 4"},
+    "plantaciones_observaciones":         {"hoja": "plantacion", "forma": "Shape 5"},
+    "diferencias":                        {"hoja": "plantacion", "forma": "Shape 6",
+      "nota": "El formato tiene UN cuadro de 'Diferencias con tasación anterior' (en PLANTACION). Si se escribieron diferencias de otras secciones, van todas ahí, cada una con su sección delante -antes se perdían en silencio-."},
+    "testigos_propiedades_analisis":      {"hoja": "ref_propiedades", "forma": "CuadroTexto 1"},
+    "testigos_derechos_agua_analisis":    {"hoja": "ref_canal", "forma": "CuadroTexto 1"}
+  },
+
+  "huecos_de_imagen": {
+    "nota": "Imágenes del formato. En la plantilla llevan una imagen de muestra gris con su rótulo: si el informe no trae esa imagen, la muestra se queda para que en Excel se cambie con clic derecho > Cambiar imagen, que conserva el tamaño y la posición exactos.",
+    "foto_portada":        {"hoja": "portada", "forma": "Imagen 3", "titulo": "Foto del predio (portada)"},
+    "certificado_avaluo":  {"hoja": "legal", "forma": "Imagen 11", "titulo": "Certificado de avalúo fiscal (SII)"},
+    "certificado_deuda":   {"hoja": "legal", "forma": "Imagen 10", "titulo": "Certificado de deuda (TGR)"},
+    "cip_1":               {"hoja": "legal", "forma": "Imagen 3", "titulo": "Certificado de Informaciones Previas, página 1"},
+    "cip_2":               {"hoja": "legal", "forma": "Imagen 4", "titulo": "Certificado de Informaciones Previas, página 2"},
+    "cip_3":               {"hoja": "legal", "forma": "Imagen 5", "titulo": "Certificado de Informaciones Previas, página 3"},
+    "satelital_ubicacion": {"hoja": "suelos", "forma": "Imagen 18", "titulo": "Ubicación del predio (satelital)"},
+    "uso_de_suelo":        {"hoja": "suelos", "forma": "Imagen 2", "titulo": "Clasificación de uso de suelo / PRC"},
+    "satelital_perimetro": {"hoja": "suelos", "forma": "Imagen 20", "titulo": "Perímetro del predio (satelital)"},
+    "firma":               {"hoja": "resumen", "forma": "image107.png", "titulo": "Firma del tasador",
+      "nota": "La firma la pone quien firma ESE informe: la plantilla trae la muestra, no la de una persona."},
+    "foto_1":  {"hoja": "fotografias", "forma": "Imagen 16", "titulo": "Fotografía 1", "rotulo": "B14"},
+    "foto_2":  {"hoja": "fotografias", "forma": "Imagen 22", "titulo": "Fotografía 2", "rotulo": "Q14"},
+    "foto_3":  {"hoja": "fotografias", "forma": "Imagen 24", "titulo": "Fotografía 3", "rotulo": "AF14"},
+    "foto_4":  {"hoja": "fotografias", "forma": "Imagen 26", "titulo": "Fotografía 4", "rotulo": "B25"},
+    "foto_5":  {"hoja": "fotografias", "forma": "Imagen 12", "titulo": "Fotografía 5", "rotulo": "Q25"},
+    "foto_6":  {"hoja": "fotografias", "forma": "Imagen 20", "titulo": "Fotografía 6", "rotulo": "AF25"},
+    "foto_7":  {"hoja": "fotografias", "forma": "Imagen 32", "titulo": "Fotografía 7", "rotulo": "B36"},
+    "foto_8":  {"hoja": "fotografias", "forma": "Imagen 34", "titulo": "Fotografía 8", "rotulo": "Q36"},
+    "foto_9":  {"hoja": "fotografias", "forma": "Imagen 36", "titulo": "Fotografía 9", "rotulo": "AF36"},
+    "foto_10": {"hoja": "fotografias", "forma": "Imagen 38", "titulo": "Fotografía 10", "rotulo": "B47"},
+    "foto_11": {"hoja": "fotografias", "forma": "Imagen 40", "titulo": "Fotografía 11", "rotulo": "Q47"},
+    "foto_12": {"hoja": "fotografias", "forma": "Imagen 42", "titulo": "Fotografía 12", "rotulo": "AF47"},
+    "foto_13": {"hoja": "fotografias", "forma": "Imagen 46", "titulo": "Fotografía 13", "rotulo": "B58"},
+    "foto_14": {"hoja": "fotografias", "forma": "Imagen 47", "titulo": "Fotografía 14", "rotulo": "Q58"},
+    "foto_15": {"hoja": "fotografias", "forma": "Imagen 45", "titulo": "Fotografía 15", "rotulo": "AF58"}
+  },
+
+  "criterio_de_valor": {
+    "nota": "Si el tasador NO considera las plantaciones (o las instalaciones) en el valor de la propiedad -criterio de mejor uso del suelo-, esas lineas del resumen y de la portada quedan como en el formato real de ese caso: el resumen en blanco y la portada en 0. Si las considera, quedan las formulas de la plantilla.",
+    "valorar_plantaciones": [{"hoja": "resumen", "celda": "C13", "valor": null},
+                             {"hoja": "portada", "celda": "F28", "valor": 0}],
+    "valorar_instalaciones": [{"hoja": "resumen", "celda": "C16", "valor": null},
+                              {"hoja": "portada", "celda": "F30", "valor": 0},
+                              {"hoja": "constr", "celda": "E23", "valor": null},
+                              {"hoja": "constr", "celda": "S23", "valor": null}]
+  },
+
+  "factores_liquidacion": {
+    "nota": "Celdas EDITABLES de la plantilla real (no una fórmula ni una constante de negocio en Python): cada línea de HIPOTECA/PRENDA en RESUMEN VALOR trae su propio % de ajuste, y en el ejemplo real las 4 de hipoteca traen 0.7 y las 4 de prenda 0.5 -el mismo valor repetido, no cuatro decisiones distintas-. El motor escribe UN valor del dominio (factor_liquidacion_hipoteca/_prenda) en las 4 celdas de cada grupo.",
+    "hipoteca": {"hoja": "resumen", "celdas": ["D6", "D7", "D8", "D9"]},
+    "prenda":   {"hoja": "resumen", "celdas": ["D13", "D14", "D15", "D16"]}
+  },
+
+  "tablas": {
+    "suelos": {
+      "atributo": "suelos",
+      "hoja": "suelos",
+      "primera_fila": 46,
+      "ultima_fila_plantilla": 53,
+      "capacidad": 8,
+      "columnas": {
+        "nombre": "A",
+        "clase_uso": "C",
+        "grado_habilitacion": "D",
+        "superficie_m2": "E",
+        "valor_unitario_uf_m2": "F"
+      },
+      "nota": "A (Propiedad) y B (Rol) se completan con predio.nombre/predio.rol_avaluo, iguales en las 8 filas -una sola propiedad en esta fase-. G/H ya son fórmula en la plantilla (=F*E*UF, =G/USD): no se pisan."
+    },
+
+    "aguas": {
+      "atributo": "aguas",
+      "hoja": "agua",
+      "primera_fila_inscripcion": 7,
+      "ultima_fila_inscripcion_plantilla": 11,
+      "primera_fila_valor": 25,
+      "ultima_fila_valor_plantilla": 26,
+      "capacidad": 5,
+      "si_no": ["SÍ", "NO"],
+      "columnas_inscripcion": {
+        "fuente_inscripcion": "B",
+        "rol_avaluo": "C",
+        "derechos_cantidad": "D",
+        "tipo": "E",
+        "inscrito_cpa": "F",
+        "hipotecado_rabofinance": "G",
+        "inscripcion.fojas": "H",
+        "inscripcion.numero": "I",
+        "inscripcion.anio": "J",
+        "inscripcion.conservador": "K"
+      },
+      "columnas_valor": {
+        "fuente": "B",
+        "rol_avaluo": "C",
+        "derechos_cantidad": "D",
+        "tipo": "E",
+        "derechos_en_acciones": "F",
+        "caudal_nominal_ls": "G",
+        "hipotecado_rabofinance": "H",
+        "valor_unitario_clp": "I"
+      },
+      "nota": "El mismo derecho se escribe en DOS tablas de la misma hoja (4.1 inscripción, 4.2 valor) porque así las separa la plantilla del banco -no son dos listas distintas en el dominio, es una sola (schemas.retasacion.DerechoAgua)."
+    },
+
+    "construcciones_hipotecables": {
+      "atributo": "construcciones_hipotecables",
+      "hoja": "constr",
+      "primera_fila": 6,
+      "ultima_fila_plantilla": 10,
+      "capacidad": 5,
+      "fila_totales": 11,
+      "columnas": {
+        "edificacion": "B",
+        "estado_conservacion": "C",
+        "ubicacion_rol": "D",
+        "superficie_m2": "E",
+        "estructura_vertical": "F",
+        "anio_dato_aprox": "G",
+        "asegurable": "L",
+        "costo_reposicion_uf_m2": "M",
+        "vida_util_total_anios": "N",
+        "valor_residual_pct": "P"
+      },
+      "nota": "O (Vida remanente) NO se escribe. Q (valor unitario depreciado), R ($/m2) y S (valor total) son fórmula -no se pisan."
+    },
+
+    "construcciones_prendables": {
+      "atributo": "construcciones_prendables",
+      "hoja": "constr",
+      "primera_fila": 15,
+      "ultima_fila_plantilla": 17,
+      "capacidad": 2,
+      "fila_totales": 18,
+      "columnas": {
+        "edificacion": "B",
+        "estado_conservacion": "C",
+        "ubicacion_rol": "D",
+        "superficie_m2": "E",
+        "estructura_vertical": "F",
+        "anio_dato_aprox": "G",
+        "asegurable": "L",
+        "costo_reposicion_uf_m2": "M",
+        "vida_util_total_anios": "N",
+        "valor_residual_pct": "P"
+      },
+      "nota": "O (Vida remanente) NO se escribe, igual que en construcciones_hipotecables."
+    },
+
+    "instalaciones": {
+      "atributo": "instalaciones",
+      "hoja": "constr",
+      "primera_fila": 22,
+      "ultima_fila_plantilla": 22,
+      "capacidad": 1,
+      "insertar_filas": true,
+      "fila_totales": 23,
+      "rotulo_de_totales": {"columna": "B", "texto": "Superficie Total"},
+      "columnas": {
+        "item": "B",
+        "estado_conservacion": "C",
+        "ubicacion_rol": "D",
+        "cantidad": "E",
+        "unidad": "F",
+        "descripcion": "H",
+        "anio_dato_aprox": "G",
+        "asegurable": "L",
+        "costo_reposicion_unitario_uf": "M",
+        "vida_util_total_anios": "N",
+        "valor_residual_pct": "P"
+      },
+      "nota": "O (Vida remanente) se calcula sola. H:K está combinada (Descripción General). La plantilla real solo traía 1 fila: si hay más instalaciones el motor inserta filas, corriendo 5.4 y el cuadro de observaciones hacia abajo."
+    },
+
+    "plantaciones_sin_royalty": {
+      "atributo": "plantaciones_sin_royalty",
+      "hoja": "plantacion",
+      "primera_fila": 5,
+      "ultima_fila_plantilla": 10,
+      "capacidad": 6,
+      "fila_totales": 11,
+      "columnas": {
+        "especie": "A",
+        "variedad": "B",
+        "anio_plantacion": "C",
+        "densidad_plantas_ha": "D",
+        "rol_avaluo": "E",
+        "superficie_ha": "F",
+        "estado": "K"
+      },
+      "nota": "G (valor unitario) es VLOOKUP contra PLANT -el motor escribe también la fila espejo en PLANT, ver services/excel_engine_rabobank.py-. H/I/J ya son fórmula (=F*G, =H/UF, =H/USD)."
+    },
+
+    "plantaciones_con_royalty": {
+      "atributo": "plantaciones_con_royalty",
+      "hoja": "plantacion",
+      "primera_fila": 15,
+      "ultima_fila_plantilla": 16,
+      "capacidad": 2,
+      "fila_totales": 17,
+      "columnas": {
+        "especie": "A",
+        "variedad": "B",
+        "anio_plantacion": "C",
+        "marco_plantacion": "D",
+        "rol_avaluo": "E",
+        "superficie_ha": "F",
+        "valor_unitario_clp_ha": "G",
+        "estado": "K"
+      },
+      "nota": "A diferencia de 6.1, aca G (valor unitario) NO tiene formula en la plantilla real -medido: G15/G16 estaban completamente vacias-, asi que se escribe el valor del dominio directo."
+    },
+
+    "testigos_propiedades": {
+      "atributo": "testigos_propiedades",
+      "hoja": "ref_propiedades",
+      "base_de_referencias": true,
+      "primera_fila_base": 6,
+      "insertar_en": 224,
+      "fila_modelo": 13,
+      "columnas": {
+        "ubicacion": "A",
+        "region": "B",
+        "comuna": "C",
+        "superficie_m2": "D",
+        "valor_total_uf": "F",
+        "fecha": "G",
+        "tipo_referencia": "H",
+        "link": "N",
+        "descripcion": "O"
+      },
+      "ceros": ["J", "K"],
+      "asimetria": {"celda": "B230", "columna": "M"},
+      "curtosis": {"celda": "F230", "columna": "M"},
+      "nota": "La hoja es la BASE de referencias que la tasadora va juntando: en el informe quedan visibles solo las que usa, y la estadística (SUBTOTAL/AGREGAR, que ignoran lo oculto) se calcula con esas. La plantilla trae la base completa oculta; el motor inserta las referencias del informe DENTRO del rango de la base (fila 224, la última de D6:D224) para que todas las fórmulas las cubran, con las fórmulas de la fila modelo (E, I, L, M), y apunta la asimetría y la curtosis -que nombran sus celdas una por una- a esas filas."
+    },
+
+    "testigos_derechos_agua": {
+      "atributo": "testigos_derechos_agua",
+      "hoja": "ref_canal",
+      "base_de_referencias": true,
+      "primera_fila_base": 6,
+      "insertar_en": 55,
+      "fila_modelo": 53,
+      "columnas": {
+        "region": "A",
+        "comuna": "B",
+        "sub_cuenca": "C",
+        "tipo_fuente": "D",
+        "fuente": "E",
+        "derechos": "F",
+        "tipo": "G",
+        "caudal_nominal_ls": "H",
+        "valor_total_m_pesos": "I",
+        "fecha": "M",
+        "tipo_referencia": "N",
+        "link": "O"
+      },
+      "asimetria": {"celda": "B61", "columna": "L"},
+      "curtosis": {"celda": "D61", "columna": "L"},
+      "nota": "Mismo criterio que testigos_propiedades: base oculta, referencias del informe insertadas en la fila 55 (la última de L6:L55 y del filtro A5:O55), con las fórmulas J, K y L de la fila modelo."
+    }
+  }
+}

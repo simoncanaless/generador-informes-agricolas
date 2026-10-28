@@ -1,0 +1,1384 @@
+{
+  "version": "1.1",
+  "generado": "2026-08-10",
+  "plantilla": "Formato Fitogreen Bsan.xlsx",
+  "schema": "schemas/informe.py::InformeFitogreen",
+  "convenciones": {
+    "confianza": {
+      "alta": "la celda esta confirmada por etiqueta adyacente, borde de entrada o formula que la consume",
+      "inferida": "la etiqueta existe pero la celda de valor se deduce del borde de subrayado; verificar con un informe real"
+    },
+    "no_escribir": "las celdas listadas en 'formulas' contienen formulas de la plantilla y NO deben sobrescribirse",
+    "hojas_con_espacio_final": [
+      "Flujo proyectado ",
+      "Anexo "
+    ]
+  },
+  "hojas": {
+    "cliente": "Cliente",
+    "dotacion": "Dotación de recursos",
+    "inversion": "Inversión",
+    "estructura": "Estructura Productiva",
+    "flujo": "Flujo proyectado ",
+    "opinion": "Comentarios generales Opinion",
+    "anexo": "Anexo "
+  },
+  "campos": {
+    "antecedentes.cliente": {
+      "hoja": "cliente",
+      "celda": "B10",
+      "area_visual": "B10:C10",
+      "tipo": "str",
+      "confianza": "inferida"
+    },
+    "antecedentes.rut": {
+      "hoja": "cliente",
+      "celda": "G10",
+      "tipo": "str",
+      "confianza": "inferida"
+    },
+    "antecedentes.ejecutivo": {
+      "hoja": "cliente",
+      "celda": "B11",
+      "area_visual": "B11:C11",
+      "tipo": "str",
+      "confianza": "inferida"
+    },
+    "antecedentes.fecha_visita": {
+      "hoja": "cliente",
+      "celda": "G11",
+      "tipo": "date",
+      "formato": "DD-MM-YYYY",
+      "confianza": "inferida"
+    },
+    "antecedentes.sucursal": {
+      "hoja": "cliente",
+      "celda": "B12",
+      "area_visual": "B12:C12",
+      "tipo": "str",
+      "confianza": "inferida"
+    },
+    "antecedentes.fecha_emision_informe": {
+      "hoja": "cliente",
+      "celda": "G12",
+      "tipo": "date",
+      "formato": "DD-MM-YYYY",
+      "confianza": "inferida"
+    },
+    "antecedentes.agronomo_informante": {
+      "hoja": "cliente",
+      "celda": "B13",
+      "area_visual": "B13:C13",
+      "tipo": "str",
+      "confianza": "inferida"
+    },
+    "antecedentes.n_solicitud": {
+      "hoja": "cliente",
+      "celda": "G13",
+      "tipo": "str",
+      "confianza": "inferida"
+    },
+    "resumen_resultados.temporada_ultima": {
+      "hoja": "cliente",
+      "celda": "E28",
+      "tipo": "str",
+      "confianza": "alta",
+      "sobrescribe_valor_por_defecto": "25/26"
+    },
+    "resumen_resultados.temporada_proyeccion": {
+      "hoja": "cliente",
+      "celda": "I28",
+      "tipo": "str",
+      "confianza": "alta",
+      "sobrescribe_valor_por_defecto": "26/27"
+    },
+    "dotacion_recursos.suelos.cliente": {
+      "hoja": "dotacion",
+      "celda": "B6",
+      "tipo": "str",
+      "confianza": "alta"
+    },
+    "dotacion_recursos.suelos.predio": {
+      "hoja": "dotacion",
+      "celda": "B7",
+      "tipo": "str",
+      "confianza": "alta"
+    },
+    "dotacion_recursos.suelos.dominio": {
+      "hoja": "dotacion",
+      "celda": "B8",
+      "tipo": "str",
+      "confianza": "alta"
+    },
+    "dotacion_recursos.suelos.rol_avaluo": {
+      "hoja": "dotacion",
+      "celda": "B9",
+      "tipo": "str",
+      "confianza": "alta"
+    },
+    "dotacion_recursos.suelos.comuna": {
+      "hoja": "dotacion",
+      "celda": "B10",
+      "tipo": "str",
+      "confianza": "alta"
+    },
+    "dotacion_recursos.suelos.inscripcion_dominio": {
+      "hoja": "dotacion",
+      "celda": "B11",
+      "tipo": "str",
+      "confianza": "alta"
+    },
+    "dotacion_recursos.comentarios": {
+      "hoja": "dotacion",
+      "celda": "A47",
+      "tipo": "str",
+      "confianza": "inferida",
+      "nota": "bajo el titulo COMENTARIOS DOTACION DE RECURSOS (A46:M46)",
+      "area_visual": "A47:M53"
+    },
+    "inversiones.comentarios": {
+      "hoja": "inversion",
+      "celda": "A18",
+      "tipo": "str",
+      "confianza": "inferida",
+      "nota": "bajo el titulo COMENTARIOS INVERSIONES (A17:J17)",
+      "area_visual": "A18:J24"
+    },
+    "estructura_productiva.comentarios_plantaciones": {
+      "hoja": "estructura",
+      "celda": "A24",
+      "tipo": "str",
+      "confianza": "inferida",
+      "nota": "etiqueta 'Comentarios Plantaciones:' en A23",
+      "area_visual": "A24:J27"
+    },
+    "flujo_proyectado.tipo_cambio_pesos_usd.historico": {
+      "hoja": "flujo",
+      "celda": "D3",
+      "tipo": "float",
+      "clave_temporada": "real",
+      "sirve_a_clases": ["Real "],
+      "confianza": "inferida",
+      "nota": "clave simbolica, no un anio escrito: la temporada la declara el tasador en el Anexo"
+    },
+    "flujo_proyectado.tipo_cambio_pesos_usd.proyeccion": {
+      "hoja": "flujo",
+      "celda": "E3",
+      "tipo": "float",
+      "clave_temporada": "preliminar",
+      "sirve_a_clases": ["Preliminar", "Projection "],
+      "confianza": "inferida",
+      "nota": "clave simbolica, no un anio escrito: la temporada la declara el tasador en el Anexo"
+    },
+    "flujo_proyectado.comentarios": {
+      "hoja": "flujo",
+      "celda": "A119",
+      "tipo": "str",
+      "confianza": "inferida",
+      "nota": "etiqueta 'Comentarios' en A118",
+      "area_visual": "A119:N124"
+    },
+    "opinion.gestion_administrativa_productiva.texto": {
+      "hoja": "opinion",
+      "celda": "A5",
+      "area_visual": "A5:H10",
+      "tipo": "str",
+      "confianza": "alta"
+    },
+    "opinion.gestion_administrativa_productiva.calificacion": {
+      "hoja": "opinion",
+      "celda": "H4",
+      "nota": "La plantilla dibuja el rotulo CALIFICACION combinado en E:G y deja la casilla con borde en H4. Hasta el 2026-09-15 el dato se escribia en E5, o sea dentro del cuerpo del comentario, y la casilla del banco quedaba vacia.",
+      "tipo": "Calificacion",
+      "confianza": "alta"
+    },
+    "opinion.canales_comerciales.texto": {
+      "hoja": "opinion",
+      "celda": "A12",
+      "area_visual": "A12:H17",
+      "tipo": "str",
+      "confianza": "alta"
+    },
+    "opinion.canales_comerciales.calificacion": {
+      "hoja": "opinion",
+      "celda": "H11",
+      "nota": "La plantilla dibuja el rotulo CALIFICACION combinado en E:G y deja la casilla con borde en H11. Hasta el 2026-09-15 el dato se escribia en E12, o sea dentro del cuerpo del comentario, y la casilla del banco quedaba vacia.",
+      "tipo": "Calificacion",
+      "confianza": "alta"
+    },
+    "opinion.calidad_activos_productivos.texto": {
+      "hoja": "opinion",
+      "celda": "A19",
+      "area_visual": "A19:H24",
+      "tipo": "str",
+      "confianza": "alta"
+    },
+    "opinion.calidad_activos_productivos.calificacion": {
+      "hoja": "opinion",
+      "celda": "H18",
+      "nota": "La plantilla dibuja el rotulo CALIFICACION combinado en E:G y deja la casilla con borde en H18. Hasta el 2026-09-15 el dato se escribia en E19, o sea dentro del cuerpo del comentario, y la casilla del banco quedaba vacia.",
+      "tipo": "Calificacion",
+      "confianza": "alta"
+    },
+    "opinion.conclusion_final.texto": {
+      "hoja": "opinion",
+      "celda": "A26",
+      "area_visual": "A26:H31",
+      "tipo": "str",
+      "confianza": "alta"
+    },
+    "opinion.conclusion_final.calificacion": {
+      "hoja": "opinion",
+      "celda": "H25",
+      "nota": "La plantilla dibuja el rotulo CALIFICACION combinado en E:G y deja la casilla con borde en H25. Hasta el 2026-09-15 el dato se escribia en E26, o sea dentro del cuerpo del comentario, y la casilla del banco quedaba vacia.",
+      "tipo": "Calificacion",
+      "confianza": "alta"
+    },
+    "anexo.resultado_real.administracion_pesos": {
+      "hoja": "anexo",
+      "celda": "M9",
+      "tipo": "float",
+      "confianza": "alta"
+    },
+    "anexo.resultado_real.gastos_generales_pesos": {
+      "hoja": "anexo",
+      "celda": "M10",
+      "tipo": "float",
+      "confianza": "alta"
+    },
+    "anexo.resultado_preliminar.administracion_pesos": {
+      "hoja": "anexo",
+      "celda": "M20",
+      "tipo": "float",
+      "confianza": "alta"
+    },
+    "anexo.resultado_preliminar.gastos_generales_pesos": {
+      "hoja": "anexo",
+      "celda": "M21",
+      "tipo": "float",
+      "confianza": "alta"
+    },
+    "flujo_proyectado.uf": {
+      "hoja": "flujo",
+      "celda": "D6",
+      "tipo": "float",
+      "formato": "decimal2",
+      "confianza": "alta",
+      "nota": "valor de la UF del DIA DEL INFORME, declarado por el tasador. Celda viva: cambiarla mueve las dos columnas UF de la caratula. Celda agregada por el generador; la plantilla del banco no la trae"
+    }
+  },
+  "tablas": {
+    "estructura_temporada": {
+      "atributo": "estructura_temporada",
+      "hoja": "cliente",
+      "fila_encabezado": [
+        18,
+        19
+      ],
+      "primera_fila": 20,
+      "ultima_fila_plantilla": 23,
+      "capacidad": 4,
+      "fila_totales": 24,
+      "insertar_filas": true,
+      "columnas": {
+        "especie": "A",
+        "superficie_ha": "B",
+        "consolidacion_pct": "D",
+        "tenencia_propio_ha": "F",
+        "tenencia_arriendo_ha": "H",
+        "tenencia_otros_ha": "I"
+      },
+      "nota": "B:C, D:E y F:G estan combinadas por fila; escribir siempre en la celda superior-izquierda",
+      "columnas_sumables": ["superficie_ha", "tenencia_propio_ha", "tenencia_arriendo_ha", "tenencia_otros_ha"],
+      "nota_totales": "La consolidacion NO se suma (80% + 81% daba 161%): su total es el promedio ponderado por superficie, en formulas_finales"
+    },
+    "resumen_resultados": {
+      "atributo": "resumen_resultados",
+      "hoja": "cliente",
+      "fila_encabezado": [
+        28,
+        29
+      ],
+      "orientacion": "filas_fijas",
+      "filas": {
+        "ingresos_operacionales": 30,
+        "costos_directos": 31,
+        "margen_bruto": 32,
+        "costos_indirectos": 33,
+        "resultado_operacional_neto": 34
+      },
+      "columnas": {
+        "ultima_m_pesos": "B",
+        "ultima_uf": "D",
+        "proyeccion_m_pesos": "F",
+        "proyeccion_uf": "H"
+      },
+      "insertar_filas": false,
+      "nota": "B:C, D:E, F:G y H:I combinadas por fila"
+    },
+    "suelos_por_predio": {
+      "atributo": "dotacion_recursos.suelos.predios",
+      "hoja": "dotacion",
+      "fila_encabezado": 12,
+      "orientacion": "bloques_de_columnas",
+      "capacidad": 4,
+      "bloques": [
+        {
+          "indice": 0,
+          "riego_ha": "B",
+          "secano_ha": "C"
+        },
+        {
+          "indice": 1,
+          "riego_ha": "E",
+          "secano_ha": "F"
+        },
+        {
+          "indice": 2,
+          "riego_ha": "H",
+          "secano_ha": "I"
+        },
+        {
+          "indice": 3,
+          "riego_ha": "K",
+          "secano_ha": "L"
+        }
+      ],
+      "columnas_total_calculadas": [
+        "D",
+        "G",
+        "J",
+        "M"
+      ],
+      "filas_clase_uso": {
+        "I-II": 13,
+        "III-IV": 14,
+        "V-VI": 15,
+        "VII-VIII": 16
+      },
+      "fila_totales": 17,
+      "insertar_filas": false,
+      "formulas": [
+        "D13:D17",
+        "G13:G17",
+        "J13:J17",
+        "M13:M17",
+        "B17:M17"
+      ],
+      "nota": "las columnas TOTAL (D,G,J,M) son formula =riego+secano y por eso no figuran en 'bloques': el motor solo escribe las claves que son campos del modelo"
+    },
+    "derechos_agua": {
+      "atributo": "dotacion_recursos.derechos_agua",
+      "hoja": "dotacion",
+      "fila_encabezado": [
+        21,
+        22
+      ],
+      "primera_fila": 23,
+      "ultima_fila_plantilla": 26,
+      "capacidad": 4,
+      "fila_totales": 27,
+      "insertar_filas": true,
+      "columnas": {
+        "predio": "A",
+        "comuna": "B",
+        "tipo_fuente": "C",
+        "nombre_fuente": "D",
+        "dominio": "E",
+        "cantidad": "F",
+        "caudal_nominal_ls": "G",
+        "caudal_real_ls": "H",
+        "cbr_fojas": "I",
+        "cbr_numero": "J",
+        "cbr_anio": "K",
+        "cbr_conservador": "L",
+        "propietario": "M"
+      },
+      "formulas": [
+        "H27"
+      ],
+      "columnas_sumables": [],
+      "nota": "La fila 27 no admite totales automaticos. El unico total que corresponde es el caudal real, y esa suma ya viene en H27 desde la plantilla. Sin esto el motor sumaba los ANIOS de inscripcion (2019+2021+2022 = 6062) y ese numero salia impreso bajo 'Datos Inscripcion CBR' en el informe del banco"
+    },
+    "requerimientos_riego": {
+      "atributo": "dotacion_recursos.requerimientos_riego",
+      "hoja": "dotacion",
+      "fila_encabezado": 32,
+      "primera_fila": 33,
+      "ultima_fila_plantilla": 36,
+      "capacidad": 4,
+      "fila_totales": 37,
+      "insertar_filas": true,
+      "columnas": {
+        "especie_variedad": "A",
+        "anio_plantacion": "B",
+        "superficie_ha": "C",
+        "sistema_riego": "D",
+        "eficiencia_riego": "E",
+        "eto_maximo_mm_enero": "F",
+        "coef_cultivo_kc_enero": "G",
+        "requerimiento_max_ls_ha": "H",
+        "requerimiento_total_plantacion_ls": "I",
+        "densidad_plantacion": "L",
+        "cobertura": "N"
+      },
+      "encabezados": {
+        "N32": "Cobertura (según año plantación)"
+      },
+      "celdas_calculadas": {
+        "K33": "=$H$27"
+      },
+      "formulas_de_columna": {
+        "requerimiento_max_ls_ha": "=ROUND(<eto_maximo_mm_enero>*<coef_cultivo_kc_enero>*10/<eficiencia_riego>/86.4*<cobertura>,2)",
+        "requerimiento_total_plantacion_ls": "=ROUND(<requerimiento_max_ls_ha>*<superficie_ha>,2)"
+      },
+      "formulas": [
+        "J33",
+        "C37"
+      ],
+      "origen_de_la_formula": "planilla hidrica propia de Fitogreen, '45. AGRICOLA EJEMPLO (RER HIDRICO-TASACION)': ETo x Kc x 10 / eficiencia / 86,4 x cobertura. Verificada contra el ejemplo ya resuelto de su hoja Hoja4",
+      "nota": "J33:J36 combinada con =SUM(I33:I36); K33:K36 combinada es la disponibilidad total del predio; L:M combinadas por fila. La columna N NO viene en la plantilla del banco: la agrega el generador para que la cobertura quede visible en el informe impreso, donde no se ven las formulas. La fila 37 NO admite totales automaticos: la unica columna sumable es la superficie y esa suma ya viene en C37 desde la plantilla. Sin esto el motor sumaba las eficiencias (0,9x4 = 3,6), los Kc (0,8+0,8 = 1,6) y las coberturas (4), y esos tres numeros sin sentido salian impresos en el informe del banco",
+      "columnas_sumables": [],
+      "columnas_agregadas": [
+        "N"
+      ]
+    },
+    "maquinaria": {
+      "atributo": "dotacion_recursos.maquinaria",
+      "hoja": "dotacion",
+      "fila_encabezado": 41,
+      "primera_fila": 42,
+      "ultima_fila_plantilla": 45,
+      "capacidad": 4,
+      "insertar_filas": true,
+      "columnas": {
+        "nombre": "A",
+        "cantidad": "B",
+        "estado": "C"
+      }
+    },
+    "infraestructura": {
+      "atributo": "dotacion_recursos.infraestructura",
+      "hoja": "dotacion",
+      "fila_encabezado": 41,
+      "primera_fila": 42,
+      "ultima_fila_plantilla": 45,
+      "capacidad": 8,
+      "insertar_filas": true,
+      "orientacion": "dos_bloques_de_columnas",
+      "bloques": [
+        {
+          "indice": 0,
+          "nombre": "F",
+          "cantidad": "G",
+          "estado": "H"
+        },
+        {
+          "indice": 1,
+          "nombre": "K",
+          "cantidad": "L",
+          "estado": "M"
+        }
+      ],
+      "nota": "8 items maximos sin insertar filas: 4 en el bloque F-H y 4 en el K-M"
+    },
+    "inversiones": {
+      "atributo": "inversiones.lineas",
+      "hoja": "inversion",
+      "fila_encabezado": 4,
+      "primera_fila": 5,
+      "ultima_fila_plantilla": 14,
+      "capacidad": 10,
+      "fila_totales": 15,
+      "insertar_filas": true,
+      "columnas_sumables": [],
+      "columnas_acomodadas": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "campos_de_grupo": ["proyecto", "anio", "superficie_ha"],
+      "tamano_bloque": 5,
+      "nota_grupo": "La plantilla combina A5:A9/B5:B9/C5:C9 para el primer proyecto y A10:A14/B10:B14/C10:C14 para el segundo: 2 grupos de 5 filas, no 10 filas sueltas. Sin repartir por grupo antes de escribir, un segundo proyecto con menos de 5 items del primero caia DENTRO del bloque combinado de ese primero -el motor se negaba a pisarlo, pero el proyecto quedaba sin su nombre, anio o superficie escritos-. `campos_de_grupo` + `tamano_bloque` resuelven esto en el motor (services/excel_engine.py:_agrupar_en_bloques): cada proyecto ocupa sus 5 filas completas, con las que sobran en blanco, asi el siguiente arranca justo en el limite. Si algun dia hay mas de 2 proyectos, se avisa cuales quedaron fuera en vez de mezclarlos.",
+      "fila_modelo_de_estilo_totales": 14,
+      "nota_totales": "La plantilla ya suma sola lo que tiene sentido sumar (C, G, H, I, J). Sin esta lista el motor rellenaba las celdas de total que quedaban vacias y escribia la suma de los ANIOS de los proyectos bajo 'Anio' y la de los costos unitarios bajo 'Costo unitario USD'. Sumar anios y sumar tasas no significa nada; es el mismo caso que la tabla de riego y la de derechos de agua.",
+      "columnas": {
+        "proyecto": "A",
+        "anio": "B",
+        "superficie_ha": "C",
+        "item": "D",
+        "cantidad_ha": "E",
+        "costo_unitario_usd": "F",
+        "costo_unitario_usd_ha": "G",
+        "costo_inversion_total_usd": "H",
+        "costo_inversion_pesos": "I"
+      },
+      "formulas_de_columna": {
+        "costo_unitario_usd_ha": "=IF(OR(<cantidad_ha>=\"\",<costo_unitario_usd>=\"\"),\"\",<cantidad_ha>*<costo_unitario_usd>)",
+        "costo_inversion_total_usd": "=IF(<costo_unitario_usd_ha>=\"\",\"\",<costo_unitario_usd_ha>*<superficie_ha>)",
+        "costo_inversion_pesos": "=IF(OR(<costo_inversion_total_usd>=\"\",'Flujo proyectado '!$E$3=0),\"\",<costo_inversion_total_usd>*'Flujo proyectado '!$E$3)"
+      },
+      "nota_formulas": "G, H e I estaban VACIAS desde el principio (§8.7) y por eso el total I15 daba cero y las once celdas de la columna J salian en #DIV/0! en TODO informe generado. Van como formula viva, no como valor: el banco tiene que poder cambiar una cantidad por hectarea o el tipo de cambio y ver moverse la inversion. OJO con la superficie: la plantilla la combina por proyecto (C5:C9 y C10:C14), asi que la referencia se resuelve al ANCLA del combinado; apuntar a C6 daria CERO -Excel devuelve cero dentro de un combinado- sin ninguna celda en error. El tipo de cambio es el de la PROYECCION (E3), porque una inversion es futura.",
+      "formulas": [
+        "J5:J14",
+        "C15",
+        "G15",
+        "H15",
+        "I15",
+        "J15"
+      ],
+      "nota": "G (costo USD/ha) y J (% del total, =I/$I$15) son formulas"
+    },
+    "plantaciones": {
+      "atributo": "estructura_productiva.plantaciones",
+      "hoja": "estructura",
+      "fila_encabezado": 6,
+      "primera_fila": 7,
+      "ultima_fila_plantilla": 10,
+      "capacidad": 4,
+      "fila_totales": 11,
+      "insertar_filas": true,
+      "columnas": {
+        "especie": "A",
+        "variedad": "B",
+        "anio_plantacion": "C",
+        "superficie_ha": "D",
+        "sistema_conduccion": "E",
+        "predio": "F",
+        "dominio": "G",
+        "riego": "H",
+        "estado": "I",
+        "densidad_plantacion": "J"
+      },
+      "formulas": [
+        "D11"
+      ],
+      "nota": "catastro de plantas; Cliente B usa 35 filas frente a las 4 de la plantilla, asi que insertar filas es obligatorio y D11 debe reexpandirse a =SUM(D7:D{ultima})"
+    },
+    "resumen_superficie": {
+      "atributo": "estructura_productiva.resumen_superficie",
+      "hoja": "estructura",
+      "fila_encabezado": 15,
+      "primera_fila": 16,
+      "ultima_fila_plantilla": 19,
+      "capacidad": 4,
+      "fila_totales": 20,
+      "fila_porcentajes": 21,
+      "insertar_filas": true,
+      "columnas": {
+        "especie": "A",
+        "propietario_ha": "B",
+        "arrendatario_ha": "C",
+        "plena_produccion_ha": "F",
+        "rendimientos_crecientes_ha": "G",
+        "formacion_ha": "H",
+        "proyectos_plantacion_ha": "I",
+        "superficie_total_con_proyectos_ha": "J",
+        "pct_por_especie": "E"
+      },
+      "formulas": [
+        "D16:D19",
+        "B20:J20"
+      ],
+      "nota": "D (total) es =SUM(B:C); la columna E (% por especie) esta vacia en la plantilla pese a tener encabezado Las columnas E (% por especie) y J (superficie con proyectos) estaban VACIAS en la plantilla pese a tener encabezado; se escriben como formula viva. El '{total}' sigue a la fila de totales cuando la tabla desborda.",
+      "formulas_de_columna": {
+        "pct_por_especie": "=IFERROR({D}/$D${total},0)",
+        "superficie_total_con_proyectos_ha": "={D}+{I}"
+      }
+    },
+    "sistemas_produccion": {
+      "atributo": "estructura_productiva.sistemas_produccion",
+      "hoja": "estructura",
+      "fila_encabezado": 30,
+      "primera_fila": 31,
+      "ultima_fila_plantilla": 35,
+      "capacidad": 5,
+      "insertar_filas": true,
+      "columnas": {
+        "especie": "A",
+        "sistema_produccion": "B",
+        "densidad_plantacion": "C",
+        "sistema_riego": "D",
+        "variedades_con_royalty": "E",
+        "considera_techos": "F",
+        "sistema_contra_heladas": "G",
+        "nivel_tecnologico": "H",
+        "nivel_homogeneidad": "I",
+        "nivel_productivo_promedio": "J"
+      }
+    },
+    "sistemas_comercializacion": {
+      "atributo": "estructura_productiva.sistemas_comercializacion",
+      "hoja": "estructura",
+      "fila_encabezado": 38,
+      "primera_fila": 39,
+      "ultima_fila_plantilla": 42,
+      "capacidad": 4,
+      "insertar_filas": true,
+      "columnas": {
+        "especie": "A",
+        "empresas_comercializadoras": "B",
+        "comercializacion": "C",
+        "mercado": "D",
+        "periodo_cosecha": "E",
+        "periodo_liquidaciones": "G",
+        "proceso": "I",
+        "gestion_exportacion": "J"
+      },
+      "nota": "E:F y G:H estan combinadas por fila"
+    },
+    "flujo_assumptions": {
+      "atributo": "flujo_proyectado.bloques",
+      "hoja": "flujo",
+      "orientacion": "bloques_de_filas",
+      "capacidad": 4,
+      "insertar_filas": false,
+      "columnas_por_temporada": {
+        "2023/24": "D",
+        "2024/25": "E",
+        "2025/26": "F",
+        "2026/27": "G",
+        "2027/28": "H",
+        "2028/29": "I",
+        "2029/30": "J",
+        "2030/31": "K",
+        "2031/32": "L",
+        "2032/33": "M",
+        "2033/34": "N"
+      },
+      "bloques": [
+        {
+          "indice": 0,
+          "primera_fila": 10,
+          "ultima_fila": 19
+        },
+        {
+          "indice": 1,
+          "primera_fila": 20,
+          "ultima_fila": 29
+        },
+        {
+          "indice": 2,
+          "primera_fila": 30,
+          "ultima_fila": 39
+        },
+        {
+          "indice": 3,
+          "primera_fila": 40,
+          "ultima_fila": 49
+        }
+      ],
+      "offsets_de_fila": {
+        "especie_variedad_anio": 0,
+        "superficie_ha": 1,
+        "precio_exportacion_usd_kg": 2,
+        "precio_mercado_interno_usd_kg": 3,
+        "rendimiento_kg_ha": 4,
+        "ratio_exportacion_pct": 5,
+        "costos_usd_ha": 6,
+        "produccion_total_kg": 7,
+        "ingresos_exportacion": 8,
+        "ingresos_mercado_interno": 9
+      },
+      "filas_espejo": {
+        "columna_etiqueta": "A",
+        "campo_etiqueta": "especie_variedad_anio",
+        "grupos": [57, 62, 67, 72, 77, 82, 90, 95],
+        "fila_modelo_de_estilo": 57,
+        "nota": "Cada uno de estos indicadores repite cuatro filas -una por bloque de especie- y la plantilla NO las rotula: el cuadro mostraba '69,5' y '765.000 kg' sin decir de que especie. Los numeros estaban bien y era ilegible igual. Los grupos son Superficie (57), Produccion Total (62), Produccion promedio (67), Precio de venta promedio (72), Costo promedio (77), Costo unitario (82), Ingresos (90) y Costos Totales (95); el bloque i va en grupo+i. El rotulo sale del propio bloque, asi que dice lo mismo que su encabezado y no puede quedar desfasado. La fila del bloque que el cliente no tiene se apaga: calcula cero sobre celdas vacias y mostrarlo en una fila sin nombre es lo que mas confunde.",
+        "_columna": "Se escribe en A y se deja desbordar sobre B y C, que estan vacias y la celda es de alineacion izquierda. Combinarlas seria tocar la geometria del banco para nada."
+      },
+      "formulas_de_fila": {
+        "produccion_total_kg": "=<rendimiento_kg_ha>*<superficie_ha>",
+        "ingresos_exportacion": "=<produccion_total_kg>*<ratio_exportacion_pct>*<precio_exportacion_usd_kg>",
+        "ingresos_mercado_interno": "=<produccion_total_kg>*(1-<ratio_exportacion_pct>)*<precio_mercado_interno_usd_kg>"
+      },
+      "nota": "especie_variedad_anio se escribe en la columna A de la primera fila del bloque; el resto son series por temporada. Las tres ultimas filas de cada bloque (produccion e ingresos) son derivadas y se escriben como formula viva, no como valor: el banco tiene que poder cambiar un precio y ver moverse el EBITDA. Origen de las formulas: 'RER Flujo sin replantes' filas 15-17, verificado contra Cliente A y Cliente B"
+    },
+    "flujo_costos_generales": {
+      "atributo": "flujo_proyectado",
+      "hoja": "flujo",
+      "orientacion": "filas_fijas",
+      "filas": {
+        "administracion": 101,
+        "gastos_generales": 102,
+        "ventas_respaldadas_pesos": 115,
+        "porcentaje_respaldo": 116
+      },
+      "columnas_por_temporada": "ver flujo_assumptions.columnas_por_temporada",
+      "insertar_filas": false,
+      "columna_modelo_de_estilo": "D",
+      "filas_de_cabecera": [
+        114
+      ],
+      "nota_estilo": "La plantilla dejo estilada solo la columna D de este bloque -esperaba una sola temporada respaldada-. Las columnas que de verdad llevan los datos salian sin recuadro, flotando al costado de la tabla. Se visten SOLO las que tienen contenido: estirar el recuadro sobre las columnas vacias devolveria el problema de la celda vacia dentro de la tabla, que se lee como un dato que falta.",
+      "formulas_de_serie": {
+        "ventas_respaldadas_pesos": "=IF({tc}=0,\"\",{valor}/{tc})",
+        "porcentaje_respaldo": {
+          "formula": "=IFERROR(<ventas_respaldadas_pesos>/{col}106,\"\")",
+          "temporadas_de": "ventas_respaldadas_pesos"
+        }
+      },
+      "nota_respaldo": "El cliente entrega las ventas respaldadas en PESOS -son sus declaraciones de IVA- y la fila del banco pide dolares. Se escribe como formula dividiendo por la celda del tipo de cambio en vez de convertir en Python: el numero en pesos queda a la vista en la barra de formulas y el cambio sigue siendo una celda viva. Es lo que hace el RER de Fitogreen ('Flujo sin replantes'!C312 = IVAS!B13/940), pero ahi el 940 esta escrito a mano. El porcentaje va en ratio crudo, no multiplicado por 100, porque su formato ya es 0.0%; la fila 112 de al lado SI multiplica porque la trae asi la plantilla.",
+      "formulas": [
+        "D100:N100",
+        "D110:N112"
+      ]
+    },
+    "anexo_real": {
+      "atributo": "anexo.resultado_real.filas",
+      "hoja": "anexo",
+      "fila_encabezado": 3,
+      "primera_fila": 4,
+      "ultima_fila_plantilla": 7,
+      "capacidad": 4,
+      "fila_totales": 8,
+      "insertar_filas": true,
+      "columnas": {
+        "especie": "B",
+        "superficie_ha": "N",
+        "produccion_exportacion_kg": "D",
+        "produccion_mercado_interno_kg": "E",
+        "ventas_exportacion_pesos": "G",
+        "ventas_mercado_interno_pesos": "H",
+        "total_ventas_usd": "J",
+        "costos_directos_pesos": "K",
+        "costos_directos_usd": "L"
+      },
+      "formulas_de_columna": {
+        "total_ventas_usd": "=IFERROR({I}/'Flujo proyectado '!$D$3,\"\")",
+        "costos_directos_usd": "=IFERROR({K}/'Flujo proyectado '!$D$3,\"\")"
+      },
+      "celdas_calculadas": {
+        "I4": "=G4+H4",
+        "J8": "=IFERROR(I{fila}/'Flujo proyectado '!$D$3,\"\")",
+        "L8": "=IFERROR(K{fila}/'Flujo proyectado '!$D$3,\"\")"
+      },
+      "formulas": [
+        "F4:F8",
+        "I5:I8",
+        "M4:M8",
+        "M11"
+      ],
+      "nota": "B:C combinadas por fila. La plantilla trae el literal 0 en I4 en vez de la formula =G4+H4 que si llevan I5:I7; se corrige desde celdas_calculadas, porque un literal SI se puede pisar y una formula no. J y L son las columnas en USD, que la plantilla dejo vacias; el tipo de cambio sale de 'Flujo proyectado'!D3 La columna N (superficie) NO viene en la plantilla del banco: la agrega el generador porque sin ella el resumen del flujo no puede calcular rendimiento, costo por hectarea ni costo unitario para las temporadas declaradas.",
+      "encabezados": {
+        "N3": "Superficie (ha)"
+      },
+      "columnas_agregadas": [
+        "N"
+      ]
+    },
+    "anexo_preliminar": {
+      "atributo": "anexo.resultado_preliminar.filas",
+      "hoja": "anexo",
+      "fila_encabezado": 14,
+      "primera_fila": 15,
+      "ultima_fila_plantilla": 18,
+      "capacidad": 4,
+      "fila_totales": 19,
+      "insertar_filas": true,
+      "columnas": {
+        "especie": "B",
+        "superficie_ha": "N",
+        "produccion_exportacion_kg": "D",
+        "produccion_mercado_interno_kg": "E",
+        "ventas_exportacion_pesos": "G",
+        "ventas_mercado_interno_pesos": "H",
+        "total_ventas_usd": "J",
+        "costos_directos_pesos": "K",
+        "costos_directos_usd": "L"
+      },
+      "formulas_de_columna": {
+        "total_ventas_usd": "=IFERROR({I}/'Flujo proyectado '!$E$3,\"\")",
+        "costos_directos_usd": "=IFERROR({K}/'Flujo proyectado '!$E$3,\"\")"
+      },
+      "formulas": [
+        "F15:F19",
+        "I15:I19",
+        "M15:M19",
+        "M22"
+      ],
+      "nota": "misma estructura que anexo_real, con el tipo de cambio de la temporada preliminar ('Flujo proyectado'!E3). Aqui I15 si trae la formula del banco: no hay literal que corregir La columna N (superficie) NO viene en la plantilla del banco: la agrega el generador porque sin ella el resumen del flujo no puede calcular rendimiento, costo por hectarea ni costo unitario para las temporadas declaradas.",
+      "celdas_calculadas": {
+        "J19": "=IFERROR(I{fila}/'Flujo proyectado '!$E$3,\"\")",
+        "L19": "=IFERROR(K{fila}/'Flujo proyectado '!$E$3,\"\")"
+      },
+      "encabezados": {
+        "N14": "Superficie (ha)"
+      },
+      "columnas_agregadas": [
+        "N"
+      ]
+    }
+  },
+  "fotografias": {
+    "soportado_por_plantilla": {
+      "satelital": {
+        "hoja": "cliente",
+        "titulo_en": "A39",
+        "titulo_texto": "IMAGEN EMPLAZAMIENTO UNIDAD PRINCIPAL",
+        "celda_ancla": "A40",
+        "rango_sugerido": "A40:I60",
+        "capacidad": 1,
+        "prioridad": 10,
+        "tipo_ancla": "twoCellAnchor",
+        "confianza": "alta",
+        "nota": "MISMO hueco que emplazamiento -es el unico marcador de imagen de la Bsan- y por eso los dos declaran la misma ancla. La satelital va primero (prioridad 10) porque es la que el agrónomo pide ver grande: una imagen satelital ES la imagen de emplazamiento, y ademas la sube a proposito, mientras que 'emplazamiento' se lo puede poner el modelo a cualquier foto de terreno. El rango mide 794x420 px, que es de donde sale LADO_SATELITAL=2000 en services/imagenes.py (242 ppp al imprimir)."
+      },
+      "emplazamiento": {
+        "hoja": "cliente",
+        "titulo_en": "A39",
+        "titulo_texto": "IMAGEN EMPLAZAMIENTO UNIDAD PRINCIPAL",
+        "celda_ancla": "A40",
+        "rango_sugerido": "A40:I60",
+        "capacidad": 1,
+        "prioridad": 20,
+        "tipo_ancla": "twoCellAnchor",
+        "confianza": "alta",
+        "nota": "unico marcador de imagen que existe en la plantilla Bsan; lo comparte con satelital, que va antes"
+      }
+    },
+    "logo": {
+      "hoja": "cliente",
+      "celda_ancla": "G1",
+      "rango": "G1:I3",
+      "tipo_ancla": "twoCellAnchor",
+      "archivo_actual": "xl/media/image1.png",
+      "nota": "ya presente en la plantilla; no sobrescribir"
+    },
+    "galeria_inspeccion": {
+      "estado": "NO_EXISTE_EN_PLANTILLA",
+      "requiere_hoja_nueva": true,
+      "nombre_hoja_propuesto": "Fotografias",
+      "origen_de_la_rejilla": "Cliente D May-2026.xlsx, hojas 'Fotografias 1' y 'Fotografias 2'",
+      "rejilla": {
+        "columnas_ancla": [
+          "B",
+          "Q",
+          "AF"
+        ],
+        "ancho_columnas": 2.66,
+        "filas_ancla": [
+          4,
+          15,
+          26,
+          37,
+          48,
+          59
+        ],
+        "alto_filas": 14,
+        "capacidad_por_hoja": 18,
+        "tipo_ancla": "twoCellAnchor"
+      },
+      "celdas": [
+        "B4:P13",
+        "Q4:AE13",
+        "AF4:AT13",
+        "B15:P24",
+        "Q15:AE24",
+        "AF15:AT24",
+        "B26:P35",
+        "Q26:AE35",
+        "AF26:AT35",
+        "B37:P46",
+        "Q37:AE46",
+        "AF37:AT46",
+        "B48:P57",
+        "Q48:AE57",
+        "AF48:AT57",
+        "B59:P68",
+        "Q59:AE68",
+        "AF59:AT68"
+      ],
+      "rejilla_alternativa": {
+        "origen": "RER Cliente B Ago-2025.xlsx, hoja 'Estructura'",
+        "columnas_ancla": [
+          "A",
+          "D",
+          "G"
+        ],
+        "filas_ancla": [
+          79,
+          91,
+          103,
+          115
+        ],
+        "alto_filas": 10,
+        "capacidad": 12,
+        "nota": "rejilla 3x4 embebida en la propia hoja de estructura productiva, no en una hoja aparte"
+      }
+    }
+  },
+  "matriz_envejecimiento": {
+    "estado": "NO_EXISTE_EN_PLANTILLA",
+    "requiere_hoja_nueva": true,
+    "nombre_hoja_propuesto": "Detalle plantaciones",
+    "origen_del_patron": "HdU - Plantation Dec-2025: matriz edad x anio de proyeccion con SUMPRODUCT contra la curva",
+    "proposito": "el flujo de la plantilla solo admite 4 bloques con UNA serie de rendimiento cada uno; esta hoja abre esa serie por edad para que el promedio ponderado sea auditable y siga vivo, en vez de un numero calculado en Python",
+    "primera_fila": 4,
+    "filas_entre_bloques": 3,
+    "columnas": {
+      "edad": "A",
+      "rendimiento_curva": "B",
+      "costo_base": "C",
+      "rendimiento_ajustado": "D",
+      "costo_total": "E",
+      "etiqueta_parametro": "A",
+      "valor_parametro": "B"
+    },
+    "primera_columna_temporada": "G",
+    "formulas": {
+      "superficie_ha": "=SUM({superficie})",
+      "rendimiento_kg_ha": "=IFERROR(SUMPRODUCT({rendimiento},{superficie})/SUM({superficie}),0)",
+      "costos_usd_ha": "=IFERROR(SUMPRODUCT({costo},{superficie})/SUM({superficie}),0)"
+    },
+    "nota": "estas formulas se escriben en el 'Flujo proyectado ' (offsets superficie_ha, rendimiento_kg_ha y costos_usd_ha) y apuntan a esta hoja; el motor sustituye {superficie}, {rendimiento} y {costo} por los rangos reales cuando sabe en que filas quedo cada bloque. Las columnas internas de la hoja (rendimiento ajustado y costo total) las arma el motor con la geometria que el mismo dispone, igual que la galeria de fotografias",
+    "solo_temporadas_de_proyeccion": "las columnas Real y Preliminar del flujo NO se calculan desde aqui: llevan lo que declara el cliente"
+  },
+  "sin_destino_en_plantilla": {
+    "suelos_por_predio.nombre": {
+      "motivo": "la fila 12 de 'Dotación de recursos' esta ocupada entera por los encabezados RIEGO/SECANO/TOTAL de los 4 bloques (B12:M12) y A12 dice 'Clase Uso'; no queda ninguna celda para rotular cada predio",
+      "accion_sugerida": "identificar el predio via dotacion_recursos.suelos.predio (B7) cuando sea uno solo, o anadir una fila de rotulos sobre la 12 si el banco lo acepta"
+    },
+    "construcciones": {
+      "motivo": "la plantilla Bsan solo tiene una tabla de infraestructura de 3 columnas (nombre, cantidad, estado) en 'Dotación de recursos' A41:M45; la tabla de 12 columnas de la tasacion no cabe",
+      "origen": "Cliente D May-2026.xlsx, hoja 'CONSTR' filas 5-23",
+      "accion_sugerida": "volcar solo edificacion+estado a 'infraestructura', o generar el detalle en el flujo de tasacion aparte"
+    }
+  },
+  "correcciones_de_formula": [
+    {
+      "hoja": "inversion",
+      "rango": "J5:J14",
+      "formula": "=IF(I{fila}=\"\",\"\",IFERROR(I{fila}/$I${total:inversiones},\"\"))",
+      "motivo": "La plantilla trae '=I5/$I$15' sin guardia: un informe SIN inversiones declaradas deja el total en cero y las diez filas mas su total salen en #DIV/0!, que es la regla de integridad de §11. Ademas '$I$15' se corre si la tabla desborda, asi que la fila del total va por token y no escrita a mano. El IF de afuera deja en blanco la fila sin inversion: sin el muestra 0,0%, y un cero en una fila vacia se lee como un dato."
+    },
+    {
+      "hoja": "flujo",
+      "rango": "D112:N112",
+      "formula": "=IFERROR(({col}110/{col}106)*100,\"\")",
+      "motivo": "La plantilla trae =(X110/X106)*100 sin guardia. Una temporada sin ingresos -que son casi todas al empezar- deja la celda en #DIV/0!, que viola la regla de integridad del proyecto y parece un error del informe cuando es un error de la plantilla. Con IFERROR la celda queda vacia."
+    },
+    {
+      "hoja": "cliente",
+      "rango": "B37:I37",
+      "formula": "=IF('Flujo proyectado '!$E$3=\"\",\"\",'Flujo proyectado '!{col+4}110*'Flujo proyectado '!$E$3/1000)",
+      "motivo": "El rotulo de A37 dice 'RESULTADO OPERACIONAL NETO M$' y la formula de la plantilla leia el flujo, que esta en USD: el cuadro decia miles de pesos e imprimia dolares. Confirmado por Fitogreen que manda el rotulo, asi que se convierte con el tipo de cambio de la proyeccion (Flujo!E3), que es una celda viva: cambiarla mueve la fila entera. El '{col+4}' existe porque B37:I37 lee F110:M110, cuatro columnas a la derecha. Sin tipo de cambio declarado la celda queda vacia en vez de mostrar un cero o un dolar disfrazado de peso."
+    }
+  ],
+  "formatos": {
+    "proposito": "La plantilla del banco viene entera en formato General: los pesos salen como '1107021,94' y las hectareas como '67,69999999999999'. Se declara por RANGO porque la mayoria de esos numeros los calculan las formulas que ya trae la plantilla, no el generador.",
+    "catalogo": {
+      "pesos": "$ #,##0",
+      "miles_pesos": "#,##0",
+      "usd": "\"USD \"#,##0",
+      "usd_kg": "\"USD \"#,##0.00",
+      "uf": "\"UF \"#,##0",
+      "hectareas": "#,##0.0 \"ha\"",
+      "kilos": "#,##0 \"kg\"",
+      "kilos_ha": "#,##0 \"kg/ha\"",
+      "porcentaje": "0.0%",
+      "pct_directo": "0.0\"%\"",
+      "caudal": "#,##0.00 \"L/s\"",
+      "caudal_ha": "#,##0.00 \"L/s/ha\"",
+      "milimetros": "#,##0.00 \"mm\"",
+      "decimal2": "#,##0.00",
+      "numero": "#,##0",
+    "calificacion": "General",
+      "decimal1": "#,##0.0",
+      "_nota_desnudos": "el agrónomo: si el rotulo de la fila ya dice la unidad -'Superficie (ha)'- el dato no la repite. '69,5', no '69,5 ha'. Los formatos con unidad se reservan para las filas cuyo rotulo NO la trae ('Ingresos Exportacion', 'EBITDA'), donde sin ella el numero queda sin explicar."
+    },
+    "rangos": {
+    "opinion": {
+      "H4:H25": "calificacion"
+    },
+      "cliente": {
+        "B20:B24": "decimal1",
+        "D20:D24": "porcentaje",
+        "F20:I24": "decimal1",
+        "B30:B34": "miles_pesos",
+        "F30:F34": "miles_pesos",
+        "D30:D34": "numero",
+        "H30:H34": "numero",
+        "B37:I37": "miles_pesos"
+      },
+      "dotacion": {
+        "B13:M17": "hectareas",
+        "H23:H27": "decimal2",
+        "C33:C37": "decimal1",
+        "E33:E36": "porcentaje",
+        "F33:F36": "decimal2",
+        "G33:G36": "decimal2",
+        "H33:H36": "decimal2",
+        "I33:I36": "decimal2",
+        "J33:K33": "decimal2",
+        "N33:N36": "porcentaje"
+      },
+      "inversion": {
+        "C5:C15": "decimal1",
+        "F5:H15": "numero",
+        "I5:I15": "numero",
+        "J5:J15": "porcentaje",
+        "_nota": "los rangos llegan a la fila 15 -la de totales- porque si no el total sale crudo: '152784' y '1' en vez de '152.784' y '100,0%'. El motor compensa la fila si la tabla desborda."
+      },
+      "estructura": {
+        "D7:D10": "decimal1",
+        "B16:D19": "decimal1",
+        "E16:E19": "porcentaje",
+        "F16:J19": "decimal1",
+        "B20:D20": "decimal1",
+        "B21:J21": "porcentaje",
+        "J16:J20": "decimal1"
+      },
+      "flujo": {
+        "D3:E3": "pesos",
+        "D11:N11": "decimal1",
+        "D12:N13": "decimal2",
+        "D14:N14": "numero",
+        "D15:N15": "porcentaje",
+        "D16:N16": "numero",
+        "D17:N17": "numero",
+        "D18:N19": "usd",
+        "D21:N21": "decimal1",
+        "D22:N23": "decimal2",
+        "D24:N24": "numero",
+        "D25:N25": "porcentaje",
+        "D26:N26": "numero",
+        "D27:N27": "numero",
+        "D28:N29": "usd",
+        "D31:N31": "decimal1",
+        "D32:N33": "decimal2",
+        "D34:N34": "numero",
+        "D35:N35": "porcentaje",
+        "D36:N36": "numero",
+        "D37:N37": "numero",
+        "D38:N39": "usd",
+        "D41:N41": "decimal1",
+        "D42:N43": "decimal2",
+        "D44:N44": "numero",
+        "D45:N45": "porcentaje",
+        "D46:N46": "numero",
+        "D47:N47": "numero",
+        "D48:N49": "usd",
+        "D56:N60": "decimal1",
+        "D61:N65": "kilos",
+        "D66:N70": "numero",
+        "D71:N75": "decimal2",
+        "D76:N80": "numero",
+        "D81:N85": "decimal2",
+        "D89:N93": "usd",
+        "D94:N98": "usd",
+        "D100:N102": "usd",
+        "D106:N108": "usd",
+        "D110:N110": "usd",
+        "D111:N111": "usd",
+        "D112:N112": "pct_directo",
+        "D115:N115": "usd",
+        "D116:N116": "porcentaje",
+        "D101:N102": "usd"
+      },
+      "anexo": {
+        "D4:F8": "numero",
+        "G4:I8": "numero",
+        "J4:J8": "numero",
+        "K4:K8": "numero",
+        "L4:L8": "numero",
+        "M4:M11": "numero",
+        "M9:M10": "numero",
+        "D15:F19": "numero",
+        "G15:I19": "numero",
+        "J15:J19": "numero",
+        "K15:K19": "numero",
+        "L15:L19": "numero",
+        "M15:M22": "numero",
+        "N4:N8": "decimal1",
+        "N15:N19": "decimal1"
+      }
+    },
+    "cuidado": "Todo texto literal va ENTRE COMILLAS. Sin comillas, openpyxl lee 'USD' como mascara de fecha -la 's' es segundos y la 'd' dias-, intenta convertir el numero a fecha y lo deja en #VALUE!. Verificado: 'USD #,##0' destruye el valor y '\"USD \"#,##0' no.",
+    "anchos_minimos": {
+      "_nota": "Ancho de columna que necesita cada formato para no salir en '####'. Formatear ALARGA el texto ('USD 1.107.022' donde antes decia '1107021,94'), asi que sin esto el informe se ve peor formateado que sin formatear. Medido con Excel sobre el Anexo: una fila de totales en NEGRITA con '$ 1.759.000.000' pide 19,6 -la negrita ensancha-, asi que el piso de 'pesos' no puede ser 15.",
+      "usd": 19,
+      "usd_kg": 10,
+      "pesos": 20,
+      "miles_pesos": 14,
+      "uf": 11,
+      "kilos": 16,
+      "kilos_ha": 15,
+      "hectareas": 10,
+      "porcentaje": 8,
+      "pct_directo": 8,
+      "caudal": 11,
+      "caudal_ha": 12,
+      "milimetros": 10,
+      "decimal2": 11,
+      "numero": 17,
+      "decimal1": 11, "calificacion": 18,
+      "_nota_numero": "los totales en pesos llegan a miles de millones y van en negrita", "_nota_calificacion": "No formatea nada -es texto-: es solo el ancho. La escala que ofrece el formulario de visita llega hasta 'Bajo el Promedio' (16 caracteres) y la columna H de la hoja de opinion mide 11, asi que el rotulo se salia del recuadro por la derecha. Medido en el render, no estimado."
+    },
+    "nota_flujo": "Los rangos del resumen (56-112) se asignaron leyendo la etiqueta de CADA fila de la plantilla, no por bloques: 'Produccion promedio (Kg/ha)' y 'Costo unitario (USD/Kg)' viven entre filas de dinero y con un rango grueso salian rotuladas en USD."
+  },
+  "formulas_finales": [
+    {
+      "hoja": "cliente",
+      "celda": "D24",
+      "formula": "=IF(COUNT(D20:D{fila-1})=0,\"\",IFERROR(SUMPRODUCT(B20:B{fila-1},D20:D{fila-1})/SUMIF(D20:D{fila-1},\"<>\",B20:B{fila-1}),\"\"))",
+      "nota": "consolidacion del predio = promedio de la de cada especie, ponderado por su superficie y solo entre las especies que la declaran. Vacia si ninguna la declara: un 0,0% se leeria como un huerto sin produccion"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "B30",
+      "formula": "=IF('Anexo '!I{total:anexo_real}=0,\"\",'Anexo '!I{total:anexo_real}/1000)",
+      "nota": "ingresos operacionales, ultima temporada, en M$ leido del Anexo (que esta en $)"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "B31",
+      "formula": "=IF('Anexo '!K{total:anexo_real}=0,\"\",'Anexo '!K{total:anexo_real}/1000)",
+      "nota": "costos directos, ultima temporada, en M$ leido del Anexo (que esta en $)"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "B32",
+      "formula": "=IF(B{fila-2}=\"\",\"\",B{fila-2}-B{fila-1})",
+      "nota": "margen bruto = ingresos - costos directos, ultima temporada, en M$ leido del Anexo (que esta en $)"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "B33",
+      "formula": "=IF(B{fila-3}=\"\",\"\",('Anexo '!M{total:anexo_real+1}+'Anexo '!M{total:anexo_real+2})/1000)",
+      "nota": "costos indirectos = administracion + gastos generales, ultima temporada, en M$ leido del Anexo (que esta en $)"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "B34",
+      "formula": "=IF(B{fila-2}=\"\",\"\",B{fila-2}-B{fila-1})",
+      "nota": "resultado operacional neto = margen bruto - costos indirectos, ultima temporada, en M$ leido del Anexo (que esta en $)"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "F30",
+      "formula": "=IF('Anexo '!I{total:anexo_preliminar}=0,\"\",'Anexo '!I{total:anexo_preliminar}/1000)",
+      "nota": "ingresos operacionales, temporada en curso, en M$ leido del Anexo (que esta en $)"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "F31",
+      "formula": "=IF('Anexo '!K{total:anexo_preliminar}=0,\"\",'Anexo '!K{total:anexo_preliminar}/1000)",
+      "nota": "costos directos, temporada en curso, en M$ leido del Anexo (que esta en $)"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "F32",
+      "formula": "=IF(F{fila-2}=\"\",\"\",F{fila-2}-F{fila-1})",
+      "nota": "margen bruto = ingresos - costos directos, temporada en curso, en M$ leido del Anexo (que esta en $)"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "F33",
+      "formula": "=IF(F{fila-3}=\"\",\"\",('Anexo '!M{total:anexo_preliminar+1}+'Anexo '!M{total:anexo_preliminar+2})/1000)",
+      "nota": "costos indirectos = administracion + gastos generales, temporada en curso, en M$ leido del Anexo (que esta en $)"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "F34",
+      "formula": "=IF(F{fila-2}=\"\",\"\",F{fila-2}-F{fila-1})",
+      "nota": "resultado operacional neto = margen bruto - costos indirectos, temporada en curso, en M$ leido del Anexo (que esta en $)"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "D30",
+      "formula": "=IF(OR(B{fila}=\"\",'Flujo proyectado '!$D$6=0),\"\",B{fila}*1000/'Flujo proyectado '!$D$6)",
+      "nota": "la misma fila en UF, ultima temporada. Vacia si no hay dato o si no se declaro la UF: dividir por cero no le sirve a nadie"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "D31",
+      "formula": "=IF(OR(B{fila}=\"\",'Flujo proyectado '!$D$6=0),\"\",B{fila}*1000/'Flujo proyectado '!$D$6)",
+      "nota": "la misma fila en UF, ultima temporada. Vacia si no hay dato o si no se declaro la UF: dividir por cero no le sirve a nadie"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "D32",
+      "formula": "=IF(OR(B{fila}=\"\",'Flujo proyectado '!$D$6=0),\"\",B{fila}*1000/'Flujo proyectado '!$D$6)",
+      "nota": "la misma fila en UF, ultima temporada. Vacia si no hay dato o si no se declaro la UF: dividir por cero no le sirve a nadie"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "D33",
+      "formula": "=IF(OR(B{fila}=\"\",'Flujo proyectado '!$D$6=0),\"\",B{fila}*1000/'Flujo proyectado '!$D$6)",
+      "nota": "la misma fila en UF, ultima temporada. Vacia si no hay dato o si no se declaro la UF: dividir por cero no le sirve a nadie"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "D34",
+      "formula": "=IF(OR(B{fila}=\"\",'Flujo proyectado '!$D$6=0),\"\",B{fila}*1000/'Flujo proyectado '!$D$6)",
+      "nota": "la misma fila en UF, ultima temporada. Vacia si no hay dato o si no se declaro la UF: dividir por cero no le sirve a nadie"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "H30",
+      "formula": "=IF(OR(F{fila}=\"\",'Flujo proyectado '!$D$6=0),\"\",F{fila}*1000/'Flujo proyectado '!$D$6)",
+      "nota": "la misma fila en UF, temporada en curso. Vacia si no hay dato o si no se declaro la UF: dividir por cero no le sirve a nadie"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "H31",
+      "formula": "=IF(OR(F{fila}=\"\",'Flujo proyectado '!$D$6=0),\"\",F{fila}*1000/'Flujo proyectado '!$D$6)",
+      "nota": "la misma fila en UF, temporada en curso. Vacia si no hay dato o si no se declaro la UF: dividir por cero no le sirve a nadie"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "H32",
+      "formula": "=IF(OR(F{fila}=\"\",'Flujo proyectado '!$D$6=0),\"\",F{fila}*1000/'Flujo proyectado '!$D$6)",
+      "nota": "la misma fila en UF, temporada en curso. Vacia si no hay dato o si no se declaro la UF: dividir por cero no le sirve a nadie"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "H33",
+      "formula": "=IF(OR(F{fila}=\"\",'Flujo proyectado '!$D$6=0),\"\",F{fila}*1000/'Flujo proyectado '!$D$6)",
+      "nota": "la misma fila en UF, temporada en curso. Vacia si no hay dato o si no se declaro la UF: dividir por cero no le sirve a nadie"
+    },
+    {
+      "hoja": "cliente",
+      "celda": "H34",
+      "formula": "=IF(OR(F{fila}=\"\",'Flujo proyectado '!$D$6=0),\"\",F{fila}*1000/'Flujo proyectado '!$D$6)",
+      "nota": "la misma fila en UF, temporada en curso. Vacia si no hay dato o si no se declaro la UF: dividir por cero no le sirve a nadie"
+    }
+  ],
+  "literales": [
+    {
+      "hoja": "flujo",
+      "celda": "A6",
+      "texto": "UF del informe:",
+      "nota": "la plantilla no trae donde declarar la UF, y sin ella las dos columnas UF de la caratula no se pueden calcular. Se pone junto al tipo de cambio (A4) porque es el mismo tipo de dato: un supuesto declarado del que cuelgan formulas"
+    }
+  ],
+  "cabecera_temporadas": {
+    "hoja": "flujo",
+    "filas_temporada": [
+      8,
+      54,
+      87,
+      104
+    ],
+    "filas_solo_declaradas": [
+      114
+    ],
+    "clases_declaradas": [
+      "Real ",
+      "Preliminar"
+    ],
+    "filas_clase": [
+      9,
+      55,
+      88,
+      105
+    ],
+    "nota": "la plantilla trae las temporadas escritas a mano; el generador las reescribe con las que el informe tiene de verdad y deja en blanco las columnas sin datos",
+    "hojas_extra": [
+      {
+        "hoja": "cliente",
+        "fila": 36,
+        "desde_columna": "B",
+        "desde_temporada": 2,
+        "nota": "los 8 anios de la caratula: leen Flujo!F110:M110, o sea desde el ano 1 del horizonte (la temporada preliminar). El indice 2 es esa columna: 0 y 1 son los dos historicos",
+        "columnas": 8
+      }
+    ],
+    "filas_a_ocultar": [
+      10,
+      116
+    ]
+  },
+  "unidades_excluibles": {
+    "inversiones": {
+      "etiqueta": "Inversión",
+      "nivel": "hoja",
+      "hoja": "inversion",
+      "depende_de": []
+    },
+    "estructura_productiva": {
+      "etiqueta": "Estructura Productiva → Toda la hoja",
+      "nivel": "hoja",
+      "hoja": "estructura",
+      "depende_de": []
+    },
+    "estructura_plantaciones": {
+      "etiqueta": "Estructura Productiva → Plantaciones",
+      "nivel": "tabla",
+      "hoja": "estructura",
+      "filas": [6, 11],
+      "depende_de": []
+    },
+    "estructura_resumen_superficie": {
+      "etiqueta": "Estructura Productiva → Resumen de superficie",
+      "nivel": "tabla",
+      "hoja": "estructura",
+      "filas": [15, 20],
+      "depende_de": []
+    },
+    "estructura_sistemas_produccion": {
+      "etiqueta": "Estructura Productiva → Sistema de producción",
+      "nivel": "tabla",
+      "hoja": "estructura",
+      "filas": [30, 35],
+      "depende_de": []
+    },
+    "estructura_comercializacion": {
+      "etiqueta": "Estructura Productiva → Comercialización",
+      "nivel": "tabla",
+      "hoja": "estructura",
+      "filas": [38, 42],
+      "depende_de": []
+    },
+    "comentarios_opinion": {
+      "etiqueta": "Comentarios generales / Opinión",
+      "nivel": "hoja",
+      "hoja": "opinion",
+      "depende_de": []
+    },
+    "suelos": {
+      "etiqueta": "Dotación de recursos → Suelos",
+      "nivel": "tabla",
+      "hoja": "dotacion",
+      "filas": [4, 17],
+      "depende_de": [],
+      "nota": "incluye la barra de titulo 'SUELOS' (fila 4) y la cabecera Cliente/Predio/Dominio/Rol/Comuna/Inscripcion (6-11), que son 'campos' y no 'tablas': eliminar_filas no distingue quien escribio cada fila, solo borra el rango"
+    },
+    "derechos_agua": {
+      "etiqueta": "Dotación de recursos → Derechos de agua",
+      "nivel": "tabla",
+      "hoja": "dotacion",
+      "filas": [19, 27],
+      "depende_de": []
+    },
+    "requerimientos_riego": {
+      "etiqueta": "Dotación de recursos → Requerimiento de riego",
+      "nivel": "tabla",
+      "hoja": "dotacion",
+      "filas": [29, 37],
+      "depende_de": ["derechos_agua"],
+      "nota": "K33 = $H$27: lee el total de Derechos de agua. Es la UNICA cascada real que existe hoy en todo el sistema (verificado, no la unica que se penso que podia existir)"
+    },
+    "maquinaria": {
+      "etiqueta": "Dotación de recursos → Maquinaria (se vacía, no se borra la fila)",
+      "nivel": "tabla_columnas",
+      "hoja": "dotacion",
+      "filas": [42, 45],
+      "columnas": ["A", "C"],
+      "depende_de": [],
+      "nota": "comparte fila 42-45 con Infraestructura (columnas F-M): borrar la fila destruiria la vecina, asi que solo se vacia el contenido de A-C"
+    },
+    "infraestructura": {
+      "etiqueta": "Dotación de recursos → Infraestructura (se vacía, no se borra la fila)",
+      "nivel": "tabla_columnas",
+      "hoja": "dotacion",
+      "filas": [42, 45],
+      "columnas": ["F", "M"],
+      "depende_de": [],
+      "nota": "comparte fila 42-45 con Maquinaria (columnas A-C): mismo motivo, se vacia en vez de borrar la fila"
+    }
+  }
+}

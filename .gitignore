@@ -1,0 +1,48 @@
+# --- secretos: NUNCA versionar
+.env
+.env.*
+!.env.example
+*.key
+
+# --- python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- salidas y temporales de trabajo
+output/
+data/uploads/
+~$*.xlsx
+~$*.docx
+
+# --- entorno
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# El secreto con que se firman las cookies de sesion. Se genera solo la primera
+# vez; si se filtra, basta con borrarlo y todos vuelven a entrar.
+data/clave_sesion.txt
+
+# Registro del servidor: lleva IPs y rutas, no va al repositorio
+data/servidor.log
+data/servidor.log.err
+data/vigilante.log
+
+# Estado propio de ESTA carpeta, no del codigo: preferencia de encendido del
+# vigilante (solo existe la carpeta principal tiene vigilante) y el respaldo
+# en JSON de curvas/mapeos cuando no hay base de datos -cada carpeta (y cada
+# base de datos que usa) lleva el suyo, no se comparten.
+data/servicio.json
+data/almacen/
+
+# Configuracion local de Claude Code: cada carpeta (principal/trabajo) tiene
+# la suya -la de trabajo usa otro puerto a proposito, para no chocar con el
+# servidor real.
+.claude/settings.local.json
+.claude/launch.json

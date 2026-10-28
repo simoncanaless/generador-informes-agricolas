@@ -1,0 +1,39 @@
+{
+  "nota": "Registro de formatos de salida. Agregar uno es agregar una entrada aqui y su mapping; el motor de Excel no se toca.",
+  "predeterminada_informe": "santander",
+  "predeterminada_catastro": "fitogreen",
+  "plantillas": {
+    "fitogreen": {
+      "nombre": "Fitogreen - Cuadros de informacion (catastro estandar)",
+      "plantilla": "templates/Cuadros Información Scotiabank 2026.xlsx",
+      "mapping": "config/mapping_catastro_fitogreen.json",
+      "uso": "catastro",
+      "descripcion": "El formato propio de la casa para catastros de plantaciones: 26 hileras, mas antecedentes del cliente, predios con aguas y resultados de dos temporadas.",
+      "nota": "El archivo se llama 'Scotiabank' por el encargo en que se creo, pero NO es un formato de ese banco: es el que usan siempre para catastros, vaya donde vaya el informe."
+    },
+    "santander": {
+      "nombre": "Banco Santander - Informe agroeconomico (formato final 2026)",
+      "plantilla": "templates/Formato Fitogreen Santander 2026.xlsx",
+      "mapping": "config/mapping_santander_2026.json",
+      "motor": "santander2026",
+      "uso": "informe",
+      "descripcion": "El formato con el que trabaja Fitogreen para Santander desde octubre de 2026: un bloque de flujo por plantacion, la hoja Supuestos que lo mueve todo, y cuatro anexos (resultado real, ventas del F29, precios e imagenes)."
+    },
+    "santander_anterior": {
+      "nombre": "Banco Santander - formato anterior (Bsan), reemplazado el 2026-10",
+      "plantilla": "templates/Formato Fitogreen Bsan.xlsx",
+      "mapping": "config/mapping_santander.json",
+      "uso": "informe",
+      "descripcion": "Informe completo para el banco: catastro de 10 columnas, dotacion de recursos, flujo proyectado a 11 temporadas y opinion profesional.",
+      "nota": "El molde que llenaba el generador hasta el formato final de Santander. Queda registrado para poder volver atras."
+    },
+    "rabobank": {
+      "nombre": "Rabobank/RaboFinance - Retasacion (garantia hipoteca/prenda)",
+      "plantilla": "templates/Formato Fitogreen Rabo.xlsx",
+      "mapping": "config/mapping_rabobank.json",
+      "uso": "retasacion",
+      "descripcion": "Actualiza una tasacion anterior: suelos, aguas, construcciones y plantaciones, consolidados en hipoteca + prenda. Motor propio (services/excel_engine_rabobank.py), distinto del de Santander -mide valor de garantia, no capacidad de pago.",
+      "nota": "Fase 1: una sola propiedad por retasacion (la plantilla real no repite el bloque de RESUMEN VALOR para mas de un predio)."
+    }
+  }
+}

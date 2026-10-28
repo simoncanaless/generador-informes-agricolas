@@ -1,0 +1,1276 @@
+{
+  "version": "2026.10.1",
+  "generado": "2026-10-14",
+  "proposito": "Define la pantalla de captura de la visita a terreno. Son los datos de ORIGEN A del CLAUDE.md: los que solo existen porque alguien fue al predio y preguntó. No se derivan de nada, y hoy son el grueso de lo que el tasador teclea a mano dentro del Excel.",
+  "criterio_de_diseno": [
+    "Ordenado por secciones del INFORME, no por guion de entrevista: los agrónomos la llevan cada uno a su manera y el formulario no debe imponer un orden.",
+    "Todo opcional y guardable a medias: se llena lo que se tenga y se vuelve después por el resto.",
+    "Los campos se declaran acá y no en el HTML, para poder agregar preguntas sin tocar el código."
+  ],
+  "escalas": {
+    "estado": [
+      "Bueno",
+      "Regular",
+      "Malo"
+    ],
+    "calificacion": [
+      "Muy Bueno",
+      "Bueno",
+      "Regular",
+      "Malo"
+    ],
+    "si_no": [
+      "Sí",
+      "No"
+    ],
+    "nivel": [
+      "Alto",
+      "Medio",
+      "Bajo"
+    ],
+    "mercado": [
+      "Exportación",
+      "Mercado Interno",
+      "Industria"
+    ],
+    "dominio": [
+      "Propietario",
+      "Sociedad Relacionada",
+      "Propiedad Familiar",
+      "Arrendatario",
+      "Usufructuario"
+    ],
+    "ejercicio": [
+      "Permanente y  continuo",
+      "Permanente y discontinuo",
+      "Eventual y continuo",
+      "Eventual y discontinuo"
+    ],
+    "fuente": [
+      "Subterránea",
+      "Canal",
+      "Río",
+      "Estero",
+      "Vertiente",
+      "Embalse",
+      "Tranque",
+      "Otro"
+    ],
+    "region": [
+      "III",
+      "IV",
+      "V",
+      "RM",
+      "VI",
+      "VII",
+      "XVI",
+      "VIII",
+      "IX",
+      "XIV",
+      "X"
+    ],
+    "densidad": [
+      "Alta",
+      "Media",
+      "Baja"
+    ],
+    "riego_tipo": [
+      "Presurizado",
+      "Gravitacional",
+      "Sin riego"
+    ],
+    "cobertura": [
+      "100%",
+      "Parcialmente",
+      "No"
+    ],
+    "venta": [
+      "Consignación",
+      "Venta firme",
+      "Contrato",
+      "Spot"
+    ],
+    "packing": [
+      "Propio",
+      "Tercerizado",
+      "Relacionado",
+      "No aplica"
+    ],
+    "exportacion": [
+      "Directa",
+      "Tercerizada",
+      "Relacionada",
+      "No aplica"
+    ],
+    "topografia": [
+      "Plana",
+      "Semiplano",
+      "Semiplano y lomajes suaves",
+      "Lomajes",
+      "Ladera"
+    ]
+  },
+  "secciones": [
+    {
+      "id": "temporadas_anexo",
+      "titulo": "Temporada de los resultados",
+      "tipo": "campos",
+      "ayuda": "La última temporada CERRADA, de la que el cliente entrega resultados (Anexo 1). Formato 2025/26. Las ocho columnas de la proyección se cuentan desde ella; si se deja en blanco, se toma la última cerrada a la fecha del informe.",
+      "campos": [
+        {
+          "id": "temporada_real",
+          "etiqueta": "Temporada de los resultados reales",
+          "tipo": "texto",
+          "destino": "anexo.resultado_real.temporada"
+        }
+      ]
+    },
+    {
+      "id": "resultado_real",
+      "titulo": "Resultados de la última temporada (Anexo 1)",
+      "ayuda": "Lo que declara el cliente, en pesos, una fila por especie: kilos de exportación y de mercado interno, ventas y costos directos. El Anexo 1 los pone en el mismo orden que las especies del catastro.",
+      "destino": "anexo.resultado_real.filas",
+      "tipo": "tabla",
+      "filas": 4,
+      "campos": [
+        {
+          "id": "especie",
+          "etiqueta": "Especie",
+          "tipo": "texto",
+          "sinonimos": [
+            "cultivo",
+            "Especie",
+            "especie",
+            "especie/variedad",
+            "frutal",
+            "producto"
+          ]
+        },
+        {
+          "id": "produccion_exportacion_kg",
+          "etiqueta": "Producción exportación (kg)",
+          "tipo": "numero",
+          "sinonimos": [
+            "exportable",
+            "exportacion kg",
+            "kg exportacion",
+            "kilos exportacion",
+            "prod exportacion",
+            "produccion export",
+            "produccion exportacion",
+            "Producción exportación (kg)"
+          ]
+        },
+        {
+          "id": "produccion_mercado_interno_kg",
+          "etiqueta": "Producción mercado interno (kg)",
+          "tipo": "numero",
+          "sinonimos": [
+            "descarte",
+            "kg mercado interno",
+            "mercado interno",
+            "nacional kg",
+            "prod mercado interno",
+            "produccion interno",
+            "produccion mercado interno",
+            "Producción mercado interno (kg)"
+          ]
+        },
+        {
+          "id": "ventas_exportacion_pesos",
+          "etiqueta": "Ventas exportación ($)",
+          "tipo": "numero",
+          "sinonimos": [
+            "exportacion pesos",
+            "facturacion exportacion",
+            "ingresos exportacion",
+            "monto exportacion",
+            "venta exportacion",
+            "ventas exportacion",
+            "Ventas exportación ($)"
+          ]
+        },
+        {
+          "id": "ventas_mercado_interno_pesos",
+          "etiqueta": "Ventas mercado interno ($)",
+          "tipo": "numero",
+          "sinonimos": [
+            "ingresos mercado interno",
+            "mercado interno pesos",
+            "monto mercado interno",
+            "venta mercado interno",
+            "ventas mercado interno",
+            "Ventas mercado interno ($)",
+            "ventas nacional"
+          ]
+        },
+        {
+          "id": "costos_directos_pesos",
+          "etiqueta": "Costos directos ($)",
+          "tipo": "numero",
+          "sinonimos": [
+            "costo directo",
+            "costo total",
+            "costos",
+            "costos de produccion",
+            "costos directos",
+            "Costos directos ($)",
+            "gastos directos"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gastos_indirectos",
+      "titulo": "Gastos indirectos",
+      "ayuda": "Administración y gastos generales de la última temporada, en pesos (bajan del margen al EBITDA del Anexo 1). Y la administración que se proyecta, en dólares por año: es la que descuenta el flujo en los ocho años.",
+      "tipo": "campos",
+      "campos": [
+        {
+          "id": "real_administracion_pesos",
+          "etiqueta": "Administración, última temporada ($)",
+          "tipo": "numero",
+          "destino": "anexo.resultado_real.administracion_pesos"
+        },
+        {
+          "id": "real_gastos_generales_pesos",
+          "etiqueta": "Gastos generales, última temporada ($)",
+          "tipo": "numero",
+          "destino": "anexo.resultado_real.gastos_generales_pesos"
+        },
+        {
+          "id": "administracion_usd_anio",
+          "etiqueta": "Administración proyectada (USD/año)",
+          "tipo": "numero",
+          "destino": "supuestos.administracion_usd_anio"
+        }
+      ]
+    },
+    {
+      "id": "ventas_f29",
+      "titulo": "Ventas según F29 (Anexo 2)",
+      "tipo": "campos",
+      "ayuda": "La base imponible de cada formulario 29, de julio a junio de la temporada real, en pesos. Es con lo que el banco contrasta las ventas que declara el cliente: el informe calcula solo el total, el porcentaje de cada mes y la diferencia con la venta informada.",
+      "campos": [
+        {
+          "id": "f29_01",
+          "etiqueta": "Julio ($)",
+          "tipo": "numero",
+          "destino": "anexo.ventas_f29_pesos[0]"
+        },
+        {
+          "id": "f29_02",
+          "etiqueta": "Agosto ($)",
+          "tipo": "numero",
+          "destino": "anexo.ventas_f29_pesos[1]"
+        },
+        {
+          "id": "f29_03",
+          "etiqueta": "Septiembre ($)",
+          "tipo": "numero",
+          "destino": "anexo.ventas_f29_pesos[2]"
+        },
+        {
+          "id": "f29_04",
+          "etiqueta": "Octubre ($)",
+          "tipo": "numero",
+          "destino": "anexo.ventas_f29_pesos[3]"
+        },
+        {
+          "id": "f29_05",
+          "etiqueta": "Noviembre ($)",
+          "tipo": "numero",
+          "destino": "anexo.ventas_f29_pesos[4]"
+        },
+        {
+          "id": "f29_06",
+          "etiqueta": "Diciembre ($)",
+          "tipo": "numero",
+          "destino": "anexo.ventas_f29_pesos[5]"
+        },
+        {
+          "id": "f29_07",
+          "etiqueta": "Enero ($)",
+          "tipo": "numero",
+          "destino": "anexo.ventas_f29_pesos[6]"
+        },
+        {
+          "id": "f29_08",
+          "etiqueta": "Febrero ($)",
+          "tipo": "numero",
+          "destino": "anexo.ventas_f29_pesos[7]"
+        },
+        {
+          "id": "f29_09",
+          "etiqueta": "Marzo ($)",
+          "tipo": "numero",
+          "destino": "anexo.ventas_f29_pesos[8]"
+        },
+        {
+          "id": "f29_10",
+          "etiqueta": "Abril ($)",
+          "tipo": "numero",
+          "destino": "anexo.ventas_f29_pesos[9]"
+        },
+        {
+          "id": "f29_11",
+          "etiqueta": "Mayo ($)",
+          "tipo": "numero",
+          "destino": "anexo.ventas_f29_pesos[10]"
+        },
+        {
+          "id": "f29_12",
+          "etiqueta": "Junio ($)",
+          "tipo": "numero",
+          "destino": "anexo.ventas_f29_pesos[11]"
+        },
+        {
+          "id": "nota_f29",
+          "etiqueta": "Nota",
+          "tipo": "texto_largo",
+          "destino": "anexo.nota_f29"
+        }
+      ]
+    },
+    {
+      "id": "lotes",
+      "titulo": "Lotes (datos legales de los terrenos)",
+      "tipo": "tabla",
+      "filas": 10,
+      "destino": "dotacion_recursos.lotes",
+      "ayuda": "Una fila por rol. Lo que sale de las escrituras llega solo; acá se agregan los demás lotes y la superficie real, que no está en ningún papel.",
+      "campos": [
+        {
+          "id": "unidad_predial",
+          "etiqueta": "Unidad predial",
+          "tipo": "texto",
+          "sinonimos": [
+            "predio",
+            "nombre del predio",
+            "unidad predial",
+            "fundo",
+            "campo"
+          ]
+        },
+        {
+          "id": "nombre",
+          "etiqueta": "Nombre del lote",
+          "tipo": "texto",
+          "sinonimos": [
+            "lote",
+            "nombre lote",
+            "nombre del lote",
+            "hijuela"
+          ]
+        },
+        {
+          "id": "dominio",
+          "etiqueta": "Dominio",
+          "tipo": "seleccion",
+          "escala": "dominio",
+          "sinonimos": [
+            "dominio",
+            "propio o arrendado",
+            "tenencia"
+          ]
+        },
+        {
+          "id": "rol",
+          "etiqueta": "Rol",
+          "tipo": "texto",
+          "sinonimos": [
+            "rol",
+            "rol (es)",
+            "roles",
+            "rol sii",
+            "rol de avaluo"
+          ]
+        },
+        {
+          "id": "region",
+          "etiqueta": "Región",
+          "tipo": "seleccion",
+          "escala": "region",
+          "sinonimos": [
+            "region"
+          ]
+        },
+        {
+          "id": "comuna",
+          "etiqueta": "Comuna",
+          "tipo": "texto",
+          "sinonimos": [
+            "comuna"
+          ]
+        },
+        {
+          "id": "fojas",
+          "etiqueta": "Fojas",
+          "tipo": "texto",
+          "sinonimos": [
+            "fojas",
+            "fs"
+          ]
+        },
+        {
+          "id": "numero",
+          "etiqueta": "N°",
+          "tipo": "texto",
+          "sinonimos": [
+            "n°",
+            "numero",
+            "nro",
+            "n"
+          ]
+        },
+        {
+          "id": "anio",
+          "etiqueta": "Año",
+          "tipo": "numero",
+          "sinonimos": [
+            "año",
+            "anio",
+            "ano"
+          ]
+        },
+        {
+          "id": "conservador",
+          "etiqueta": "CBR",
+          "tipo": "texto",
+          "sinonimos": [
+            "cbr",
+            "conservador"
+          ]
+        },
+        {
+          "id": "superficie_legal_ha",
+          "etiqueta": "Superficie legal (ha)",
+          "tipo": "numero",
+          "sinonimos": [
+            "superficie fisica",
+            "superficie",
+            "sup legal",
+            "superficie (ha)",
+            "superficie legal"
+          ]
+        },
+        {
+          "id": "superficie_real_ha",
+          "etiqueta": "Superficie real (ha)",
+          "tipo": "numero",
+          "sinonimos": [
+            "sup real",
+            "superficie real"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unidades_prediales",
+      "titulo": "Unidades prediales (clasificación de suelos)",
+      "tipo": "tabla",
+      "filas": 6,
+      "destino": "dotacion_recursos.unidades_prediales",
+      "ayuda": "Una fila por unidad predial: su superficie por clase de capacidad de uso -riego solo en las clases I-II y III-IV, secano en las cuatro-, la topografía y la capacidad de sus tranques. El nombre tiene que ser el mismo que el 'Predio' de las plantaciones: con él el informe arma el requerimiento de riego de cada unidad.",
+      "campos": [
+        {
+          "id": "nombre",
+          "etiqueta": "Unidad predial",
+          "tipo": "texto",
+          "sinonimos": [
+            "campo",
+            "fundo",
+            "nombre del predio",
+            "parcela",
+            "Predio",
+            "predio"
+          ]
+        },
+        {
+          "id": "i_ii_riego_ha",
+          "etiqueta": "I-II riego (ha)",
+          "tipo": "numero"
+        },
+        {
+          "id": "iii_iv_riego_ha",
+          "etiqueta": "III-IV riego (ha)",
+          "tipo": "numero"
+        },
+        {
+          "id": "i_ii_secano_ha",
+          "etiqueta": "I-II secano (ha)",
+          "tipo": "numero"
+        },
+        {
+          "id": "iii_iv_secano_ha",
+          "etiqueta": "III-IV secano (ha)",
+          "tipo": "numero"
+        },
+        {
+          "id": "v_vi_secano_ha",
+          "etiqueta": "V-VI secano (ha)",
+          "tipo": "numero"
+        },
+        {
+          "id": "vii_viii_secano_ha",
+          "etiqueta": "VII-VIII secano (ha)",
+          "tipo": "numero"
+        },
+        {
+          "id": "topografia",
+          "etiqueta": "Topografía predominante",
+          "tipo": "seleccion",
+          "escala": "topografia",
+          "sinonimos": [
+            "topografia",
+            "topografia predominante"
+          ]
+        },
+        {
+          "id": "capacidad_tranques_m3",
+          "etiqueta": "Capacidad de tranques (m³)",
+          "tipo": "numero",
+          "sinonimos": [
+            "tranques",
+            "capacidad tranques",
+            "capacidad de tranques"
+          ]
+        }
+      ],
+      "nota": "Es dato de un estudio agrológico: si no lo hay, la clasificación queda en blanco."
+    },
+    {
+      "id": "derechos_agua",
+      "titulo": "Derechos de agua",
+      "tipo": "tabla",
+      "filas": 4,
+      "destino": "dotacion_recursos.derechos_agua",
+      "ayuda": "Una fila por fuente. Lo que sale de los certificados llega solo; aquí se corrige y sobre todo se agrega el CAUDAL REAL, que es lo que el agrónomo estima en terreno: el balance hídrico de cada unidad predial se hace contra ese número.",
+      "campos": [
+        {
+          "id": "predio",
+          "etiqueta": "Unidad predial",
+          "tipo": "texto",
+          "sinonimos": [
+            "campo",
+            "fundo",
+            "nombre del predio",
+            "parcela",
+            "Predio",
+            "predio"
+          ]
+        },
+        {
+          "id": "tipo_fuente",
+          "etiqueta": "Fuente",
+          "tipo": "seleccion",
+          "sinonimos": [
+            "fuente",
+            "naturaleza",
+            "origen",
+            "tipo de derecho",
+            "Tipo de fuente",
+            "tipo de fuente",
+            "tipo fuente"
+          ],
+          "escala": "fuente"
+        },
+        {
+          "id": "nombre_fuente",
+          "etiqueta": "Nombre de la fuente",
+          "tipo": "texto",
+          "sinonimos": [
+            "canal",
+            "estero",
+            "Nombre de la fuente",
+            "nombre de la fuente",
+            "nombre fuente",
+            "pozo",
+            "rio",
+            "vertiente"
+          ]
+        },
+        {
+          "id": "ejercicio",
+          "etiqueta": "Ejercicio del derecho",
+          "tipo": "seleccion",
+          "escala": "ejercicio"
+        },
+        {
+          "id": "dominio",
+          "etiqueta": "Dominio",
+          "tipo": "seleccion",
+          "sinonimos": [
+            "Dominio",
+            "dominio",
+            "propiedad",
+            "tenencia",
+            "titularidad"
+          ],
+          "escala": "dominio"
+        },
+        {
+          "id": "cantidad",
+          "etiqueta": "Cantidad (acciones / regadores)",
+          "tipo": "numero",
+          "sinonimos": [
+            "acciones",
+            "cant",
+            "cantidad",
+            "Cantidad (acciones / regadores)",
+            "n acciones",
+            "numero de acciones",
+            "regadores"
+          ]
+        },
+        {
+          "id": "caudal_nominal_ls",
+          "etiqueta": "Caudal nominal (L/s)",
+          "tipo": "numero",
+          "sinonimos": [
+            "caudal",
+            "caudal inscrito",
+            "caudal l/s",
+            "caudal nominal",
+            "Caudal nominal (L/s)",
+            "caudal nominal ls",
+            "litros por segundo"
+          ]
+        },
+        {
+          "id": "caudal_real_ls",
+          "etiqueta": "Caudal REAL (L/s)",
+          "tipo": "numero",
+          "sinonimos": [
+            "caudal disponible",
+            "caudal efectivo",
+            "caudal medido",
+            "caudal real",
+            "Caudal REAL (L/s)",
+            "caudal real ls"
+          ]
+        },
+        {
+          "id": "cbr_fojas",
+          "etiqueta": "Fojas",
+          "tipo": "texto",
+          "sinonimos": [
+            "fjs",
+            "foja",
+            "fojas",
+            "Fojas"
+          ]
+        },
+        {
+          "id": "cbr_numero",
+          "etiqueta": "Número",
+          "tipo": "texto",
+          "sinonimos": [
+            "n",
+            "n inscripcion",
+            "num",
+            "numero",
+            "numero inscripcion",
+            "Número"
+          ]
+        },
+        {
+          "id": "cbr_anio",
+          "etiqueta": "Año",
+          "tipo": "numero",
+          "sinonimos": [
+            "anio",
+            "anio inscripcion",
+            "ano",
+            "Año",
+            "year"
+          ]
+        },
+        {
+          "id": "cbr_conservador",
+          "etiqueta": "Conservador",
+          "tipo": "texto",
+          "sinonimos": [
+            "cbr",
+            "conservador",
+            "Conservador",
+            "conservador de bienes raices"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sistemas_produccion",
+      "titulo": "Sistema de producción",
+      "ayuda": "Una fila por especie. Los tres niveles del final son juicio del tasador: no se calculan, se observan en terreno.",
+      "destino": "estructura_productiva.sistemas_produccion",
+      "tipo": "tabla",
+      "filas": 5,
+      "campos": [
+        {
+          "id": "especie",
+          "etiqueta": "Especie",
+          "tipo": "texto",
+          "sinonimos": [
+            "cultivo",
+            "Especie",
+            "especie",
+            "especie/variedad",
+            "frutal",
+            "producto"
+          ]
+        },
+        {
+          "id": "sistema_produccion",
+          "etiqueta": "Sistema de producción",
+          "tipo": "texto",
+          "sinonimos": [
+            "manejo",
+            "produccion",
+            "sistema de produccion",
+            "Sistema de producción",
+            "sistema produccion",
+            "tipo de produccion"
+          ]
+        },
+        {
+          "id": "densidad_plantacion",
+          "etiqueta": "Densidad",
+          "tipo": "seleccion",
+          "sinonimos": [
+            "densidad",
+            "Densidad",
+            "densidad de plantacion",
+            "distancia",
+            "marco",
+            "marco de plantacion"
+          ],
+          "escala": "densidad"
+        },
+        {
+          "id": "sistema_riego",
+          "etiqueta": "Sistema de riego",
+          "tipo": "seleccion",
+          "sinonimos": [
+            "metodo de riego",
+            "riego",
+            "Sistema de riego",
+            "sistema de riego",
+            "tipo de riego"
+          ],
+          "escala": "riego_tipo"
+        },
+        {
+          "id": "considera_techos",
+          "etiqueta": "Techos o similares",
+          "tipo": "seleccion",
+          "escala": "cobertura",
+          "sinonimos": [
+            "cobertura",
+            "malla",
+            "techo",
+            "techos",
+            "Techos o similares"
+          ]
+        },
+        {
+          "id": "sistema_contra_heladas",
+          "etiqueta": "Control de heladas",
+          "tipo": "seleccion",
+          "escala": "cobertura",
+          "sinonimos": [
+            "antiheladas",
+            "control de heladas",
+            "Control de heladas",
+            "heladas",
+            "sistema contra heladas"
+          ]
+        },
+        {
+          "id": "nivel_tecnologico",
+          "etiqueta": "Nivel tecnológico",
+          "tipo": "seleccion",
+          "escala": "nivel",
+          "sinonimos": [
+            "nivel tecnologico",
+            "Nivel tecnológico",
+            "tecnologia"
+          ]
+        },
+        {
+          "id": "nivel_homogeneidad",
+          "etiqueta": "Homogeneidad",
+          "tipo": "seleccion",
+          "escala": "nivel",
+          "sinonimos": [
+            "homogeneidad",
+            "Homogeneidad",
+            "uniformidad"
+          ]
+        },
+        {
+          "id": "estado_fitosanitario",
+          "etiqueta": "Estado fitosanitario",
+          "tipo": "seleccion",
+          "escala": "estado"
+        },
+        {
+          "id": "nivel_productivo_promedio",
+          "etiqueta": "Nivel productivo",
+          "tipo": "seleccion",
+          "escala": "nivel",
+          "sinonimos": [
+            "nivel de produccion",
+            "nivel productivo",
+            "Nivel productivo",
+            "productividad"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ajustes_de_curva",
+      "titulo": "Ajustes a las curvas por lo visto en terreno",
+      "ayuda": "Si observó algo que la curva de manual no recoge —el riego es mediocre, la poda está atrasada, el huerto se ve mejor que el promedio— ajústela acá con un porcentaje. No hace falta llenarlo: la mayoría de los informes no lleva ninguno. Se aplica solo a la especie que indique, no a todo el campo, y el motivo es lo que se le responde al banco si pregunta. Escriba la especie tal como aparece en el catastro: si pone 'Palto' alcanza a todos los paltos, y si pone 'Palto Clonal' solo a ese. Si el ajuste es de todo el campo y no de una especie, repítalo en cada fila.",
+      "destino": "ajustes_de_curva",
+      "tipo": "tabla",
+      "filas": 4,
+      "campos": [
+        {
+          "id": "especie",
+          "etiqueta": "Especie",
+          "tipo": "texto",
+          "sinonimos": [
+            "cultivo",
+            "Especie",
+            "especie",
+            "especie/variedad",
+            "frutal",
+            "producto"
+          ]
+        },
+        {
+          "id": "ajuste_pct",
+          "etiqueta": "Ajuste (%)",
+          "tipo": "numero",
+          "sinonimos": [
+            "ajuste",
+            "ajuste %",
+            "Ajuste (%)",
+            "ajuste porcentaje",
+            "castigo",
+            "correccion"
+          ]
+        },
+        {
+          "id": "motivo",
+          "etiqueta": "Qué observó",
+          "tipo": "texto",
+          "sinonimos": [
+            "comentario",
+            "motivo",
+            "observacion",
+            "observaciones",
+            "que observo",
+            "Qué observó",
+            "razon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sensibilizacion",
+      "titulo": "Sensibilización por especie (Supuestos)",
+      "tipo": "tabla",
+      "filas": 4,
+      "destino": "supuestos.sensibilizacion",
+      "ayuda": "Opcional. Cuánto mover, en %, el precio, el rendimiento o los costos de una especie en todo el flujo: -5 baja un 5%. Se puede cambiar después en la hoja Supuestos del Excel.",
+      "campos": [
+        {
+          "id": "especie",
+          "etiqueta": "Especie",
+          "tipo": "texto",
+          "sinonimos": [
+            "especie",
+            "cultivo"
+          ]
+        },
+        {
+          "id": "precio_exportacion",
+          "etiqueta": "Δ Precio exportación (%)",
+          "tipo": "numero",
+          "sinonimos": [
+            "precio exportacion",
+            "delta precio exportacion"
+          ]
+        },
+        {
+          "id": "precio_mercado_interno",
+          "etiqueta": "Δ Precio mercado interno (%)",
+          "tipo": "numero",
+          "sinonimos": [
+            "precio mercado interno"
+          ]
+        },
+        {
+          "id": "rendimiento",
+          "etiqueta": "Δ Rendimiento (%)",
+          "tipo": "numero",
+          "sinonimos": [
+            "rendimiento"
+          ]
+        },
+        {
+          "id": "costos",
+          "etiqueta": "Δ Costos (%)",
+          "tipo": "numero",
+          "sinonimos": [
+            "costos"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sistemas_comercializacion",
+      "titulo": "Comercialización",
+      "ayuda": "A quién le vende, en qué mercado y cuándo le liquidan.",
+      "destino": "estructura_productiva.sistemas_comercializacion",
+      "tipo": "tabla",
+      "filas": 4,
+      "campos": [
+        {
+          "id": "especie",
+          "etiqueta": "Especie",
+          "tipo": "texto",
+          "sinonimos": [
+            "cultivo",
+            "Especie",
+            "especie",
+            "especie/variedad",
+            "frutal",
+            "producto"
+          ]
+        },
+        {
+          "id": "mercado",
+          "etiqueta": "Destino principal",
+          "tipo": "seleccion",
+          "escala": "mercado",
+          "sinonimos": [
+            "destino",
+            "mercado",
+            "Mercado",
+            "mercado destino"
+          ]
+        },
+        {
+          "id": "empresas_comercializadoras",
+          "etiqueta": "Empresas comercializadoras",
+          "tipo": "texto",
+          "sinonimos": [
+            "comercializadora",
+            "empresa",
+            "Empresas comercializadoras",
+            "empresas comercializadoras",
+            "exportadora",
+            "exportadoras",
+            "recibidor"
+          ]
+        },
+        {
+          "id": "comercializacion",
+          "etiqueta": "Sistema de venta principal",
+          "tipo": "seleccion",
+          "sinonimos": [
+            "comercializacion",
+            "forma de comercializacion",
+            "Forma de comercialización",
+            "modalidad",
+            "tipo de venta"
+          ],
+          "escala": "venta"
+        },
+        {
+          "id": "certificaciones",
+          "etiqueta": "Certificaciones vigentes",
+          "tipo": "texto"
+        },
+        {
+          "id": "proceso",
+          "etiqueta": "Proceso de packing",
+          "tipo": "seleccion",
+          "sinonimos": [
+            "packing",
+            "procesamiento",
+            "Proceso",
+            "proceso"
+          ],
+          "escala": "packing"
+        },
+        {
+          "id": "gestion_exportacion",
+          "etiqueta": "Proceso de exportación",
+          "tipo": "seleccion",
+          "sinonimos": [
+            "gestion de exportacion",
+            "gestion exportacion",
+            "Gestión de exportación",
+            "quien exporta"
+          ],
+          "escala": "exportacion"
+        },
+        {
+          "id": "periodo_cosecha",
+          "etiqueta": "Período de cosecha",
+          "tipo": "texto",
+          "sinonimos": [
+            "cosecha",
+            "epoca de cosecha",
+            "periodo de cosecha",
+            "Período de cosecha",
+            "temporada de cosecha"
+          ]
+        },
+        {
+          "id": "periodo_liquidaciones",
+          "etiqueta": "Período de liquidaciones",
+          "tipo": "texto",
+          "sinonimos": [
+            "epoca de pago",
+            "liquidaciones",
+            "pago",
+            "periodo de liquidaciones",
+            "Período de liquidaciones"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inversiones",
+      "titulo": "Inversiones proyectadas",
+      "ayuda": "Proyectos que el cliente declara para los próximos años: plantaciones nuevas, riego, infraestructura. Una plantación futura además entra sola al flujo con su año.",
+      "destino": "inversiones.lineas",
+      "tipo": "tabla",
+      "filas": 6,
+      "campos": [
+        {
+          "id": "proyecto",
+          "etiqueta": "Proyecto",
+          "tipo": "texto",
+          "sinonimos": [
+            "inversion",
+            "nombre del proyecto",
+            "obra",
+            "Proyecto",
+            "proyecto"
+          ]
+        },
+        {
+          "id": "anio",
+          "etiqueta": "Año",
+          "tipo": "numero",
+          "sinonimos": [
+            "anio",
+            "anio del proyecto",
+            "ano",
+            "Año",
+            "fecha",
+            "year"
+          ]
+        },
+        {
+          "id": "superficie_ha",
+          "etiqueta": "Superficie (ha)",
+          "tipo": "numero",
+          "sinonimos": [
+            "ha",
+            "has",
+            "hectareas",
+            "sup",
+            "sup ha",
+            "superficie",
+            "Superficie (ha)",
+            "superficie ha",
+            "superficie plantada"
+          ]
+        },
+        {
+          "id": "item",
+          "etiqueta": "Ítem",
+          "tipo": "texto",
+          "sinonimos": [
+            "concepto",
+            "descripcion",
+            "detalle",
+            "item",
+            "partida",
+            "Ítem"
+          ]
+        },
+        {
+          "id": "cantidad_ha",
+          "etiqueta": "Cantidad por ha",
+          "tipo": "numero",
+          "sinonimos": [
+            "cantidad ha",
+            "cantidad por ha",
+            "Cantidad por ha",
+            "cantidad/ha",
+            "dosis",
+            "unidades por ha"
+          ]
+        },
+        {
+          "id": "costo_unitario_usd",
+          "etiqueta": "Costo unitario (USD)",
+          "tipo": "numero",
+          "sinonimos": [
+            "costo unitario",
+            "Costo unitario (USD)",
+            "costo unitario usd",
+            "precio unitario",
+            "usd unitario",
+            "valor unitario"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tipo_cambio",
+      "titulo": "Tipo de cambio y UF",
+      "tipo": "campos",
+      "ayuda": "El peso por dólar de la temporada real (con el que se pasan a dólares los resultados del Anexo 1), el de la proyección y el valor de la UF del día del informe (columnas UF de la portada).",
+      "campos": [
+        {
+          "id": "tc_ultima_temporada",
+          "etiqueta": "$/USD de la temporada real",
+          "tipo": "numero",
+          "destino": "flujo_proyectado.tipo_cambio_pesos_usd[real]"
+        },
+        {
+          "id": "tc_proyeccion",
+          "etiqueta": "$/USD de la proyección",
+          "tipo": "numero",
+          "destino": "flujo_proyectado.tipo_cambio_pesos_usd[proyeccion]"
+        },
+        {
+          "id": "tc_anterior",
+          "etiqueta": "$/USD de la temporada anterior",
+          "tipo": "numero",
+          "destino": "flujo_proyectado.tipo_cambio_pesos_usd[anterior]"
+        },
+        {
+          "id": "uf_del_informe",
+          "etiqueta": "Valor de la UF el día del informe ($)",
+          "tipo": "numero",
+          "destino": "flujo_proyectado.uf"
+        }
+      ],
+      "nota": "Claves simbolicas ('real', 'proyeccion', 'anterior'): el anio lo pone la temporada real."
+    },
+    {
+      "id": "comentarios",
+      "titulo": "Comentarios del informe",
+      "tipo": "campos",
+      "ayuda": "Los cuadros de comentarios de cada hoja. Todo opcional.",
+      "campos": [
+        {
+          "id": "notas_suelos",
+          "etiqueta": "Notas de la clasificación de suelos",
+          "tipo": "texto_largo",
+          "destino": "dotacion_recursos.notas_suelos"
+        },
+        {
+          "id": "comentarios_recursos",
+          "etiqueta": "Comentarios de la dotación de recursos",
+          "tipo": "texto_largo",
+          "destino": "dotacion_recursos.comentarios"
+        },
+        {
+          "id": "comentarios_plantaciones",
+          "etiqueta": "Comentarios de las plantaciones",
+          "tipo": "texto_largo",
+          "destino": "estructura_productiva.comentarios_plantaciones"
+        },
+        {
+          "id": "variedades_con_royalty",
+          "etiqueta": "Variedades con royalty (separadas por coma)",
+          "tipo": "texto",
+          "destino": "estructura_productiva.variedades_con_royalty"
+        },
+        {
+          "id": "comentarios_inversiones",
+          "etiqueta": "Comentarios de las inversiones",
+          "tipo": "texto_largo",
+          "destino": "inversiones.comentarios"
+        },
+        {
+          "id": "comentarios_flujo",
+          "etiqueta": "Comentarios del flujo proyectado",
+          "tipo": "texto_largo",
+          "destino": "flujo_proyectado.comentarios"
+        }
+      ]
+    },
+    {
+      "id": "opinion",
+      "titulo": "Opinión profesional",
+      "ayuda": "Los cuatro juicios que firma el agrónomo. Si se analizaron documentos y fotos, llegan con un borrador propuesto que hay que revisar y corregir.",
+      "tipo": "campos",
+      "campos": [
+        {
+          "id": "gestion_texto",
+          "etiqueta": "Gestión administrativa y productiva",
+          "tipo": "texto_largo",
+          "destino": "opinion.gestion_administrativa_productiva.texto"
+        },
+        {
+          "id": "gestion_calificacion",
+          "etiqueta": "Calificación",
+          "tipo": "seleccion",
+          "escala": "calificacion",
+          "destino": "opinion.gestion_administrativa_productiva.calificacion"
+        },
+        {
+          "id": "canales_texto",
+          "etiqueta": "Conocimiento y manejo de canales comerciales",
+          "tipo": "texto_largo",
+          "destino": "opinion.canales_comerciales.texto"
+        },
+        {
+          "id": "canales_calificacion",
+          "etiqueta": "Calificación",
+          "tipo": "seleccion",
+          "escala": "calificacion",
+          "destino": "opinion.canales_comerciales.calificacion"
+        },
+        {
+          "id": "activos_texto",
+          "etiqueta": "Calidad de los activos productivos",
+          "tipo": "texto_largo",
+          "destino": "opinion.calidad_activos_productivos.texto"
+        },
+        {
+          "id": "activos_calificacion",
+          "etiqueta": "Calificación",
+          "tipo": "seleccion",
+          "escala": "calificacion",
+          "destino": "opinion.calidad_activos_productivos.calificacion"
+        },
+        {
+          "id": "conclusion_texto",
+          "etiqueta": "Conclusión final",
+          "tipo": "texto_largo",
+          "destino": "opinion.conclusion_final.texto"
+        },
+        {
+          "id": "conclusion_calificacion",
+          "etiqueta": "Calificación",
+          "tipo": "seleccion",
+          "escala": "calificacion",
+          "destino": "opinion.conclusion_final.calificacion"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "version": "2026.08.1",
+  "generado": "2026-08-25T20:32:31",
+  "origen": "HdU - Plantation Dec-2025 vf Esp.xlsx",
+  "hoja": "Precios",
+  "fuente_declarada": "ODEPA",
+  "tipo": "precio a productor (no FOB)",
+  "anios": [
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+  ],
+  "tipo_cambio_clp_usd": 928.16,
+  "metodo": "promedio simple de los 5 anios de la serie; la conversion a USD usa un tipo de cambio unico, el mismo del archivo original",
+  "advertencia": "Es una REFERENCIA de mercado, no lo que recibe un cliente concreto. Un agricultor sin acceso a packing o con contrato propio cobra otra cosa. Para el informe del banco, lo que el cliente declara manda sobre esto.",
+  "cultivares": {
+    "sauvignon blanc": {
+      "nombre": "Sauvignon Blanc",
+      "serie_clp_kg": {
+        "2021": 330.0,
+        "2022": 679.0,
+        "2023": 471.0,
+        "2024": 261.0,
+        "2025": 345.0
+      },
+      "promedio_clp_kg": 417.2,
+      "promedio_usd_kg": 0.449491,
+      "fuente": "ODEPA",
+      "tipo": "precio a productor",
+      "confianza": "alta"
+    },
+    "chardonnay": {
+      "nombre": "Chardonnay",
+      "serie_clp_kg": {
+        "2021": 339.0,
+        "2022": 419.0,
+        "2023": 362.0,
+        "2024": 237.0,
+        "2025": 336.0
+      },
+      "promedio_clp_kg": 338.6,
+      "promedio_usd_kg": 0.364808,
+      "fuente": "ODEPA",
+      "tipo": "precio a productor",
+      "confianza": "alta"
+    },
+    "pinot gris": {
+      "nombre": "Pinot Gris",
+      "serie_clp_kg": {
+        "2021": 317.0,
+        "2022": 410.0,
+        "2023": 380.0,
+        "2024": 250.0,
+        "2025": 340.0
+      },
+      "promedio_clp_kg": 339.4,
+      "promedio_usd_kg": 0.36567,
+      "fuente": "ODEPA",
+      "tipo": "precio a productor",
+      "confianza": "alta"
+    },
+    "pinot noir": {
+      "nombre": "Pinot Noir",
+      "serie_clp_kg": {
+        "2021": 687.0,
+        "2022": 779.0,
+        "2023": 650.0,
+        "2024": 350.0,
+        "2025": 520.0
+      },
+      "promedio_clp_kg": 597.2,
+      "promedio_usd_kg": 0.643424,
+      "fuente": "ODEPA",
+      "tipo": "precio a productor",
+      "confianza": "alta"
+    },
+    "syrah": {
+      "nombre": "Syrah",
+      "serie_clp_kg": {
+        "2021": 642.0,
+        "2022": 564.0,
+        "2023": 701.0,
+        "2024": 541.0,
+        "2025": 451.0
+      },
+      "promedio_clp_kg": 579.8,
+      "promedio_usd_kg": 0.624677,
+      "fuente": "ODEPA",
+      "tipo": "precio a productor",
+      "confianza": "alta"
+    },
+    "grenache (garnacha)": {
+      "nombre": "Grenache (Garnacha)",
+      "serie_clp_kg": {
+        "2021": 722.0,
+        "2022": 650.0,
+        "2023": 500.0,
+        "2024": 280.0,
+        "2025": 420.0
+      },
+      "promedio_clp_kg": 514.4,
+      "promedio_usd_kg": 0.554215,
+      "fuente": "ODEPA",
+      "tipo": "precio a productor",
+      "confianza": "alta"
+    },
+    "cabernet franc": {
+      "nombre": "Cabernet Franc",
+      "serie_clp_kg": {
+        "2021": 302.0,
+        "2022": 503.0,
+        "2023": 419.0,
+        "2024": 183.0,
+        "2025": 325.0
+      },
+      "promedio_clp_kg": 346.4,
+      "promedio_usd_kg": 0.373212,
+      "fuente": "ODEPA",
+      "tipo": "precio a productor",
+      "confianza": "alta"
+    },
+    "cabernet sauvignon": {
+      "nombre": "Cabernet Sauvignon",
+      "serie_clp_kg": {
+        "2021": 375.0,
+        "2022": 420.0,
+        "2023": 300.0,
+        "2024": 216.0,
+        "2025": 297.0
+      },
+      "promedio_clp_kg": 321.6,
+      "promedio_usd_kg": 0.346492,
+      "fuente": "ODEPA",
+      "tipo": "precio a productor",
+      "confianza": "alta"
+    },
+    "malbec (cot)": {
+      "nombre": "Malbec (Cot)",
+      "serie_clp_kg": {
+        "2021": 467.0,
+        "2022": 410.0,
+        "2023": 350.0,
+        "2024": 210.0,
+        "2025": 305.0
+      },
+      "promedio_clp_kg": 348.4,
+      "promedio_usd_kg": 0.375366,
+      "fuente": "ODEPA",
+      "tipo": "precio a productor",
+      "confianza": "alta"
+    },
+    "merlot": {
+      "nombre": "Merlot",
+      "serie_clp_kg": {
+        "2021": 249.0,
+        "2022": 326.0,
+        "2023": 261.0,
+        "2024": 172.0,
+        "2025": 294.0
+      },
+      "promedio_clp_kg": 260.4,
+      "promedio_usd_kg": 0.280555,
+      "fuente": "ODEPA",
+      "tipo": "precio a productor",
+      "confianza": "alta"
+    }
+  },
+  "grupos": {
+    "coastal white": {
+      "nombre": "Coastal White",
+      "serie_clp_kg": {
+        "2021": 328.67,
+        "2022": 502.67,
+        "2023": 404.33,
+        "2024": 249.33,
+        "2025": 340.33
+      },
+      "promedio_clp_kg": 365.07,
+      "promedio_usd_kg": 0.393323,
+      "compuesto_por": [
+        "Sauvignon Blanc",
+        "Chardonnay",
+        "Pinot Gris"
+      ],
+      "fuente": "ODEPA",
+      "tipo": "precio a productor",
+      "confianza": "alta"
+    },
+    "cool climate reds": {
+      "nombre": "Cool Climate Reds",
+      "serie_clp_kg": {
+        "2021": 588.25,
+        "2022": 624.0,
+        "2023": 567.5,
+        "2024": 338.5,
+        "2025": 429.0
+      },
+      "promedio_clp_kg": 509.45,
+      "promedio_usd_kg": 0.548882,
+      "compuesto_por": [
+        "Pinot Noir",
+        "Syrah",
+        "Grenache (Garnacha)",
+        "Cabernet Franc"
+      ],
+      "fuente": "ODEPA",
+      "tipo": "precio a productor",
+      "confianza": "alta"
+    },
+    "traditional reds": {
+      "nombre": "Traditional Reds",
+      "serie_clp_kg": {
+        "2021": 363.67,
+        "2022": 385.33,
+        "2023": 303.67,
+        "2024": 199.33,
+        "2025": 298.67
+      },
+      "promedio_clp_kg": 310.13,
+      "promedio_usd_kg": 0.334138,
+      "compuesto_por": [
+        "Cabernet Sauvignon",
+        "Malbec (Cot)",
+        "Merlot"
+      ],
+      "fuente": "ODEPA",
+      "tipo": "precio a productor",
+      "confianza": "alta"
+    }
+  },
+  "otras_especies": {
+    "_nota": "ODEPA solo publica precio A PRODUCTOR de ganado, leche, vino y uva vinifera: por eso la tabla del HdU es solo de vid. Para la fruta de exportacion el dato publico es el FOB, que es justo lo que dijo el agrónomo, y hay que restarle la cadena de descuentos para llegar al RLP. Estas cifras vienen de prensa sectorial y estadisticas de exportacion, NO de una serie oficial descargada: son un punto de partida para que el tasador confirme o reemplace.",
+    "avellano": {
+      "nombre": "Avellano europeo",
+      "referencias": [
+        {
+          "tipo": "FOB exportacion",
+          "valor_usd_kg": 6.9,
+          "unidad": "avellana con cascara",
+          "periodo": "temporada 2025/26",
+          "fuente": "estadisticas de exportacion (prensa sectorial, ODEPA)",
+          "confianza": "media",
+          "advertencia": "subio 71,3% respecto de la temporada anterior; usar un solo anio de una serie tan volatil es arriesgado"
+        },
+        {
+          "tipo": "precio a productor",
+          "valor_usd_kg": 3.35,
+          "unidad": "avellana con cascara, variedad Giffoni",
+          "periodo": "referencia sin anio preciso",
+          "fuente": "prensa sectorial",
+          "confianza": "baja",
+          "advertencia": "el mercado chileno del avellano esta muy concentrado y el precio se pacta por contrato con parametros de calidad; preguntar a el agrónomo el que recibe de verdad"
+        },
+        {
+          "tipo": "precio a productor",
+          "valor_usd_kg": 2.25,
+          "unidad": "avellana con cascara, variedad Barcelona",
+          "periodo": "referencia sin anio preciso",
+          "fuente": "prensa sectorial",
+          "confianza": "baja"
+        }
+      ]
+    }
+  }
+}

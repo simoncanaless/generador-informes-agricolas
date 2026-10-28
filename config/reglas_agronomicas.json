@@ -1,0 +1,57 @@
+{
+  "version": "1.0",
+  "generado": "2026-08-10",
+  "origen": "deducido de 'RER Agrícola Ejemplo A Jul-24.xlsx', hoja 'Detalle Plantaciones', cuadro 5.2",
+
+  "madurez": {
+    "nota": "Clasifica cada plantacion en plena produccion / rendimientos crecientes / formacion segun su antiguedad. En el informe Cliente A (Jul-2024) los cortes salieron identicos para palto y avellano: >=8 anios plena, 4-7 crecientes, <=3 formacion. Se deja por especie porque agronomicamente NO tienen por que coincidir (un cerezo produce antes que un nogal); si una especie no figura aqui se usa 'por_defecto'.",
+    "por_defecto": {
+      "formacion_hasta": 3,
+      "crecientes_hasta": 7
+    },
+    "por_especie": {
+      "palto":    {"formacion_hasta": 3, "crecientes_hasta": 7, "confirmado_con": "Cliente A Jul-24"},
+      "avellano": {"formacion_hasta": 3, "crecientes_hasta": 7, "confirmado_con": "Cliente A Jul-24"},
+      "cerezo":   {"formacion_hasta": 3, "crecientes_hasta": 7, "confirmado_con": "Cliente A Jul-24 (solo 1 fila, 5 anios)"}
+    }
+  },
+
+  "especies": {
+    "nota": "Los catastros escriben la especie con calificativos ('Palto (rebajado)', 'Palto - clonal'). El cuadro resumen los agrupa bajo la especie base. El texto original NUNCA se altera en el catastro: la base solo sirve para agrupar.",
+    "separadores_calificativo": ["(", " - ", "-", "/"],
+    "calificativos_conocidos": {
+      "rebajado": {
+        "significado": "arbol rebajado o reinjertado: reinicia su ciclo productivo",
+        "el_anio_es": "anio del rebaje, no de la plantacion original",
+        "afecta_madurez": true
+      },
+      "clonal": {
+        "significado": "portainjerto clonal",
+        "afecta_madurez": false
+      },
+      "replante": {
+        "significado": "replante sobre plantacion existente",
+        "afecta_madurez": true
+      }
+    }
+  },
+
+  "sinonimos_columnas": {
+    "nota": "Encabezados equivalentes para reconocer un catastro ajeno sin preguntarle a la IA. Se comparan normalizados (sin tildes, minusculas, sin puntuacion ni saltos de linea).",
+    "especie": ["especie", "especies", "cultivo", "cultivos", "rubro", "frutal", "frutales", "tipo de cultivo"],
+    "variedad": ["variedad", "variedades", "var", "cultivar", "clon"],
+    "anio_plantacion": ["anio de plantacion", "anio plantacion", "anio", "ano de plantacion", "ano plantacion", "ano", "ano plant", "anio plant", "ano plantac", "fecha de plantacion", "fecha plantacion", "fecha plant", "temporada de plantacion", "anio establecimiento", "plantado", "ano de plantado"],
+    "superficie_ha": ["superficie ha", "superficie", "superficie has", "sup ha", "sup", "has", "ha", "hectareas", "superficie plantada", "superficie total"],
+    "sistema_conduccion": ["sistema de conduccion", "sistema conduccion", "conduccion", "formacion", "sistema de formacion"],
+    "predio": ["predio", "predios", "campo", "fundo", "sector", "cuartel", "potrero", "lote", "parcela", "paño", "cuadro"],
+    "dominio": ["tenencia", "dominio", "condicion de tenencia", "propiedad", "regimen", "condicion"],
+    "riego": ["sistema de riego", "sistema riego", "riego", "tipo de riego", "metodo de riego"],
+    "estado": ["estado", "estado fitosanitario", "estado general", "condicion sanitaria", "estado del huerto"],
+    "densidad_plantacion": ["marco de plantacion m", "marco de plantacion m x m", "marco de plantacion", "marco plantacion", "marco", "densidad de plantacion", "densidad plantacion", "densidad", "distanciamiento", "distancia de plantacion", "m x m"]
+  },
+
+  "filas_a_ignorar": {
+    "nota": "Textos que delatan una fila de totales o un subtitulo, no una plantacion.",
+    "patrones": ["total", "totales", "superficie total", "subtotal", "resumen", "suma"]
+  }
+}

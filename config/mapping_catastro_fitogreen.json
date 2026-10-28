@@ -1,0 +1,153 @@
+{
+  "version": "1.1",
+  "generado": "2026-08-10",
+  "plantilla": "Cuadros Información Scotiabank 2026.xlsx",
+  "schema": "schemas/informe.py::InformeFitogreen",
+
+  "convenciones": {
+    "proposito": "Formato PROPIO de Fitogreen para catastros de plantaciones. Es el destino por defecto cuando llega el catastro de un agricultor en su formato: entre lo que entre, sale aqui.",
+    "sobre_el_nombre": "El archivo se llama 'Cuadros Información Scotiabank 2026' por el encargo en el que se creo, pero NO es un formato de ese banco ni exclusivo de el. Se conserva el nombre del archivo tal cual porque es el que ellos usan; el alias interno es 'fitogreen' para que nadie lo confunda con un formato bancario.",
+    "diferencias_con_el_informe_santander": [
+      "el catastro tiene 6 columnas en vez de 10: no lleva sistema de conduccion, tenencia, riego ni estado",
+      "predios y aguas van en una sola tabla combinada, no en dos",
+      "no hay flujo proyectado ni opinion profesional: es un anexo de cuadros, no el informe completo",
+      "la capacidad del catastro es de 26 hileras (frente a 4 de la plantilla Santander)"
+    ]
+  },
+
+  "hojas": {
+    "antecedentes": "Antecedentes Generales",
+    "predios": "Predios&Agua",
+    "plantaciones": "Plantaciones",
+    "resultados": "Resultados"
+  },
+
+  "campos": {
+    "antecedentes.cliente": {"hoja": "antecedentes", "celda": "B4", "tipo": "str", "confianza": "alta", "nota": "etiqueta 'Nombre de la empresa (Cliente)' en A4"},
+    "antecedentes.rut":     {"hoja": "antecedentes", "celda": "B5", "tipo": "str", "confianza": "alta"},
+    "antecedentes.agronomo_informante": {"hoja": "antecedentes", "celda": "B11", "tipo": "str", "confianza": "inferida", "nota": "etiqueta 'Nombre Asesor(es) Tecnico(s)'; el formato admite varios y el schema solo uno"}
+  },
+
+  "tablas": {
+    "plantaciones": {
+      "atributo": "estructura_productiva.plantaciones",
+      "hoja": "plantaciones",
+      "fila_encabezado": [4, 5],
+      "primera_fila": 7,
+      "ultima_fila_plantilla": 32,
+      "fila_modelo": 8,
+      "capacidad": 26,
+      "fila_totales": 33,
+      "insertar_filas": true,
+      "columnas": {
+        "especie": "A",
+        "variedad": "B",
+        "anio_plantacion": "C",
+        "superficie_ha": "D",
+        "densidad_plantacion": "E",
+        "predio": "F"
+      },
+      "formulas": ["D33"],
+      "nota": "'ESPECIE' esta en A4 combinada A4:A6 y 'VARIEDAD' una fila mas abajo, en B5. D33 es =SUM(D7:D32) y se reexpande sola al insertar filas.",
+      "campos_sin_destino": ["sistema_conduccion", "dominio", "riego", "estado"]
+    },
+
+    "predios_agua": {
+      "atributo": "dotacion_recursos.derechos_agua",
+      "hoja": "predios",
+      "fila_encabezado": [4, 5],
+      "primera_fila": 6,
+      "ultima_fila_plantilla": 16,
+      "fila_modelo": 7,
+      "capacidad": 11,
+      "fila_totales": 17,
+      "insertar_filas": true,
+      "columnas": {
+        "predio": "A",
+        "dominio": "B",
+        "comuna": "D",
+        "nombre_fuente": "F",
+        "cantidad": "G",
+        "caudal_nominal_ls": "H",
+        "caudal_real_ls": "K"
+      },
+      "formulas": ["E17"],
+      "nota": "tabla combinada de predios y aguas. C (rol SII) y E (superficie fisica) pertenecen al predio y no al derecho de agua, asi que no se escriben desde esta tabla; I y J son de aguas subterraneas, que el schema no separa todavia."
+    },
+
+    "resultado_real": {
+      "atributo": "anexo.resultado_real.filas",
+      "hoja": "resultados",
+      "fila_encabezado": 4,
+      "primera_fila": 5,
+      "ultima_fila_plantilla": 10,
+      "fila_modelo": 6,
+      "capacidad": 6,
+      "fila_totales": 11,
+      "insertar_filas": false,
+      "columnas": {
+        "especie": "A",
+        "ventas_exportacion_pesos": "E",
+        "ventas_mercado_interno_pesos": "F",
+        "costos_directos_pesos": "H"
+      },
+      "formulas": ["G5:G10", "I5:I10", "E11:I11", "I14"],
+      "nota": "G (total ventas) e I (margen bruto) son formulas de la plantilla. La columna B pide produccion total en una sola cifra y el schema la guarda separada en exportacion y mercado interno, asi que se deja en blanco."
+    },
+
+    "resultado_preliminar": {
+      "atributo": "anexo.resultado_preliminar.filas",
+      "hoja": "resultados",
+      "fila_encabezado": 18,
+      "primera_fila": 19,
+      "ultima_fila_plantilla": 24,
+      "fila_modelo": 20,
+      "capacidad": 6,
+      "fila_totales": 25,
+      "insertar_filas": false,
+      "columnas": {
+        "especie": "A",
+        "ventas_exportacion_pesos": "E",
+        "ventas_mercado_interno_pesos": "F",
+        "costos_directos_pesos": "H"
+      },
+      "formulas": ["G19:G24", "I19:I24", "E25:I25", "I28"]
+    }
+  },
+
+  "fotografias": {
+    "soportado_por_plantilla": {},
+    "galeria_inspeccion": {
+      "estado": "NO_EXISTE_EN_PLANTILLA",
+      "requiere_hoja_nueva": true,
+      "nombre_hoja_propuesto": "Fotografias",
+      "rejilla": {
+        "columnas_ancla": ["B", "Q", "AF"],
+        "ancho_columnas": 15,
+        "filas_ancla": [4, 15, 26, 37, 48, 59],
+        "alto_filas": 10,
+        "capacidad_por_hoja": 18,
+        "tipo_ancla": "twoCellAnchor"
+      },
+      "celdas": [
+        "B4:P13",  "Q4:AE13",  "AF4:AT13",
+        "B15:P24", "Q15:AE24", "AF15:AT24",
+        "B26:P35", "Q26:AE35", "AF26:AT35",
+        "B37:P46", "Q37:AE46", "AF37:AT46",
+        "B48:P57", "Q48:AE57", "AF48:AT57",
+        "B59:P68", "Q59:AE68", "AF59:AT68"
+      ]
+    }
+  },
+
+  "sin_destino_en_plantilla": {
+    "detalle_del_catastro": {
+      "motivo": "este cuadro solo pide especie, variedad, anio, superficie, marco y predio",
+      "se_pierden": ["sistema de conduccion", "tenencia", "sistema de riego", "estado del huerto"],
+      "accion_sugerida": "el importador SI los captura y quedan en el expediente; si hacen falta en la entrega, usar la plantilla del informe Santander, que tiene las 10 columnas"
+    },
+    "flujo_proyectado": {
+      "motivo": "este anexo no incluye proyeccion de flujo ni opinion profesional; son propias del informe completo"
+    }
+  }
+}

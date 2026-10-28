@@ -1,0 +1,953 @@
+{
+  "version": "2026.08.1",
+  "generado": "2026-08-19T20:38:43",
+  "origen": "planilla hidrica propia.xlsm",
+  "formula": "demanda_l_s_ha = eto_diario * kc * 10 / eficiencia / 86.4 * cobertura",
+  "notas": {
+    "constante_86_4": "convierte mm/dia sobre una hectarea a L/s: 1 mm sobre 1 ha = 10 m3, y 86.400 s tiene el dia",
+    "eto_diario": "ya trae un 15% de margen sobre el promedio de enero: la planilla original hace mm_mes/31*1.15",
+    "cobertura": "fraccion de desarrollo del cultivo segun anios desde la plantacion; desde el 4to anio se considera adulto"
+  },
+  "kc_por_especie": {
+    "alfalfa": {
+      "nombre": "Alfalfa",
+      "kc": 1.1
+    },
+    "almendro": {
+      "nombre": "Almendro",
+      "kc": 1.1
+    },
+    "arandano": {
+      "nombre": "Arándano",
+      "kc": 1.05
+    },
+    "avellano": {
+      "nombre": "Avellano",
+      "kc": 0.9
+    },
+    "cucurbitaceas": {
+      "nombre": "Cucurbitaceas",
+      "kc": 1.0
+    },
+    "caqui": {
+      "nombre": "Caqui",
+      "kc": 1.1
+    },
+    "castano": {
+      "nombre": "Castaño",
+      "kc": 0.85
+    },
+    "cebolla": {
+      "nombre": "Cebolla",
+      "kc": 1.05
+    },
+    "cerezo": {
+      "nombre": "Cerezo",
+      "kc": 1.0
+    },
+    "ciruelo": {
+      "nombre": "Ciruelo",
+      "kc": 0.9
+    },
+    "damasco": {
+      "nombre": "Damasco",
+      "kc": 0.9
+    },
+    "durazno": {
+      "nombre": "Durazno",
+      "kc": 0.9
+    },
+    "frutilla": {
+      "nombre": "Frutilla",
+      "kc": 1.05
+    },
+    "kiwi": {
+      "nombre": "Kiwi",
+      "kc": 1.1
+    },
+    "limon": {
+      "nombre": "Limon",
+      "kc": 0.75
+    },
+    "mandarino": {
+      "nombre": "Mandarino",
+      "kc": 0.75
+    },
+    "manzano": {
+      "nombre": "Manzano",
+      "kc": 1.0
+    },
+    "melon": {
+      "nombre": "Melón",
+      "kc": 1.0
+    },
+    "naranjo": {
+      "nombre": "Naranjo",
+      "kc": 0.75
+    },
+    "nectarin": {
+      "nombre": "Nectarín",
+      "kc": 0.9
+    },
+    "nogal": {
+      "nombre": "Nogal",
+      "kc": 1.1
+    },
+    "olivo": {
+      "nombre": "Olivo",
+      "kc": 0.55
+    },
+    "palto": {
+      "nombre": "Palto",
+      "kc": 0.8
+    },
+    "papa": {
+      "nombre": "Papa",
+      "kc": 0.85
+    },
+    "papayo": {
+      "nombre": "Papayo",
+      "kc": 1.1
+    },
+    "peral": {
+      "nombre": "Peral",
+      "kc": 0.9
+    },
+    "pomelo": {
+      "nombre": "Pomelo",
+      "kc": 0.75
+    },
+    "sandia": {
+      "nombre": "Sandía",
+      "kc": 1.0
+    },
+    "semillas": {
+      "nombre": "Semillas",
+      "kc": 0.8
+    },
+    "tomate": {
+      "nombre": "Tomate",
+      "kc": 1.0
+    },
+    "tuna": {
+      "nombre": "Tuna",
+      "kc": 0.4
+    },
+    "uva de mesa": {
+      "nombre": "Uva de mesa",
+      "kc": 0.85
+    },
+    "uva vinifera": {
+      "nombre": "Uva vinifera",
+      "kc": 0.5
+    }
+  },
+  "eficiencia_por_sistema": {
+    "goteo": {
+      "nombre": "Goteo",
+      "eficiencia": 0.9
+    },
+    "microaspersion": {
+      "nombre": "Microaspersión",
+      "eficiencia": 0.8
+    },
+    "microjet": {
+      "nombre": "Microjet",
+      "eficiencia": 0.85
+    },
+    "pivote": {
+      "nombre": "Pivote",
+      "eficiencia": 0.7
+    },
+    "surco": {
+      "nombre": "Surco",
+      "eficiencia": 0.6
+    }
+  },
+  "cobertura_por_anio": {
+    "1": 0.1,
+    "2": 0.4,
+    "3": 0.7,
+    "4": 1.0
+  },
+  "eto_por_comuna": {
+    "combarbala": {
+      "nombre": "Combarbalá",
+      "enero_mm_mes": 213.9,
+      "diario_mm": 7.94
+    },
+    "coquimbo": {
+      "nombre": "Coquimbo",
+      "enero_mm_mes": 153.45,
+      "diario_mm": 5.69
+    },
+    "illapel": {
+      "nombre": "Illapel",
+      "enero_mm_mes": 183.68,
+      "diario_mm": 6.81
+    },
+    "la higuera": {
+      "nombre": "La Higuera",
+      "enero_mm_mes": 150.87,
+      "diario_mm": 5.6
+    },
+    "la serena": {
+      "nombre": "La Serena",
+      "enero_mm_mes": 149.58,
+      "diario_mm": 5.55
+    },
+    "los vilos": {
+      "nombre": "Los Vilos",
+      "enero_mm_mes": 144.67,
+      "diario_mm": 5.37
+    },
+    "monte patria": {
+      "nombre": "Monte Patria",
+      "enero_mm_mes": 210.8,
+      "diario_mm": 7.82
+    },
+    "ovalle": {
+      "nombre": "Ovalle",
+      "enero_mm_mes": 193.23,
+      "diario_mm": 7.17
+    },
+    "paihuano": {
+      "nombre": "Paihuano",
+      "enero_mm_mes": 224.23,
+      "diario_mm": 8.32
+    },
+    "punitaqui": {
+      "nombre": "Punitaqui",
+      "enero_mm_mes": 182.13,
+      "diario_mm": 6.76
+    },
+    "rio hurtado": {
+      "nombre": "Rio Hurtado",
+      "enero_mm_mes": 219.33,
+      "diario_mm": 8.14
+    },
+    "salamanca": {
+      "nombre": "Salamanca",
+      "enero_mm_mes": 195.3,
+      "diario_mm": 7.25
+    },
+    "vicuna": {
+      "nombre": "Vicuña",
+      "enero_mm_mes": 207.7,
+      "diario_mm": 7.71
+    },
+    "cabildo": {
+      "nombre": "Cabildo",
+      "enero_mm_mes": 165.33,
+      "diario_mm": 6.13
+    },
+    "calle larga": {
+      "nombre": "Calle Larga",
+      "enero_mm_mes": 195.3,
+      "diario_mm": 7.25
+    },
+    "cartagena": {
+      "nombre": "Cartagena",
+      "enero_mm_mes": 127.88,
+      "diario_mm": 4.74
+    },
+    "casablanca": {
+      "nombre": "Casablanca",
+      "enero_mm_mes": 167.4,
+      "diario_mm": 6.21
+    },
+    "catemu": {
+      "nombre": "Catemu",
+      "enero_mm_mes": 179.8,
+      "diario_mm": 6.67
+    },
+    "el quisco": {
+      "nombre": "El Quisco",
+      "enero_mm_mes": 127.1,
+      "diario_mm": 4.72
+    },
+    "el tabo": {
+      "nombre": "El Tabo",
+      "enero_mm_mes": 127.1,
+      "diario_mm": 4.72
+    },
+    "hijuelas": {
+      "nombre": "Hijuelas",
+      "enero_mm_mes": 159.13,
+      "diario_mm": 5.9
+    },
+    "la calera": {
+      "nombre": "La Calera",
+      "enero_mm_mes": 161.2,
+      "diario_mm": 5.98
+    },
+    "la cruz": {
+      "nombre": "La Cruz",
+      "enero_mm_mes": 158.1,
+      "diario_mm": 5.87
+    },
+    "la ligua": {
+      "nombre": "La Ligua",
+      "enero_mm_mes": 141.83,
+      "diario_mm": 5.26
+    },
+    "limache": {
+      "nombre": "Limache",
+      "enero_mm_mes": 157.33,
+      "diario_mm": 5.84
+    },
+    "llay llay": {
+      "nombre": "Llay Llay",
+      "enero_mm_mes": 182.9,
+      "diario_mm": 6.79
+    },
+    "los andes": {
+      "nombre": "Los Andes",
+      "enero_mm_mes": 192.2,
+      "diario_mm": 7.13
+    },
+    "nogales": {
+      "nombre": "Nogales",
+      "enero_mm_mes": 158.1,
+      "diario_mm": 5.87
+    },
+    "olmue": {
+      "nombre": "Olmué",
+      "enero_mm_mes": 164.3,
+      "diario_mm": 6.1
+    },
+    "panquehue": {
+      "nombre": "Panquehue",
+      "enero_mm_mes": 187.03,
+      "diario_mm": 6.94
+    },
+    "papudo": {
+      "nombre": "Papudo",
+      "enero_mm_mes": 136.4,
+      "diario_mm": 5.06
+    },
+    "petorca": {
+      "nombre": "Petorca",
+      "enero_mm_mes": 195.3,
+      "diario_mm": 7.25
+    },
+    "putaendo": {
+      "nombre": "Putaendo",
+      "enero_mm_mes": 196.08,
+      "diario_mm": 7.27
+    },
+    "quillota": {
+      "nombre": "Quillota",
+      "enero_mm_mes": 151.9,
+      "diario_mm": 5.64
+    },
+    "quilpue": {
+      "nombre": "Quilpué",
+      "enero_mm_mes": 144.15,
+      "diario_mm": 5.35
+    },
+    "rinconada": {
+      "nombre": "Rinconada",
+      "enero_mm_mes": 192.2,
+      "diario_mm": 7.13
+    },
+    "san antonio": {
+      "nombre": "San Antonio",
+      "enero_mm_mes": 142.6,
+      "diario_mm": 5.29
+    },
+    "san esteban": {
+      "nombre": "San Esteban",
+      "enero_mm_mes": 190.65,
+      "diario_mm": 7.07
+    },
+    "san felipe": {
+      "nombre": "San Felipe",
+      "enero_mm_mes": 189.1,
+      "diario_mm": 7.02
+    },
+    "santa maria": {
+      "nombre": "Santa María",
+      "enero_mm_mes": 192.2,
+      "diario_mm": 7.13
+    },
+    "santo domingo": {
+      "nombre": "Santo Domingo",
+      "enero_mm_mes": 136.4,
+      "diario_mm": 5.06
+    },
+    "villa alemana": {
+      "nombre": "Villa Alemana",
+      "enero_mm_mes": 164.3,
+      "diario_mm": 6.1
+    },
+    "zapallar": {
+      "nombre": "Zapallar",
+      "enero_mm_mes": 136.4,
+      "diario_mm": 5.06
+    },
+    "alhue": {
+      "nombre": "Alhué",
+      "enero_mm_mes": 179.8,
+      "diario_mm": 6.67
+    },
+    "buin": {
+      "nombre": "Buin",
+      "enero_mm_mes": 182.9,
+      "diario_mm": 6.79
+    },
+    "calera de tango": {
+      "nombre": "Calera de Tango",
+      "enero_mm_mes": 179.8,
+      "diario_mm": 6.67
+    },
+    "colina": {
+      "nombre": "Colina",
+      "enero_mm_mes": 196.33,
+      "diario_mm": 7.28
+    },
+    "curacavi": {
+      "nombre": "Curacaví",
+      "enero_mm_mes": 173.6,
+      "diario_mm": 6.44
+    },
+    "el monte": {
+      "nombre": "El Monte",
+      "enero_mm_mes": 186.0,
+      "diario_mm": 6.9
+    },
+    "isla de maipo": {
+      "nombre": "Isla de Maipo",
+      "enero_mm_mes": 182.9,
+      "diario_mm": 6.79
+    },
+    "lampa": {
+      "nombre": "Lampa",
+      "enero_mm_mes": 189.1,
+      "diario_mm": 7.02
+    },
+    "maria pinto": {
+      "nombre": "María Pinto",
+      "enero_mm_mes": 173.6,
+      "diario_mm": 6.44
+    },
+    "melipilla": {
+      "nombre": "Melipilla",
+      "enero_mm_mes": 170.5,
+      "diario_mm": 6.33
+    },
+    "padre hurtado": {
+      "nombre": "Padre Hurtado",
+      "enero_mm_mes": 179.8,
+      "diario_mm": 6.67
+    },
+    "paine": {
+      "nombre": "Paine",
+      "enero_mm_mes": 186.0,
+      "diario_mm": 6.9
+    },
+    "penaflor": {
+      "nombre": "Peñaflor",
+      "enero_mm_mes": 178.25,
+      "diario_mm": 6.61
+    },
+    "san bernardo": {
+      "nombre": "San Bernardo",
+      "enero_mm_mes": 179.8,
+      "diario_mm": 6.67
+    },
+    "san pedro": {
+      "nombre": "San Pedro",
+      "enero_mm_mes": 154.23,
+      "diario_mm": 5.72
+    },
+    "talagante": {
+      "nombre": "Talagante",
+      "enero_mm_mes": 176.7,
+      "diario_mm": 6.56
+    },
+    "tiltil": {
+      "nombre": "Tiltil",
+      "enero_mm_mes": 185.23,
+      "diario_mm": 6.87
+    },
+    "chepica": {
+      "nombre": "Chépica",
+      "enero_mm_mes": 184.97,
+      "diario_mm": 6.86
+    },
+    "chimbarongo": {
+      "nombre": "Chimbarongo",
+      "enero_mm_mes": 189.88,
+      "diario_mm": 7.04
+    },
+    "codegua": {
+      "nombre": "Codegua",
+      "enero_mm_mes": 186.0,
+      "diario_mm": 6.9
+    },
+    "coinco": {
+      "nombre": "Coinco",
+      "enero_mm_mes": 179.8,
+      "diario_mm": 6.67
+    },
+    "coltauco": {
+      "nombre": "Coltauco",
+      "enero_mm_mes": 181.87,
+      "diario_mm": 6.75
+    },
+    "donihue": {
+      "nombre": "Doñihue",
+      "enero_mm_mes": 131.85,
+      "diario_mm": 4.89
+    },
+    "graneros": {
+      "nombre": "Graneros",
+      "enero_mm_mes": 182.9,
+      "diario_mm": 6.79
+    },
+    "las cabras": {
+      "nombre": "Las Cabras",
+      "enero_mm_mes": 171.28,
+      "diario_mm": 6.35
+    },
+    "litueche": {
+      "nombre": "Litueche",
+      "enero_mm_mes": 155.0,
+      "diario_mm": 5.75
+    },
+    "lolol": {
+      "nombre": "Lolol",
+      "enero_mm_mes": 171.53,
+      "diario_mm": 6.36
+    },
+    "machali": {
+      "nombre": "Machalí",
+      "enero_mm_mes": 186.0,
+      "diario_mm": 6.9
+    },
+    "malloa": {
+      "nombre": "Malloa",
+      "enero_mm_mes": 192.2,
+      "diario_mm": 7.13
+    },
+    "marchigue": {
+      "nombre": "Marchigüe",
+      "enero_mm_mes": 173.6,
+      "diario_mm": 6.44
+    },
+    "mostazal": {
+      "nombre": "Mostazal",
+      "enero_mm_mes": 190.13,
+      "diario_mm": 7.05
+    },
+    "nancagua": {
+      "nombre": "Nancagua",
+      "enero_mm_mes": 189.1,
+      "diario_mm": 7.02
+    },
+    "navidad": {
+      "nombre": "Navidad",
+      "enero_mm_mes": 127.88,
+      "diario_mm": 4.74
+    },
+    "olivar": {
+      "nombre": "Olivar",
+      "enero_mm_mes": 187.55,
+      "diario_mm": 6.96
+    },
+    "palmilla": {
+      "nombre": "Palmilla",
+      "enero_mm_mes": 189.1,
+      "diario_mm": 7.02
+    },
+    "paredones": {
+      "nombre": "Paredones",
+      "enero_mm_mes": 151.9,
+      "diario_mm": 5.64
+    },
+    "peralillo": {
+      "nombre": "Peralillo",
+      "enero_mm_mes": 181.35,
+      "diario_mm": 6.73
+    },
+    "peumo": {
+      "nombre": "Peumo",
+      "enero_mm_mes": 182.9,
+      "diario_mm": 6.79
+    },
+    "pichidegua": {
+      "nombre": "Pichidegua",
+      "enero_mm_mes": 180.58,
+      "diario_mm": 6.7
+    },
+    "pichilemu": {
+      "nombre": "Pichilemu",
+      "enero_mm_mes": 149.58,
+      "diario_mm": 5.55
+    },
+    "placilla": {
+      "nombre": "Placilla",
+      "enero_mm_mes": 189.88,
+      "diario_mm": 7.04
+    },
+    "pumanque": {
+      "nombre": "Pumanque",
+      "enero_mm_mes": 170.5,
+      "diario_mm": 6.33
+    },
+    "quinta de tilcoco": {
+      "nombre": "Quinta de Tilcoco",
+      "enero_mm_mes": 186.0,
+      "diario_mm": 6.9
+    },
+    "rancagua": {
+      "nombre": "Rancagua",
+      "enero_mm_mes": 186.0,
+      "diario_mm": 6.9
+    },
+    "rengo": {
+      "nombre": "Rengo",
+      "enero_mm_mes": 190.65,
+      "diario_mm": 7.07
+    },
+    "requinoa": {
+      "nombre": "Requinoa",
+      "enero_mm_mes": 186.0,
+      "diario_mm": 6.9
+    },
+    "san fernando": {
+      "nombre": "San Fernando",
+      "enero_mm_mes": 190.13,
+      "diario_mm": 7.05
+    },
+    "san vicente": {
+      "nombre": "San Vicente",
+      "enero_mm_mes": 186.0,
+      "diario_mm": 6.9
+    },
+    "santa cruz": {
+      "nombre": "Santa Cruz",
+      "enero_mm_mes": 186.0,
+      "diario_mm": 6.9
+    },
+    "la estrella": {
+      "nombre": "La estrella",
+      "enero_mm_mes": 173.6,
+      "diario_mm": 6.44
+    },
+    "cauquenes": {
+      "nombre": "Cauquenes",
+      "enero_mm_mes": 178.25,
+      "diario_mm": 6.61
+    },
+    "chanco": {
+      "nombre": "Chanco",
+      "enero_mm_mes": 139.5,
+      "diario_mm": 5.18
+    },
+    "colbun": {
+      "nombre": "Colbún",
+      "enero_mm_mes": 187.55,
+      "diario_mm": 6.96
+    },
+    "constitucion": {
+      "nombre": "Constitución",
+      "enero_mm_mes": 140.53,
+      "diario_mm": 5.21
+    },
+    "curepto": {
+      "nombre": "Curepto",
+      "enero_mm_mes": 155.0,
+      "diario_mm": 5.75
+    },
+    "curico": {
+      "nombre": "Curicó",
+      "enero_mm_mes": 186.0,
+      "diario_mm": 6.9
+    },
+    "empedrado": {
+      "nombre": "Empedrado",
+      "enero_mm_mes": 170.5,
+      "diario_mm": 6.33
+    },
+    "hualane": {
+      "nombre": "Hualañé",
+      "enero_mm_mes": 166.63,
+      "diario_mm": 6.18
+    },
+    "licanten": {
+      "nombre": "Licantén",
+      "enero_mm_mes": 155.0,
+      "diario_mm": 5.75
+    },
+    "linares": {
+      "nombre": "Linares",
+      "enero_mm_mes": 189.1,
+      "diario_mm": 7.02
+    },
+    "longavi": {
+      "nombre": "Longaví",
+      "enero_mm_mes": 189.1,
+      "diario_mm": 7.02
+    },
+    "maule": {
+      "nombre": "Maule",
+      "enero_mm_mes": 198.4,
+      "diario_mm": 7.36
+    },
+    "molina": {
+      "nombre": "Molina",
+      "enero_mm_mes": 192.2,
+      "diario_mm": 7.13
+    },
+    "parral": {
+      "nombre": "Parral",
+      "enero_mm_mes": 195.3,
+      "diario_mm": 7.25
+    },
+    "pelarco": {
+      "nombre": "Pelarco",
+      "enero_mm_mes": 192.2,
+      "diario_mm": 7.13
+    },
+    "pelluhue": {
+      "nombre": "Pelluhue",
+      "enero_mm_mes": 138.47,
+      "diario_mm": 5.14
+    },
+    "pencahue": {
+      "nombre": "Pencahue",
+      "enero_mm_mes": 186.0,
+      "diario_mm": 6.9
+    },
+    "rauco": {
+      "nombre": "Rauco",
+      "enero_mm_mes": 186.0,
+      "diario_mm": 6.9
+    },
+    "retiro": {
+      "nombre": "Retiro",
+      "enero_mm_mes": 192.2,
+      "diario_mm": 7.13
+    },
+    "rio claro": {
+      "nombre": "Río Claro",
+      "enero_mm_mes": 192.2,
+      "diario_mm": 7.13
+    },
+    "romeral": {
+      "nombre": "Romeral",
+      "enero_mm_mes": 192.2,
+      "diario_mm": 7.13
+    },
+    "sagrada familia": {
+      "nombre": "Sagrada Familia",
+      "enero_mm_mes": 182.9,
+      "diario_mm": 6.79
+    },
+    "san clemente": {
+      "nombre": "San Clemente",
+      "enero_mm_mes": 192.2,
+      "diario_mm": 7.13
+    },
+    "san javier": {
+      "nombre": "San Javier",
+      "enero_mm_mes": 195.3,
+      "diario_mm": 7.25
+    },
+    "san rafael": {
+      "nombre": "San Rafael",
+      "enero_mm_mes": 195.3,
+      "diario_mm": 7.25
+    },
+    "talca": {
+      "nombre": "Talca",
+      "enero_mm_mes": 195.3,
+      "diario_mm": 7.25
+    },
+    "teno": {
+      "nombre": "Teno",
+      "enero_mm_mes": 190.65,
+      "diario_mm": 7.07
+    },
+    "vichuquen": {
+      "nombre": "Vichuquén",
+      "enero_mm_mes": 149.83,
+      "diario_mm": 5.56
+    },
+    "villa alegre": {
+      "nombre": "Villa Alegre",
+      "enero_mm_mes": 195.3,
+      "diario_mm": 7.25
+    },
+    "yerbas buenas": {
+      "nombre": "Yerbas Buenas",
+      "enero_mm_mes": 189.1,
+      "diario_mm": 7.02
+    }
+  },
+  "comunas_por_region": {
+    "IV": [
+      "Combarbalá",
+      "Coquimbo",
+      "Illapel",
+      "La Higuera",
+      "La Serena",
+      "Los Vilos",
+      "Monte Patria",
+      "Ovalle",
+      "Paihuano",
+      "Punitaqui",
+      "Rio Hurtado",
+      "Salamanca",
+      "Vicuña"
+    ],
+    "V": [
+      "Cabildo",
+      "Calle Larga",
+      "Cartagena",
+      "Casablanca",
+      "Catemu",
+      "El Quisco",
+      "El Tabo",
+      "Hijuelas",
+      "La Calera",
+      "La Cruz",
+      "La Ligua",
+      "Limache",
+      "Llay Llay",
+      "Los Andes",
+      "Nogales",
+      "Olmué",
+      "Panquehue",
+      "Papudo",
+      "Petorca",
+      "Putaendo",
+      "Quillota",
+      "Quilpué",
+      "Rinconada",
+      "San Antonio",
+      "San Esteban",
+      "San Felipe",
+      "Santa María",
+      "Santo Domingo",
+      "Villa Alemana",
+      "Zapallar"
+    ],
+    "RM": [
+      "Alhué",
+      "Buin",
+      "Calera de Tango",
+      "Colina",
+      "Curacaví",
+      "El Monte",
+      "Isla de Maipo",
+      "Lampa",
+      "María Pinto",
+      "Melipilla",
+      "Padre Hurtado",
+      "Paine",
+      "Peñaflor",
+      "San Bernardo",
+      "San Pedro",
+      "Talagante",
+      "Tiltil"
+    ],
+    "VI": [
+      "Chépica",
+      "Chimbarongo",
+      "Codegua",
+      "Coinco",
+      "Coltauco",
+      "Doñihue",
+      "Graneros",
+      "Las Cabras",
+      "Litueche",
+      "Lolol",
+      "Machalí",
+      "Malloa",
+      "Marchigüe",
+      "Mostazal",
+      "Nancagua",
+      "Navidad",
+      "Olivar",
+      "Palmilla",
+      "Paredones",
+      "Peralillo",
+      "Peumo",
+      "Pichidegua",
+      "Pichilemu",
+      "Placilla",
+      "Pumanque",
+      "Quinta de Tilcoco",
+      "Rancagua",
+      "Rengo",
+      "Requinoa",
+      "San Fernando",
+      "San Vicente",
+      "La Estrella",
+      "Santa Cruz"
+    ],
+    "VII": [
+      "Cauquenes",
+      "Chanco",
+      "Colbún",
+      "Constitución",
+      "Curepto",
+      "Curicó",
+      "Empedrado",
+      "Hualañé",
+      "Licantén",
+      "Linares",
+      "Longaví",
+      "Maule",
+      "Molina",
+      "Parral",
+      "Pelarco",
+      "Pelluhue",
+      "Pencahue",
+      "Rauco",
+      "Retiro",
+      "Río Claro",
+      "Romeral",
+      "Sagrada Familia",
+      "San Clemente",
+      "San Javier",
+      "San Rafael",
+      "Talca",
+      "Teno",
+      "Vichuquén",
+      "Villa Alegre",
+      "Yerbas Buenas"
+    ]
+  },
+  "cuencas": [
+    "Rio los Choros",
+    "Costeras entrre R. Los Choros y R. Elqui",
+    "Rio Elqui",
+    "Costeras entre Elqui y Limari",
+    "Rio Limari",
+    "Costeras entre R.Limari y R.Choapa",
+    "Rio Choapa",
+    "Costeras entre R.Choapa y R.Quilimari",
+    "Rio QuiLimari",
+    "Costeras Quilimari-Petorca",
+    "Rio Petorca",
+    "Rio Ligua",
+    "Costeras Ligua-Aconcagua",
+    "Rio Aconcagua",
+    "Costeras entre Aconcagua y Maipo",
+    "Rio Maipo",
+    "Costeras entre  Maipo y Rapel",
+    "Rio Rapel",
+    "Costeras Rapel-E.Nilahue",
+    "Costeras entre limite Region y R.  Mataquito",
+    "Rio Mataquito",
+    "Costeras Mataquito-Maule",
+    "Rio Maule",
+    "Costeras Maule y Limite Region",
+    "Costeras entre limite Region y R. Itata",
+    "Rio Itata"
+  ]
+}

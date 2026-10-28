@@ -1,0 +1,1115 @@
+{
+  "version": "1.0",
+  "generado": "2026-09-08T23:31:30",
+  "origen": "exportaciones_por_temporada.xlsx",
+  "encabezado_del_archivo": [
+    "Temporada",
+    "País",
+    "Grupo de productos",
+    "Código producto",
+    "Producto",
+    "Volumen (ton)",
+    "Valor (USD FOB)",
+    "Procesamiento",
+    "ID región",
+    "Región"
+  ],
+  "fuente_declarada": "ODEPA, Boletin de la fruta. Datos de comercio exterior del Servicio Nacional de Aduanas.",
+  "tipo": "FOB exportacion",
+  "temporada_de_referencia": "Sep 2024 / Ago 2025",
+  "temporadas_cerradas": [
+    "Sep 2016 / Ago 2017",
+    "Sep 2017 / Ago 2018",
+    "Sep 2018 / Ago 2019",
+    "Sep 2019 / Ago 2020",
+    "Sep 2020 / Ago 2021",
+    "Sep 2021 / Ago 2022",
+    "Sep 2022 / Ago 2023",
+    "Sep 2023 / Ago 2024",
+    "Sep 2024 / Ago 2025"
+  ],
+  "temporadas_parciales": [
+    "Sep 2025 / Jul 2026"
+  ],
+  "minimo_toneladas": 50.0,
+  "procesamientos": [
+    "Fresca",
+    "Frutos secos"
+  ],
+  "metodo": "USD/kg = suma de «Valor (USD FOB)» / (suma de «Volumen (ton)» x 1000), agregando todos los paises de destino. Es un promedio ponderado por volumen, que es lo que corresponde: un embarque de 1.000 t pesa mas que uno de 10.",
+  "advertencia": "UN FOB NO ES LO QUE RECIBE EL PRODUCTOR. Falta restarle packing, frio, flete y comision de la exportadora (§10.2). Ponerlo tal cual en la fila de precio del flujo duplicaria el ingreso del cliente.",
+  "advertencia_temporada": "Solo se usan temporadas CERRADAS (septiembre a agosto). La temporada en curso que trae el archivo esta cortada donde alcanzo el boletin y sesga el precio hacia la fruta temprana.",
+  "grupos": {
+    "almendra": {
+      "nombre": "Almendra",
+      "procesamiento": "Frutos secos",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 6258.2,
+      "usd_kg": 7.5271,
+      "codigos": [
+        {
+          "codigo": "08021210",
+          "producto": "Almendras sin cáscara, frescas o secas, enteras",
+          "toneladas": 5064.26,
+          "usd_kg": 7.6641
+        },
+        {
+          "codigo": "08021290",
+          "producto": "Las demás almendras sin cáscara, frescas o secas, excepto enteras",
+          "toneladas": 1173.77,
+          "usd_kg": 6.9404
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 7.3973,
+        "Sep 2017 / Ago 2018": 7.9284,
+        "Sep 2018 / Ago 2019": 7.088,
+        "Sep 2019 / Ago 2020": 7.2138,
+        "Sep 2020 / Ago 2021": 5.9359,
+        "Sep 2021 / Ago 2022": 6.2209,
+        "Sep 2022 / Ago 2023": 6.162,
+        "Sep 2023 / Ago 2024": 6.1735,
+        "Sep 2024 / Ago 2025": 7.5271
+      }
+    },
+    "arandanos y mirtilos": {
+      "nombre": "Arándanos y mirtilos",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 90801.81,
+      "usd_kg": 4.8475,
+      "codigos": [
+        {
+          "codigo": "08104029",
+          "producto": "Los demás arándanos azules o blueberry, frescos (desde 2012)",
+          "toneladas": 73964.67,
+          "usd_kg": 4.5294
+        },
+        {
+          "codigo": "08104021",
+          "producto": "Arándanos azules o blueberry, frescos orgánicos (desde 2012)",
+          "toneladas": 15924.4,
+          "usd_kg": 6.2873
+        },
+        {
+          "codigo": "08104019",
+          "producto": "Los demás arándanos rojos, frescos (desde 2012)",
+          "toneladas": 537.28,
+          "usd_kg": 5.0921
+        },
+        {
+          "codigo": "08104099",
+          "producto": "Mirtilos y demás frutos del género Vaccinium, frescos (desde 2012)",
+          "toneladas": 310.29,
+          "usd_kg": 6.4038
+        },
+        {
+          "codigo": "08104091",
+          "producto": "Mirtilos y demás frutos del género Vaccinium, frescos orgánicos (desde 2012)",
+          "toneladas": 53.4,
+          "usd_kg": 5.1356
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 5.1149,
+        "Sep 2017 / Ago 2018": 5.7273,
+        "Sep 2018 / Ago 2019": 5.1868,
+        "Sep 2019 / Ago 2020": 5.0563,
+        "Sep 2020 / Ago 2021": 5.1466,
+        "Sep 2021 / Ago 2022": 4.2089,
+        "Sep 2022 / Ago 2023": 4.4177,
+        "Sep 2023 / Ago 2024": 5.5106,
+        "Sep 2024 / Ago 2025": 4.8475
+      }
+    },
+    "avellana": {
+      "nombre": "Avellana",
+      "procesamiento": "Frutos secos",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 40025.63,
+      "usd_kg": 9.1279,
+      "codigos": [
+        {
+          "codigo": "08022200",
+          "producto": "Avellanas sin cáscara, frescas o secas",
+          "toneladas": 34084.88,
+          "usd_kg": 9.992
+        },
+        {
+          "codigo": "08022100",
+          "producto": "Avellanas con cáscara, frescas o secas",
+          "toneladas": 5940.76,
+          "usd_kg": 4.1701
+        }
+      ],
+      "es_mezcla": true,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "media",
+      "advertencia": "El grupo mezcla 2 productos con precios de 4.1701 a 9.992 USD/kg. El promedio no describe a ninguno: elija el codigo que corresponde a lo que vende el cliente.",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 9.7603,
+        "Sep 2017 / Ago 2018": 7.8868,
+        "Sep 2018 / Ago 2019": 7.0287,
+        "Sep 2019 / Ago 2020": 8.1,
+        "Sep 2020 / Ago 2021": 9.1236,
+        "Sep 2021 / Ago 2022": 7.6873,
+        "Sep 2022 / Ago 2023": 7.4685,
+        "Sep 2023 / Ago 2024": 8.4917,
+        "Sep 2024 / Ago 2025": 9.1279
+      }
+    },
+    "castana": {
+      "nombre": "Castaña",
+      "procesamiento": "Frutos secos",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 5987.39,
+      "usd_kg": 2.5173,
+      "codigos": [
+        {
+          "codigo": "08024100",
+          "producto": "Castañas (Castanea spp.), con cáscara, frescas o secas (desde 2012)",
+          "toneladas": 5969.49,
+          "usd_kg": 2.5126
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 1.1519,
+        "Sep 2017 / Ago 2018": 1.7279,
+        "Sep 2018 / Ago 2019": 1.7413,
+        "Sep 2019 / Ago 2020": 1.581,
+        "Sep 2020 / Ago 2021": 1.9153,
+        "Sep 2021 / Ago 2022": 1.863,
+        "Sep 2022 / Ago 2023": 2.5437,
+        "Sep 2023 / Ago 2024": 2.2994,
+        "Sep 2024 / Ago 2025": 2.5173
+      }
+    },
+    "cereza": {
+      "nombre": "Cereza",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 625330.58,
+      "usd_kg": 4.5473,
+      "codigos": [
+        {
+          "codigo": "08092919",
+          "producto": "Las demás cerezas dulces (Prunus avium), frescas (desde 2012)",
+          "toneladas": 622562.4,
+          "usd_kg": 4.5457
+        },
+        {
+          "codigo": "08092990",
+          "producto": "Las demás cerezas frescas (desde 2012)",
+          "toneladas": 2676.33,
+          "usd_kg": 4.89
+        },
+        {
+          "codigo": "08092911",
+          "producto": "Cerezas dulces (Prunus avium), orgánicas frescas (desde 2012)",
+          "toneladas": 91.86,
+          "usd_kg": 5.1468
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 7.1241,
+        "Sep 2017 / Ago 2018": 5.9269,
+        "Sep 2018 / Ago 2019": 7.4107,
+        "Sep 2019 / Ago 2020": 6.8087,
+        "Sep 2020 / Ago 2021": 5.1114,
+        "Sep 2021 / Ago 2022": 5.9658,
+        "Sep 2022 / Ago 2023": 6.1417,
+        "Sep 2023 / Ago 2024": 7.3648,
+        "Sep 2024 / Ago 2025": 4.5473
+      }
+    },
+    "chirimoya": {
+      "nombre": "Chirimoya",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 526.11,
+      "usd_kg": 5.6034,
+      "codigos": [
+        {
+          "codigo": "08109020",
+          "producto": "Chirimoyas frescas",
+          "toneladas": 526.11,
+          "usd_kg": 5.6034
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 4.271,
+        "Sep 2017 / Ago 2018": 4.766,
+        "Sep 2018 / Ago 2019": 5.0811,
+        "Sep 2019 / Ago 2020": 4.3577,
+        "Sep 2020 / Ago 2021": 3.7197,
+        "Sep 2021 / Ago 2022": 4.6334,
+        "Sep 2022 / Ago 2023": 5.0131,
+        "Sep 2023 / Ago 2024": 5.5722,
+        "Sep 2024 / Ago 2025": 5.6034
+      }
+    },
+    "ciruelo": {
+      "nombre": "Ciruelo",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 154037.64,
+      "usd_kg": 1.8409,
+      "codigos": [
+        {
+          "codigo": "08094019",
+          "producto": "Las demás ciruelas frescas (desde 2012)",
+          "toneladas": 153395.33,
+          "usd_kg": 1.8414
+        },
+        {
+          "codigo": "08094011",
+          "producto": "Ciruelas frescas orgánicas (desde 2012)",
+          "toneladas": 642.31,
+          "usd_kg": 1.7106
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 1.4164,
+        "Sep 2017 / Ago 2018": 1.4434,
+        "Sep 2018 / Ago 2019": 1.3757,
+        "Sep 2019 / Ago 2020": 1.5449,
+        "Sep 2020 / Ago 2021": 1.7566,
+        "Sep 2021 / Ago 2022": 1.375,
+        "Sep 2022 / Ago 2023": 2.1371,
+        "Sep 2023 / Ago 2024": 1.8194,
+        "Sep 2024 / Ago 2025": 1.8409
+      }
+    },
+    "damasco": {
+      "nombre": "Damasco",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 1403.17,
+      "usd_kg": 2.5096,
+      "codigos": [
+        {
+          "codigo": "08091000",
+          "producto": "Damascos (albaricoques, chabacanos), frescos",
+          "toneladas": 1403.17,
+          "usd_kg": 2.5096
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 2.0085,
+        "Sep 2017 / Ago 2018": 2.1192,
+        "Sep 2018 / Ago 2019": 2.6856,
+        "Sep 2019 / Ago 2020": 2.7042,
+        "Sep 2020 / Ago 2021": 2.545,
+        "Sep 2021 / Ago 2022": 1.7508,
+        "Sep 2022 / Ago 2023": 2.7403,
+        "Sep 2023 / Ago 2024": 2.7626,
+        "Sep 2024 / Ago 2025": 2.5096
+      }
+    },
+    "durazno": {
+      "nombre": "Durazno",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 24775.77,
+      "usd_kg": 1.5592,
+      "codigos": [
+        {
+          "codigo": "08093020",
+          "producto": "Duraznos (melocotones), frescos",
+          "toneladas": 24568.27,
+          "usd_kg": 1.5576
+        },
+        {
+          "codigo": "08093090",
+          "producto": "Los demás duraznos incluidos los griñones frescos",
+          "toneladas": 207.51,
+          "usd_kg": 1.7478
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 1.3764,
+        "Sep 2017 / Ago 2018": 1.4596,
+        "Sep 2018 / Ago 2019": 1.3994,
+        "Sep 2019 / Ago 2020": 1.4297,
+        "Sep 2020 / Ago 2021": 1.5109,
+        "Sep 2021 / Ago 2022": 1.3281,
+        "Sep 2022 / Ago 2023": 1.5144,
+        "Sep 2023 / Ago 2024": 1.8174,
+        "Sep 2024 / Ago 2025": 1.5592
+      }
+    },
+    "higo": {
+      "nombre": "Higo",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 104.0,
+      "usd_kg": 7.9094,
+      "codigos": [
+        {
+          "codigo": "08042000",
+          "producto": "Higos, frescos o secos",
+          "toneladas": 104.0,
+          "usd_kg": 7.9094
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 6.5747,
+        "Sep 2017 / Ago 2018": 6.303,
+        "Sep 2018 / Ago 2019": 6.5043,
+        "Sep 2020 / Ago 2021": 6.6642,
+        "Sep 2021 / Ago 2022": 7.1332,
+        "Sep 2022 / Ago 2023": 7.7478,
+        "Sep 2023 / Ago 2024": 8.0614,
+        "Sep 2024 / Ago 2025": 7.9094
+      }
+    },
+    "kiwi": {
+      "nombre": "Kiwi",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 154152.03,
+      "usd_kg": 2.1592,
+      "codigos": [
+        {
+          "codigo": "08105090",
+          "producto": "Los demás kiwis frescos (desde 2012)",
+          "toneladas": 152440.81,
+          "usd_kg": 2.1541
+        },
+        {
+          "codigo": "08105010",
+          "producto": "Kiwis frescos orgánicos (desde 2012)",
+          "toneladas": 1711.22,
+          "usd_kg": 2.6091
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 1.1224,
+        "Sep 2017 / Ago 2018": 1.1423,
+        "Sep 2018 / Ago 2019": 1.1968,
+        "Sep 2019 / Ago 2020": 1.3988,
+        "Sep 2020 / Ago 2021": 1.6641,
+        "Sep 2021 / Ago 2022": 1.4052,
+        "Sep 2022 / Ago 2023": 1.7922,
+        "Sep 2023 / Ago 2024": 2.0117,
+        "Sep 2024 / Ago 2025": 2.1592
+      }
+    },
+    "limon": {
+      "nombre": "Limón",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 124881.25,
+      "usd_kg": 1.0162,
+      "codigos": [
+        {
+          "codigo": "08055010",
+          "producto": "Limones ( Citrus limon, Citrus limonum), frescos o secos",
+          "toneladas": 120086.14,
+          "usd_kg": 1.0143
+        },
+        {
+          "codigo": "08055090",
+          "producto": "Las demás limas y limones, secos o frescos",
+          "toneladas": 4795.11,
+          "usd_kg": 1.0651
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 1.2543,
+        "Sep 2017 / Ago 2018": 1.52,
+        "Sep 2018 / Ago 2019": 1.0299,
+        "Sep 2019 / Ago 2020": 1.1046,
+        "Sep 2020 / Ago 2021": 0.917,
+        "Sep 2021 / Ago 2022": 0.773,
+        "Sep 2022 / Ago 2023": 1.0869,
+        "Sep 2023 / Ago 2024": 1.017,
+        "Sep 2024 / Ago 2025": 1.0162
+      }
+    },
+    "mandarina": {
+      "nombre": "Mandarina",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 211593.57,
+      "usd_kg": 1.1747,
+      "codigos": [
+        {
+          "codigo": "08052100",
+          "producto": "Mandarinas (incluidas las tangerinas y satsumas), frescas o secas (desde 2017)",
+          "toneladas": 139973.18,
+          "usd_kg": 1.2826
+        },
+        {
+          "codigo": "08052200",
+          "producto": "Clementinas, frescas o secas (desde 2017)",
+          "toneladas": 71525.34,
+          "usd_kg": 0.9599
+        },
+        {
+          "codigo": "08052900",
+          "producto": "Los demás Wilkings o híbridos similares de agrios, frescos o secos (desde 2017)",
+          "toneladas": 95.04,
+          "usd_kg": 3.8357
+        }
+      ],
+      "es_mezcla": true,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "media",
+      "advertencia": "El grupo mezcla 3 productos con precios de 0.9599 a 3.8357 USD/kg. El promedio no describe a ninguno: elija el codigo que corresponde a lo que vende el cliente.",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 1.4793,
+        "Sep 2017 / Ago 2018": 1.4428,
+        "Sep 2018 / Ago 2019": 1.2391,
+        "Sep 2019 / Ago 2020": 1.4047,
+        "Sep 2020 / Ago 2021": 1.1032,
+        "Sep 2021 / Ago 2022": 1.1681,
+        "Sep 2022 / Ago 2023": 1.1423,
+        "Sep 2023 / Ago 2024": 1.2908,
+        "Sep 2024 / Ago 2025": 1.1747
+      }
+    },
+    "manzana": {
+      "nombre": "Manzana",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 578304.53,
+      "usd_kg": 1.0925,
+      "codigos": [
+        {
+          "codigo": "08081029",
+          "producto": "Las demás manzanas frescas, variedad Royal Gala (desde 2012)",
+          "toneladas": 240205.25,
+          "usd_kg": 1.0281
+        },
+        {
+          "codigo": "08081099",
+          "producto": "Las demás manzanas frescas, las demás variedades (desde 2012)",
+          "toneladas": 176619.97,
+          "usd_kg": 1.1474
+        },
+        {
+          "codigo": "08081069",
+          "producto": "Las demás manzanas frescas, variedad Granny Smith (desde 2012)",
+          "toneladas": 71999.14,
+          "usd_kg": 1.1604
+        },
+        {
+          "codigo": "08081049",
+          "producto": "Las demás manzanas frescas, variedad Fuji (desde 2012)",
+          "toneladas": 42469.73,
+          "usd_kg": 1.1995
+        },
+        {
+          "codigo": "08081010",
+          "producto": "Manzanas frescas, variedad Richared Delicious",
+          "toneladas": 36737.5,
+          "usd_kg": 0.9781
+        },
+        {
+          "codigo": "08081021",
+          "producto": "Manzanas frescas, variedad Royal Gala orgánica (desde 2012)",
+          "toneladas": 3090.94,
+          "usd_kg": 1.2386
+        },
+        {
+          "codigo": "08081059",
+          "producto": "Las demás manzanas frescas, variedad Braeburn (desde 2012)",
+          "toneladas": 1944.91,
+          "usd_kg": 1.0334
+        },
+        {
+          "codigo": "08081041",
+          "producto": "Manzanas frescas, variedad Fuji orgánica (desde 2012)",
+          "toneladas": 1830.96,
+          "usd_kg": 1.046
+        },
+        {
+          "codigo": "08081091",
+          "producto": "Manzanas frescas, las demás variedades orgánicas (desde 2012)",
+          "toneladas": 1433.59,
+          "usd_kg": 1.3393
+        },
+        {
+          "codigo": "08081070",
+          "producto": "Manzanas frescas, variedad Red Chief (desde 2007)",
+          "toneladas": 1419.42,
+          "usd_kg": 1.0113
+        },
+        {
+          "codigo": "08081061",
+          "producto": "Manzanas frescas, variedad Granny Smith orgánica (desde 2012)",
+          "toneladas": 550.17,
+          "usd_kg": 1.1672
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 0.9319,
+        "Sep 2017 / Ago 2018": 0.9607,
+        "Sep 2018 / Ago 2019": 0.9108,
+        "Sep 2019 / Ago 2020": 0.8979,
+        "Sep 2020 / Ago 2021": 0.9421,
+        "Sep 2021 / Ago 2022": 0.8549,
+        "Sep 2022 / Ago 2023": 1.0444,
+        "Sep 2023 / Ago 2024": 1.087,
+        "Sep 2024 / Ago 2025": 1.0925
+      }
+    },
+    "membrillo": {
+      "nombre": "Membrillo",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 291.75,
+      "usd_kg": 1.6524,
+      "codigos": [
+        {
+          "codigo": "08084000",
+          "producto": "Membrillos  frescos (desde 2012)",
+          "toneladas": 291.75,
+          "usd_kg": 1.6524
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 2.028,
+        "Sep 2017 / Ago 2018": 1.8703,
+        "Sep 2018 / Ago 2019": 1.646,
+        "Sep 2019 / Ago 2020": 1.6872,
+        "Sep 2020 / Ago 2021": 1.7806,
+        "Sep 2021 / Ago 2022": 0.6995,
+        "Sep 2022 / Ago 2023": 1.6679,
+        "Sep 2023 / Ago 2024": 1.9028,
+        "Sep 2024 / Ago 2025": 1.6524
+      }
+    },
+    "naranja": {
+      "nombre": "Naranja",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 116449.43,
+      "usd_kg": 1.0263,
+      "codigos": [
+        {
+          "codigo": "08051000",
+          "producto": "Naranjas, frescas o secas",
+          "toneladas": 116449.43,
+          "usd_kg": 1.0263
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 0.9676,
+        "Sep 2017 / Ago 2018": 0.8454,
+        "Sep 2018 / Ago 2019": 0.8011,
+        "Sep 2019 / Ago 2020": 0.9716,
+        "Sep 2020 / Ago 2021": 1.1943,
+        "Sep 2021 / Ago 2022": 0.8955,
+        "Sep 2022 / Ago 2023": 1.0391,
+        "Sep 2023 / Ago 2024": 1.0848,
+        "Sep 2024 / Ago 2025": 1.0263
+      }
+    },
+    "nectarin": {
+      "nombre": "Nectarín",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 116416.15,
+      "usd_kg": 1.1715,
+      "codigos": [
+        {
+          "codigo": "08093010",
+          "producto": "Nectarines frescos",
+          "toneladas": 116416.15,
+          "usd_kg": 1.1715
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 1.2839,
+        "Sep 2017 / Ago 2018": 1.4672,
+        "Sep 2018 / Ago 2019": 1.5317,
+        "Sep 2019 / Ago 2020": 1.3398,
+        "Sep 2020 / Ago 2021": 1.4365,
+        "Sep 2021 / Ago 2022": 1.0336,
+        "Sep 2022 / Ago 2023": 1.5394,
+        "Sep 2023 / Ago 2024": 1.4106,
+        "Sep 2024 / Ago 2025": 1.1715
+      }
+    },
+    "nuez": {
+      "nombre": "Nuez",
+      "procesamiento": "Frutos secos",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 109434.28,
+      "usd_kg": 4.7953,
+      "codigos": [
+        {
+          "codigo": "08023190",
+          "producto": "Las demás nueces de nogal con cáscara, frescas o secas (desde 2022)",
+          "toneladas": 78010.44,
+          "usd_kg": 3.4489
+        },
+        {
+          "codigo": "08023299",
+          "producto": "Las demás nueces de nogal sin cáscara, frescas o secas excepto enteras (desde 2022)",
+          "toneladas": 29426.96,
+          "usd_kg": 8.1359
+        },
+        {
+          "codigo": "08023219",
+          "producto": "Las demás nueces de nogal sin cáscara, frescas o seca, enteras (desde 2022)",
+          "toneladas": 1735.18,
+          "usd_kg": 8.583
+        },
+        {
+          "codigo": "08023110",
+          "producto": "Nueces de nogal orgánicas con cáscara, frescas o secas (desde 2022)",
+          "toneladas": 221.7,
+          "usd_kg": 4.7698
+        }
+      ],
+      "es_mezcla": true,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "media",
+      "advertencia": "El grupo mezcla 4 productos con precios de 3.4489 a 8.583 USD/kg. El promedio no describe a ninguno: elija el codigo que corresponde a lo que vende el cliente.",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 5.3882,
+        "Sep 2017 / Ago 2018": 5.3362,
+        "Sep 2018 / Ago 2019": 4.0421,
+        "Sep 2019 / Ago 2020": 4.2596,
+        "Sep 2020 / Ago 2021": 3.9031,
+        "Sep 2021 / Ago 2022": 4.0183,
+        "Sep 2022 / Ago 2023": 3.3463,
+        "Sep 2023 / Ago 2024": 3.5294,
+        "Sep 2024 / Ago 2025": 4.7953
+      }
+    },
+    "otros berries": {
+      "nombre": "Otros berries",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 929.79,
+      "usd_kg": 11.1009,
+      "codigos": [
+        {
+          "codigo": "08109069",
+          "producto": "Las demás zarzaparrillas, frescas (desde 2012)",
+          "toneladas": 910.18,
+          "usd_kg": 11.0014
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 9.2324,
+        "Sep 2017 / Ago 2018": 15.4422,
+        "Sep 2018 / Ago 2019": 10.3372,
+        "Sep 2019 / Ago 2020": 4.3793,
+        "Sep 2020 / Ago 2021": 6.6997,
+        "Sep 2021 / Ago 2022": 10.6834,
+        "Sep 2022 / Ago 2023": 8.4994,
+        "Sep 2023 / Ago 2024": 11.071,
+        "Sep 2024 / Ago 2025": 11.1009
+      }
+    },
+    "otros frutos": {
+      "nombre": "Otros frutos",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 3464.45,
+      "usd_kg": 2.78,
+      "codigos": [
+        {
+          "codigo": "08109089",
+          "producto": "Las demás granadas (Punica granatum) (desde 2022)",
+          "toneladas": 2147.16,
+          "usd_kg": 2.9548
+        },
+        {
+          "codigo": "08109099",
+          "producto": "Las demás frutas u otros frutos, frescos (desde 2012)",
+          "toneladas": 726.55,
+          "usd_kg": 2.3992
+        },
+        {
+          "codigo": "08107000",
+          "producto": "Caquis (Persimonios) (desde 2012)",
+          "toneladas": 568.31,
+          "usd_kg": 2.399
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 2.0485,
+        "Sep 2017 / Ago 2018": 2.0077,
+        "Sep 2018 / Ago 2019": 2.2546,
+        "Sep 2019 / Ago 2020": 2.2485,
+        "Sep 2020 / Ago 2021": 2.6361,
+        "Sep 2021 / Ago 2022": 3.1931,
+        "Sep 2022 / Ago 2023": 2.8622,
+        "Sep 2023 / Ago 2024": 3.4498,
+        "Sep 2024 / Ago 2025": 2.78
+      }
+    },
+    "otros frutos secos": {
+      "nombre": "Otros frutos secos",
+      "procesamiento": "Frutos secos",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 475.91,
+      "usd_kg": 6.9374,
+      "codigos": [
+        {
+          "codigo": "08134099",
+          "producto": "Los demás frutos secos, excepto de partidas 0801 a 0806 (desde 2012)",
+          "toneladas": 354.86,
+          "usd_kg": 6.7096
+        },
+        {
+          "codigo": "08135000",
+          "producto": "Mezclas de frutos secos o de frutos de cáscara de este capítulo",
+          "toneladas": 92.64,
+          "usd_kg": 8.8085
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 7.6692,
+        "Sep 2017 / Ago 2018": 7.356,
+        "Sep 2018 / Ago 2019": 6.1015,
+        "Sep 2019 / Ago 2020": 5.9203,
+        "Sep 2020 / Ago 2021": 7.9903,
+        "Sep 2021 / Ago 2022": 7.6453,
+        "Sep 2022 / Ago 2023": 9.7136,
+        "Sep 2023 / Ago 2024": 5.7303,
+        "Sep 2024 / Ago 2025": 6.9374
+      }
+    },
+    "palta": {
+      "nombre": "Palta",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 133055.35,
+      "usd_kg": 2.8469,
+      "codigos": [
+        {
+          "codigo": "08044019",
+          "producto": "Las demás paltas (aguacates), variedad Hass, frescas o secas (desde 2012)",
+          "toneladas": 130625.71,
+          "usd_kg": 2.8415
+        },
+        {
+          "codigo": "08044099",
+          "producto": "Las demás paltas (aguacates), de otras variedades, frescas o secas (desde 2012)",
+          "toneladas": 2169.85,
+          "usd_kg": 3.041
+        },
+        {
+          "codigo": "08044020",
+          "producto": "Paltas (aguacates), variedad Fuerte, frescos o secos",
+          "toneladas": 216.0,
+          "usd_kg": 4.2089
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 2.5949,
+        "Sep 2017 / Ago 2018": 2.9461,
+        "Sep 2018 / Ago 2019": 2.3558,
+        "Sep 2019 / Ago 2020": 2.6803,
+        "Sep 2020 / Ago 2021": 3.1784,
+        "Sep 2021 / Ago 2022": 2.4093,
+        "Sep 2022 / Ago 2023": 2.3886,
+        "Sep 2023 / Ago 2024": 3.007,
+        "Sep 2024 / Ago 2025": 2.8469
+      }
+    },
+    "pera": {
+      "nombre": "Pera",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 109987.41,
+      "usd_kg": 1.1071,
+      "codigos": [
+        {
+          "codigo": "08083090",
+          "producto": "Las demás variedades de peras frescas (desde 2012)",
+          "toneladas": 40073.07,
+          "usd_kg": 1.1638
+        },
+        {
+          "codigo": "08083030",
+          "producto": "Peras variedad Abate Fetel, frescas (desde 2012)",
+          "toneladas": 24300.23,
+          "usd_kg": 0.9794
+        },
+        {
+          "codigo": "08083010",
+          "producto": "Peras variedad  Packham's Triumph, frescas (desde 2012)",
+          "toneladas": 23882.9,
+          "usd_kg": 1.0289
+        },
+        {
+          "codigo": "08083060",
+          "producto": "Peras variedad Coscia, frescas (desde 2012)",
+          "toneladas": 14961.87,
+          "usd_kg": 1.2724
+        },
+        {
+          "codigo": "08083040",
+          "producto": "Peras variedad Bartlett, frescas (desde 2012)",
+          "toneladas": 2862.05,
+          "usd_kg": 0.8969
+        },
+        {
+          "codigo": "08083050",
+          "producto": "Peras variedad Beurre Bosc, frescas (desde 2012)",
+          "toneladas": 1848.94,
+          "usd_kg": 1.205
+        },
+        {
+          "codigo": "08083020",
+          "producto": "Peras variedades asiáticas, frescas (desde 2012)",
+          "toneladas": 1444.63,
+          "usd_kg": 1.5766
+        },
+        {
+          "codigo": "08083070",
+          "producto": "Peras variedad D' Anjou, frescas (desde 2012)",
+          "toneladas": 613.72,
+          "usd_kg": 1.0571
+        }
+      ],
+      "es_mezcla": true,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "media",
+      "advertencia": "El grupo mezcla 8 productos con precios de 0.8969 a 1.5766 USD/kg. El promedio no describe a ninguno: elija el codigo que corresponde a lo que vende el cliente.",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 0.9195,
+        "Sep 2017 / Ago 2018": 0.9993,
+        "Sep 2018 / Ago 2019": 0.9821,
+        "Sep 2019 / Ago 2020": 1.0762,
+        "Sep 2020 / Ago 2021": 1.045,
+        "Sep 2021 / Ago 2022": 1.0702,
+        "Sep 2022 / Ago 2023": 1.1318,
+        "Sep 2023 / Ago 2024": 1.1309,
+        "Sep 2024 / Ago 2025": 1.1071
+      }
+    },
+    "plumcots": {
+      "nombre": "Plumcots",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 430.15,
+      "usd_kg": 2.021,
+      "codigos": [
+        {
+          "codigo": "08109050",
+          "producto": "Plumcots frescos",
+          "toneladas": 430.15,
+          "usd_kg": 2.021
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 1.3332,
+        "Sep 2017 / Ago 2018": 1.7882,
+        "Sep 2018 / Ago 2019": 1.2696,
+        "Sep 2019 / Ago 2020": 1.1774,
+        "Sep 2020 / Ago 2021": 1.2396,
+        "Sep 2022 / Ago 2023": 1.6339,
+        "Sep 2023 / Ago 2024": 1.4988,
+        "Sep 2024 / Ago 2025": 2.021
+      }
+    },
+    "pomelo": {
+      "nombre": "Pomelo",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 1410.5,
+      "usd_kg": 0.9723,
+      "codigos": [
+        {
+          "codigo": "08054000",
+          "producto": "Toronjas o pomelos, frescos o secos",
+          "toneladas": 1410.5,
+          "usd_kg": 0.9723
+        }
+      ],
+      "es_mezcla": false,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "alta",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 0.7871,
+        "Sep 2017 / Ago 2018": 0.947,
+        "Sep 2018 / Ago 2019": 0.769,
+        "Sep 2019 / Ago 2020": 0.6458,
+        "Sep 2020 / Ago 2021": 0.7198,
+        "Sep 2021 / Ago 2022": 0.8557,
+        "Sep 2022 / Ago 2023": 0.9909,
+        "Sep 2023 / Ago 2024": 1.0585,
+        "Sep 2024 / Ago 2025": 0.9723
+      }
+    },
+    "uva": {
+      "nombre": "Uva",
+      "procesamiento": "Fresca",
+      "temporada": "Sep 2024 / Ago 2025",
+      "toneladas": 556973.23,
+      "usd_kg": 1.7631,
+      "codigos": [
+        {
+          "codigo": "08061099",
+          "producto": "Uva fresca, las demás variedades (desde 2012)",
+          "toneladas": 387408.26,
+          "usd_kg": 1.7922
+        },
+        {
+          "codigo": "08061039",
+          "producto": "Las demás uvas fresca, variedad Red Globe (desde 2012)",
+          "toneladas": 81260.85,
+          "usd_kg": 1.701
+        },
+        {
+          "codigo": "08061019",
+          "producto": "Las demás uvas frescas, variedad Thompson Seedless (Sultanina) (desde 2012)",
+          "toneladas": 38750.66,
+          "usd_kg": 1.6949
+        },
+        {
+          "codigo": "08061059",
+          "producto": "Las demás uvas frescas, variedad Crimson Seedless (desde 2012)",
+          "toneladas": 37293.79,
+          "usd_kg": 1.7755
+        },
+        {
+          "codigo": "08061079",
+          "producto": "Las demás uvas frescas, variedad Sugraone (desde 2012)",
+          "toneladas": 6442.48,
+          "usd_kg": 1.371
+        },
+        {
+          "codigo": "08061029",
+          "producto": "Las demás uvas frescas, variedad Flame Seedless (desde 2012)",
+          "toneladas": 3503.62,
+          "usd_kg": 1.3498
+        },
+        {
+          "codigo": "08061069",
+          "producto": "Las demás uvas frescas, variedad Black Seedless (desde 2012)",
+          "toneladas": 1031.23,
+          "usd_kg": 1.3856
+        },
+        {
+          "codigo": "08061089",
+          "producto": "Las demás uvas frescas, variedad Ruby Seedless (desde 2012)",
+          "toneladas": 784.57,
+          "usd_kg": 1.6037
+        },
+        {
+          "codigo": "08061049",
+          "producto": "Las demás uvas frescas, variedad Ribier (desde 2012)",
+          "toneladas": 334.97,
+          "usd_kg": 2.0492
+        },
+        {
+          "codigo": "08061091",
+          "producto": "Uva fresca, las demás variedades orgánicas (desde 2012)",
+          "toneladas": 116.49,
+          "usd_kg": 3.7845
+        }
+      ],
+      "es_mezcla": true,
+      "tipo": "FOB exportacion",
+      "fuente": "ODEPA - Boletin de la fruta (Servicio Nacional de Aduanas)",
+      "confianza": "media",
+      "advertencia": "El grupo mezcla 10 productos con precios de 1.3498 a 3.7845 USD/kg. El promedio no describe a ninguno: elija el codigo que corresponde a lo que vende el cliente.",
+      "serie_usd_kg": {
+        "Sep 2016 / Ago 2017": 1.7493,
+        "Sep 2017 / Ago 2018": 1.7056,
+        "Sep 2018 / Ago 2019": 1.9167,
+        "Sep 2019 / Ago 2020": 1.7123,
+        "Sep 2020 / Ago 2021": 1.7445,
+        "Sep 2021 / Ago 2022": 1.4318,
+        "Sep 2022 / Ago 2023": 1.8081,
+        "Sep 2023 / Ago 2024": 2.5708,
+        "Sep 2024 / Ago 2025": 1.7631
+      }
+    }
+  }
+}
